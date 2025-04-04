@@ -1,0 +1,6 @@
+config_version=5
+
+[application]
+
+config/name="LudumDare57"
+config/features=PackedStringArray("4.4", "Forward Plus")
