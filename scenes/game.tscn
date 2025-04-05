@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw5dep2lvaeic"]
+
+[ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://baw4loy5iwkq7" path="res://scenes/levels/level1.tscn" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://dgmllju2ikp5e" path="res://scenes/levels/level_3.tscn" id="3_lbhrr"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_uwrxv")
+levels = Array[PackedScene]([ExtResource("2_lnu2h"), ExtResource("3_lbhrr")])
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 180.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="time_out"]

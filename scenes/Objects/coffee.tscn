@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://bni4j3r7dp4jg"]
+
+[ext_resource type="Script" uid="uid://doxc1kpf73yrl" path="res://classes/coffee.gd" id="1_kukex"]
+
+[sub_resource type="Gradient" id="Gradient_kukex"]
+colors = PackedColorArray(0.32771, 0.170355, 0.017865, 1, 0.88371, 0.599381, 0.341616, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_21xrd"]
+gradient = SubResource("Gradient_kukex")
+
+[sub_resource type="Curve" id="Curve_0woxd"]
+_data = [Vector2(0, 0), 0.0, 20.7422, 0, 0, Vector2(0.12476, 1), 0.146392, 0.146392, 0, 0, Vector2(1, 0.493741), -1.0205, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_4nv5d"]
+curve = SubResource("Curve_0woxd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f7x7d"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 29.865, 1)
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(0, 0, 0)
+spread = 18.328
+initial_velocity_min = 124.38
+initial_velocity_max = 286.84
+gravity = Vector3(0, 900, 0)
+scale_min = 3.89
+scale_max = 49.8
+scale_curve = SubResource("CurveTexture_4nv5d")
+color_initial_ramp = SubResource("GradientTexture1D_21xrd")
+
+[node name="Coffee" type="RigidBody2D"]
+mass = 0.6
+script = ExtResource("1_kukex")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-61, -141)
+rotation = -1.57079
+amount = 113
+lifetime = 1.05
+randomness = 0.02
+process_material = SubResource("ParticleProcessMaterial_f7x7d")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(60, 141, 115, -137, 138, -145, -120, -144, -99, -136, -65, 141)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-65, 141, 60, 141, 115, -137, 138, -145, -121, -144, -99, -136)
