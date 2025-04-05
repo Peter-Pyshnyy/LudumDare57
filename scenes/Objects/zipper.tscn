@@ -1,16 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://xstywed8a4ni"]
+[gd_scene load_steps=6 format=3 uid="uid://xstywed8a4ni"]
 
 [ext_resource type="Script" uid="uid://c4yd1sro05qu5" path="res://classes/zipper.gd" id="1_01k3e"]
+[ext_resource type="Script" uid="uid://fyil3i0su26b" path="res://scenes/Objects/handle.gd" id="2_6a7oh"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_uaosp"]
 b = Vector2(-39.11, 0)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tbvg1"]
+friction = 0.0
+rough = true
+absorbent = true
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6a7oh"]
+absorbent = true
 
 [node name="Zipper" type="Node2D"]
 script = ExtResource("1_01k3e")
 
 [node name="Base" type="StaticBody2D" parent="."]
 rotation = 1.5708
-collision_layer = 4
 
 [node name="BaseCol" type="CollisionShape2D" parent="Base"]
 rotation = -1.5708
@@ -20,12 +28,16 @@ shape = SubResource("SegmentShape2D_uaosp")
 rotation = 1.5708
 node_a = NodePath("../Base")
 node_b = NodePath("../Handle")
+bias = 0.9
 length = 408.0
 initial_offset = 1.0
 
 [node name="Slider" type="RigidBody2D" parent="."]
-collision_layer = 4
-mass = 0.1
+collision_layer = 2
+collision_mask = 4
+mass = 1000.0
+physics_material_override = SubResource("PhysicsMaterial_tbvg1")
+sleeping = true
 lock_rotation = true
 
 [node name="Polygon2D" type="Polygon2D" parent="Slider"]
@@ -37,21 +49,30 @@ polygon = PackedVector2Array(-11, -1, 13, -1, 17, 14, -16, 14)
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 node_a = NodePath("../Slider")
 node_b = NodePath("../Handle")
+bias = 0.9
 angular_limit_enabled = true
 angular_limit_lower = -0.872665
 angular_limit_upper = 0.872665
 
 [node name="Handle" type="RigidBody2D" parent="."]
 collision_layer = 4
-mass = 0.144
+collision_mask = 3
+mass = 6.183
+physics_material_override = SubResource("PhysicsMaterial_6a7oh")
+gravity_scale = 0.209
+contact_monitor = true
+script = ExtResource("2_6a7oh")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Handle"]
 position = Vector2(0, -1.71788)
 scale = Vector2(2.5682, 2.5682)
-polygon = PackedVector2Array(-1, 2, 1, 2, 2, -9, 5, -14, -5, -14, -2, -9)
+polygon = PackedVector2Array(-1.55751, 1.83704, 1.55751, 1.83704, 2, -9, 5, -14, -5, -14, -2, -9)
 
 [node name="Polygon2D" type="Polygon2D" parent="Handle"]
 position = Vector2(0, -1.71788)
 scale = Vector2(2.5682, 2.5682)
 color = Color(0.678944, 0.678944, 0.678944, 1)
-polygon = PackedVector2Array(-1, 2, 1, 2, 2, -9, 5, -14, -5, -14, -2, -9)
+polygon = PackedVector2Array(-1.55751, 1.83704, 1.55751, 1.83704, 2, -9, 5, -14, -5, -14, -2, -9)
+
+[connection signal="body_entered" from="Handle" to="." method="_on_handle_body_entered"]
+[connection signal="body_shape_entered" from="Handle" to="." method="_on_handle_body_shape_entered"]

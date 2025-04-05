@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://baw4loy5iwkq7"]
+[gd_scene load_steps=3 format=3 uid="uid://baw4loy5iwkq7"]
 
 [ext_resource type="PackedScene" uid="uid://xstywed8a4ni" path="res://scenes/Objects/zipper.tscn" id="1_x6ivy"]
+[ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/hand.tscn" id="2_4tcl0"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Zipper" parent="." instance=ExtResource("1_x6ivy")]
 position = Vector2(743, 572)
+
+[node name="Hand" parent="." instance=ExtResource("2_4tcl0")]
+position = Vector2(761, 386)
+scale = Vector2(1.65, 1.65)

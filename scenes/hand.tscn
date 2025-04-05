@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://cyiacwvceu3mp"]
+[gd_scene load_steps=22 format=3 uid="uid://cyiacwvceu3mp"]
 
 [ext_resource type="Script" uid="uid://cfbetsvoob6r8" path="res://scenes/grips.gd" id="1_eyfoh"]
+[ext_resource type="Script" uid="uid://dfdneti23ltj3" path="res://scenes/limb.gd" id="1_k7pjy"]
 
 [sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_eyfoh"]
 target_nodepath = NodePath("Palm/IK Targets/Thumb Target")
@@ -11,7 +12,7 @@ joint_two_bone_idx = 2
 joint_two_bone2d_node = NodePath("Palm/Thumb1/Thumb2")
 
 [sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_cmdsa"]
-target_nodepath = NodePath("Palm/IK Targets/Index Target")
+target_nodepath = NodePath("Palm/IK Targets/Limb Index/Index Target")
 joint_one_bone_idx = 3
 joint_one_bone2d_node = NodePath("Palm/Index1")
 joint_two_bone_idx = 4
@@ -47,17 +48,17 @@ modifications/2 = SubResource("SkeletonModification2DTwoBoneIK_k7pjy")
 modifications/3 = SubResource("SkeletonModification2DTwoBoneIK_m1v21")
 modifications/4 = SubResource("SkeletonModification2DTwoBoneIK_kdemd")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eyfoh"]
-size = Vector2(32.0868, 34)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f44jc"]
+size = Vector2(9.47754, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysndn"]
+size = Vector2(1.9095, 2.75115)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmdsa"]
 size = Vector2(15.7748, 8.7862)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7pjy"]
 size = Vector2(11.1249, 21.0054)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1v21"]
-size = Vector2(14.7185, 4.58039)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdemd"]
 size = Vector2(9.01015, 20.9917)
@@ -80,8 +81,17 @@ size = Vector2(17.4106, 7.05091)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bfalx"]
 size = Vector2(7.80298, 14.799)
 
-[node name="Hand" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1v21"]
+size = Vector2(9.34916, 20.8332)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0eb3b"]
+size = Vector2(2.94587, 3.81838)
+
+[node name="Hand" type="CharacterBody2D"]
 position = Vector2(363, 159)
+collision_mask = 256
+input_pickable = true
+script = ExtResource("1_k7pjy")
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
 position = Vector2(1, -1)
@@ -99,9 +109,6 @@ scale = Vector2(1.00001, 1.00001)
 [node name="Thumb Target" type="Node2D" parent="Skeleton2D/Palm/IK Targets"]
 position = Vector2(-33.6217, 45.5483)
 
-[node name="Index Target" type="Node2D" parent="Skeleton2D/Palm/IK Targets"]
-position = Vector2(-12.6328, 89.2335)
-
 [node name="Mid Target" type="Node2D" parent="Skeleton2D/Palm/IK Targets"]
 position = Vector2(11.3797, 88.6153)
 
@@ -112,7 +119,39 @@ position = Vector2(29.663, 77.3588)
 position = Vector2(45.1428, 54.2644)
 
 [node name="Test Target" type="Node2D" parent="Skeleton2D/Palm/IK Targets"]
-position = Vector2(-141.786, 47.2359)
+position = Vector2(2.00231, 9.06737)
+
+[node name="Limb Index" type="CharacterBody2D" parent="Skeleton2D/Palm/IK Targets"]
+position = Vector2(-12.9022, 85.243)
+rotation = -1.5708
+scale = Vector2(1.59998, 1.59998)
+collision_layer = 4
+collision_mask = 256
+input_pickable = true
+script = ExtResource("1_k7pjy")
+
+[node name="Inner Index1" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Index"]
+z_index = 11
+position = Vector2(21.1136, 3.6221)
+rotation = 1.08731
+scale = Vector2(0.624999, 0.624999)
+shape = SubResource("RectangleShape2D_f44jc")
+
+[node name="Inner Index2" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Index"]
+z_index = 11
+position = Vector2(2.38419e-06, -3.78489e-06)
+rotation = -0.0149294
+scale = Vector2(1.59999, 1.59999)
+shape = SubResource("RectangleShape2D_ysndn")
+
+[node name="Index Target" type="Node2D" parent="Skeleton2D/Palm/IK Targets/Limb Index"]
+rotation = 1.5708
+scale = Vector2(0.625009, 0.625009)
+
+[node name="RT Index" type="RemoteTransform2D" parent="Skeleton2D/Palm/IK Targets/Limb Index"]
+position = Vector2(-2.86102e-06, 1.43051e-06)
+rotation = -3.18699
+remote_path = NodePath("../../../../../Outer Index2")
 
 [node name="PalmPolygon" type="Polygon2D" parent="Skeleton2D/Palm"]
 scale = Vector2(1.27778, 1)
@@ -130,16 +169,9 @@ offset_top = 0.776001
 offset_right = 6.96072
 offset_bottom = 8.776
 
-[node name="Palm A2D" type="Area2D" parent="Skeleton2D/Palm/PalmPolygon"]
-
-[node name="Palm Collision" type="CollisionShape2D" parent="Skeleton2D/Palm/PalmPolygon/Palm A2D"]
-position = Vector2(-0.391205, 11)
-shape = SubResource("RectangleShape2D_eyfoh")
-
 [node name="Thumb1" type="Bone2D" parent="Skeleton2D/Palm"]
 position = Vector2(-23, 4)
 rotation = 0.612801
-scale = Vector2(1, 1)
 rest = Transform2D(0.81804, 0.575161, -0.575161, 0.81804, -23, 4)
 metadata/_local_pose_override_enabled_ = true
 
@@ -147,7 +179,7 @@ metadata/_local_pose_override_enabled_ = true
 z_index = 1
 position = Vector2(-19, 17)
 rotation = 2.41168
-scale = Vector2(1, 1)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(-0.745234, 0.666802, -0.666802, -0.745234, -19, 17)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -177,8 +209,8 @@ offset_bottom = 3.50684
 [node name="Thumb2 Collision" type="CollisionShape2D" parent="Skeleton2D/Palm/Thumb1/Thumb2/Thumb2Polygon/Thumb2 A2D"]
 position = Vector2(7.87424, -1.61942)
 rotation = 0.0455898
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cmdsa")
+disabled = true
 
 [node name="Thumb Anchor" type="Node2D" parent="Skeleton2D/Palm/Thumb1/Thumb2"]
 position = Vector2(16.0009, -0.000105707)
@@ -193,12 +225,12 @@ polygon = PackedVector2Array(-2.87582, -4.09019, 4.93356, 8.75554, -13, 23, -20,
 [node name="Thumb1 Collision" type="CollisionShape2D" parent="Skeleton2D/Palm/Thumb1/Thumb1Polygon/Thumb1 A2D"]
 position = Vector2(-7.21313, 10.6809)
 rotation = 0.868592
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_k7pjy")
+disabled = true
 
 [node name="Index1" type="Bone2D" parent="Skeleton2D/Palm"]
 position = Vector2(-16, 30)
-rotation = -0.123401
+rotation = -0.1234
 scale = Vector2(0.999996, 0.999996)
 rest = Transform2D(0.992392, -0.123087, 0.123087, 0.992392, -16, 30)
 metadata/_local_pose_override_enabled_ = true
@@ -220,22 +252,13 @@ skeleton = NodePath("../../../../..")
 polygon = PackedVector2Array(0.887119, 2.41943, 0.680382, -3.28194, 15.7886, -2.77266, 15.6189, 2.26341)
 
 [node name="Index Select" type="Button" parent="Skeleton2D/Palm/Index1/Index2/Index2Polygon"]
-anchors_preset = -1
 offset_left = 7.49463
 offset_top = -3.73989
 offset_right = 15.4946
 offset_bottom = 4.26011
 
-[node name="Index2 A2D" type="Area2D" parent="Skeleton2D/Palm/Index1/Index2/Index2Polygon"]
-
-[node name="Index2 Collision" type="CollisionShape2D" parent="Skeleton2D/Palm/Index1/Index2/Index2Polygon/Index2 A2D"]
-position = Vector2(8.03364, -0.115982)
-rotation = -0.00356145
-scale = Vector2(0.999999, 0.999999)
-shape = SubResource("RectangleShape2D_m1v21")
-
 [node name="Index Anchor" type="Node2D" parent="Skeleton2D/Palm/Index1/Index2"]
-position = Vector2(16.0006, 0.000744581)
+position = Vector2(16.0006, 0.000747681)
 
 [node name="Intex1Polygon" type="Polygon2D" parent="Skeleton2D/Palm/Index1"]
 position = Vector2(0, -1)
@@ -249,10 +272,21 @@ polygon = PackedVector2Array(-7, 2, 5, 1, 0, 25, -9, 24)
 position = Vector2(-3.02252, 13.2209)
 rotation = 0.120819
 shape = SubResource("RectangleShape2D_kdemd")
+disabled = true
+
+[node name="RT Outer Index1" type="RemoteTransform2D" parent="Skeleton2D/Palm/Index1"]
+position = Vector2(-2.6245, 12.0877)
+rotation = 0.139428
+remote_path = NodePath("../../../../Outer Index1")
+
+[node name="RT Inner Index1" type="RemoteTransform2D" parent="Skeleton2D/Palm/Index1"]
+position = Vector2(-2.62455, 12.0877)
+rotation = 0.131854
+remote_path = NodePath("../../IK Targets/Limb Index/Inner Index1")
 
 [node name="Mid1" type="Bone2D" parent="Skeleton2D/Palm"]
 position = Vector2(0, 28)
-rotation = -0.154739
+rotation = -0.154738
 scale = Vector2(0.999997, 0.999997)
 rest = Transform2D(0.988049, -0.154121, 0.154121, 0.988049, 0, 28)
 metadata/_local_pose_override_enabled_ = true
@@ -289,8 +323,8 @@ offset_bottom = 4.0
 [node name="Mid2 Collision" type="CollisionShape2D" parent="Skeleton2D/Palm/Mid1/Mid2/Mid2Polygon/Mid2 A2D"]
 position = Vector2(8.11305, 0.879272)
 rotation = 0.0256929
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_n04oe")
+disabled = true
 
 [node name="Mid Anchor" type="Node2D" parent="Skeleton2D/Palm/Mid1/Mid2"]
 position = Vector2(16.0006, 0.000744581)
@@ -306,6 +340,7 @@ polygon = PackedVector2Array(-7, 1, 4, 0, 2, 25, -8, 26)
 position = Vector2(-2.02295, 13.3392)
 rotation = 0.041317
 shape = SubResource("RectangleShape2D_yinqy")
+disabled = true
 
 [node name="Ring1" type="Bone2D" parent="Skeleton2D/Palm"]
 position = Vector2(12, 27)
@@ -348,6 +383,7 @@ position = Vector2(8.86084, -0.198044)
 rotation = -0.0545969
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_ligq1")
+disabled = true
 
 [node name="Ring Anchor" type="Node2D" parent="Skeleton2D/Palm/Ring1/Ring2"]
 position = Vector2(16.0006, 0.000744581)
@@ -363,11 +399,12 @@ polygon = PackedVector2Array(-6, 1, 2, 0, 4, 19, -5, 20)
 position = Vector2(-1.32639, 9.25848)
 rotation = -0.087747
 shape = SubResource("RectangleShape2D_y1wyv")
+disabled = true
 
 [node name="Pinky1" type="Bone2D" parent="Skeleton2D/Palm"]
 position = Vector2(19, 26)
 rotation = -0.412971
-scale = Vector2(1, 1)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(0.915932, -0.401332, 0.401332, 0.915932, 19, 26)
 metadata/_local_pose_override_enabled_ = true
 
@@ -403,8 +440,8 @@ offset_bottom = 3.16966
 [node name="Pinky2 Collision" type="CollisionShape2D" parent="Skeleton2D/Palm/Pinky1/Pinky2/Pinky2Polygon/Pinky2 A2D"]
 position = Vector2(8.99615, 0.0199585)
 rotation = -0.104934
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_v24qn")
+disabled = true
 
 [node name="Pinky Anchor" type="Node2D" parent="Skeleton2D/Palm/Pinky1/Pinky2"]
 position = Vector2(16.0006, 0.000744581)
@@ -421,7 +458,24 @@ polygon = PackedVector2Array(-4, 4, 4, 3, 8, 15, 1, 18)
 position = Vector2(2.14682, 9.375)
 rotation = -0.325621
 shape = SubResource("RectangleShape2D_bfalx")
+disabled = true
 
+[node name="Outer Index1" type="CollisionShape2D" parent="."]
+z_index = 11
+position = Vector2(-10.9432, 40.6852)
+rotation = -0.408528
+scale = Vector2(0.999995, 0.999995)
+shape = SubResource("RectangleShape2D_m1v21")
+
+[node name="Outer Index2" type="CollisionShape2D" parent="."]
+z_index = 11
+position = Vector2(-19, 74)
+rotation = 1.59278
+scale = Vector2(1.6, 1.6)
+shape = SubResource("RectangleShape2D_0eb3b")
+
+[connection signal="input_event" from="." to="." method="_on_Draggable_input_event"]
+[connection signal="input_event" from="Skeleton2D/Palm/IK Targets/Limb Index" to="Skeleton2D/Palm/IK Targets/Limb Index" method="_on_Draggable_input_event"]
 [connection signal="button_down" from="Skeleton2D/Palm/PalmPolygon/Palm Select" to="Skeleton2D" method="_on_palm_select_button_down"]
 [connection signal="button_up" from="Skeleton2D/Palm/PalmPolygon/Palm Select" to="Skeleton2D" method="_on_palm_select_button_up"]
 [connection signal="button_down" from="Skeleton2D/Palm/Thumb1/Thumb2/Thumb2Polygon/Thumb Select" to="Skeleton2D" method="_on_thumb_select_button_down"]
