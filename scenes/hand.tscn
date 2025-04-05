@@ -1,0 +1,302 @@
+[gd_scene load_steps=8 format=3 uid="uid://cyiacwvceu3mp"]
+
+[ext_resource type="Script" uid="uid://cfbetsvoob6r8" path="res://scenes/grips.gd" id="1_eyfoh"]
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_eyfoh"]
+target_nodepath = NodePath("Palm/IK Targets/Thumb Target")
+flip_bend_direction = true
+joint_one_bone_idx = 1
+joint_one_bone2d_node = NodePath("Palm/Thumb1")
+joint_two_bone_idx = 2
+joint_two_bone2d_node = NodePath("Palm/Thumb1/Thumb2")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_cmdsa"]
+target_nodepath = NodePath("Palm/IK Targets/Index Target")
+joint_one_bone_idx = 3
+joint_one_bone2d_node = NodePath("Palm/Index1")
+joint_two_bone_idx = 4
+joint_two_bone2d_node = NodePath("Palm/Index1/Index2")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_k7pjy"]
+target_nodepath = NodePath("Palm/IK Targets/Mid Target")
+joint_one_bone_idx = 5
+joint_one_bone2d_node = NodePath("Palm/Mid1")
+joint_two_bone_idx = 6
+joint_two_bone2d_node = NodePath("Palm/Mid1/Mid2")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_m1v21"]
+target_nodepath = NodePath("Palm/IK Targets/Ring Target")
+joint_one_bone_idx = 7
+joint_one_bone2d_node = NodePath("Palm/Ring1")
+joint_two_bone_idx = 8
+joint_two_bone2d_node = NodePath("Palm/Ring1/Ring2")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_kdemd"]
+target_nodepath = NodePath("Palm/IK Targets/Pinky Target")
+joint_one_bone_idx = 9
+joint_one_bone2d_node = NodePath("Palm/Pinky1")
+joint_two_bone_idx = 10
+joint_two_bone2d_node = NodePath("Palm/Pinky1/Pinky2")
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_n04oe"]
+enabled = true
+modification_count = 5
+modifications/0 = SubResource("SkeletonModification2DTwoBoneIK_eyfoh")
+modifications/1 = SubResource("SkeletonModification2DTwoBoneIK_cmdsa")
+modifications/2 = SubResource("SkeletonModification2DTwoBoneIK_k7pjy")
+modifications/3 = SubResource("SkeletonModification2DTwoBoneIK_m1v21")
+modifications/4 = SubResource("SkeletonModification2DTwoBoneIK_kdemd")
+
+[node name="Hand" type="Node2D"]
+position = Vector2(363, 159)
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+position = Vector2(1, -1)
+modification_stack = SubResource("SkeletonModificationStack2D_n04oe")
+script = ExtResource("1_eyfoh")
+
+[node name="Palm" type="Bone2D" parent="Skeleton2D"]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="IK Targets" type="Node2D" parent="Skeleton2D/Palm"]
+position = Vector2(-1.38724, -9.1817)
+rotation = 0.0673835
+scale = Vector2(1.00001, 1.00001)
+
+[node name="Thumb Target" type="Node2D" parent="Skeleton2D/Palm/IK Targets"]
+position = Vector2(-58.5217, 18.1631)
+
+[node name="Index Target" type="Node2D" parent="Skeleton2D/Palm/IK Targets"]
+position = Vector2(-53.9004, 56.9394)
+
+[node name="Mid Target" type="Node2D" parent="Skeleton2D/Palm/IK Targets"]
+position = Vector2(-23.822, 71.948)
+
+[node name="Ring Target" type="Node2D" parent="Skeleton2D/Palm/IK Targets"]
+position = Vector2(3.3061, 58.0901)
+
+[node name="Pinky Target" type="Node2D" parent="Skeleton2D/Palm/IK Targets"]
+position = Vector2(30.9055, 51.2162)
+
+[node name="Test Target" type="Node2D" parent="Skeleton2D/Palm/IK Targets"]
+position = Vector2(-141.786, 47.2359)
+
+[node name="PalmPolygon" type="Polygon2D" parent="Skeleton2D/Palm"]
+scale = Vector2(1.27778, 1)
+skeleton = NodePath("../..")
+polygon = PackedVector2Array(-17.2174, -8, -18, 30, 18, 26, 11.7391, -6)
+
+[node name="Palm Select" type="Button" parent="Skeleton2D/Palm/PalmPolygon"]
+anchors_preset = -1
+anchor_left = -0.011
+anchor_top = -0.012
+anchor_right = 0.005
+anchor_bottom = 0.017
+offset_left = -1.03928
+offset_top = 0.776001
+offset_right = 6.96072
+offset_bottom = 8.776
+
+[node name="Thumb1" type="Bone2D" parent="Skeleton2D/Palm"]
+position = Vector2(-23, 4)
+rest = Transform2D(1, 0, 0, 1, -23, 4)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Thumb2" type="Bone2D" parent="Skeleton2D/Palm/Thumb1"]
+position = Vector2(-19, 17)
+scale = Vector2(1, 1)
+rest = Transform2D(-0.553392, 0.832921, -0.832921, -0.553392, -19, 17)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Thumb2Polygon" type="Polygon2D" parent="Skeleton2D/Palm/Thumb1/Thumb2"]
+rotation = 0.0715228
+color = Color(0.476252, 0.380246, 0.346791, 1)
+skeleton = NodePath("../../../..")
+polygon = PackedVector2Array(-0.559063, 2.77263, 3.06348, -8.03834, 15.8142, -3.30334, 16.6357, 3.35436)
+
+[node name="Thumb Select" type="Button" parent="Skeleton2D/Palm/Thumb1/Thumb2/Thumb2Polygon"]
+z_index = 3
+anchors_preset = -1
+anchor_left = -0.052
+anchor_top = 0.006
+anchor_right = -0.045
+anchor_bottom = 0.019
+offset_left = 8.90461
+offset_top = -4.49316
+offset_right = 16.9046
+offset_bottom = 3.50684
+
+[node name="Thumb Anchor" type="Node2D" parent="Skeleton2D/Palm/Thumb1/Thumb2"]
+position = Vector2(16.0006, 0.000738745)
+
+[node name="Thumb1Polygon" type="Polygon2D" parent="Skeleton2D/Palm/Thumb1"]
+color = Color(0.666569, 0.666569, 0.666569, 1)
+skeleton = NodePath("../../..")
+polygon = PackedVector2Array(-1, -7, -2, 14, -13, 23, -20, 14)
+
+[node name="Index1" type="Bone2D" parent="Skeleton2D/Palm"]
+position = Vector2(-16, 30)
+rest = Transform2D(1, 0, 0, 1, -16, 30)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Index2" type="Bone2D" parent="Skeleton2D/Palm/Index1"]
+position = Vector2(-5, 23)
+rotation = 1.67726
+scale = Vector2(1.6, 1.6)
+rest = Transform2D(-0.170022, 1.59094, -1.59094, -0.170022, -5, 23)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 2.04906e-05
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Index2Polygon" type="Polygon2D" parent="Skeleton2D/Palm/Index1/Index2"]
+color = Color(0.476252, 0.380246, 0.346791, 1)
+skeleton = NodePath("../../../../..")
+polygon = PackedVector2Array(0.887119, 2.41943, 0.910847, -3.24014, 14.8486, -2.21542, 15.3136, 2.13481)
+
+[node name="Index Select" type="Button" parent="Skeleton2D/Palm/Index1/Index2/Index2Polygon"]
+anchors_preset = -1
+offset_left = 7.49463
+offset_top = -3.73989
+offset_right = 15.4946
+offset_bottom = 4.26011
+
+[node name="Index Anchor" type="Node2D" parent="Skeleton2D/Palm/Index1/Index2"]
+position = Vector2(16.0006, 0.000744581)
+
+[node name="Intex1Polygon" type="Polygon2D" parent="Skeleton2D/Palm/Index1"]
+position = Vector2(0, -1)
+color = Color(0.666569, 0.666569, 0.666569, 1)
+skeleton = NodePath("../../..")
+polygon = PackedVector2Array(-7, 2, 5, 1, 0, 25, -9, 24)
+
+[node name="Mid1" type="Bone2D" parent="Skeleton2D/Palm"]
+position = Vector2(0, 28)
+rest = Transform2D(1, 0, 0, 1, 0, 28)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Mid2" type="Bone2D" parent="Skeleton2D/Palm/Mid1"]
+position = Vector2(-2, 26)
+rotation = 1.55509
+scale = Vector2(1.585, 1.585)
+rest = Transform2D(0.024896, 1.5848, -1.5848, 0.024896, -2, 26)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 2.04906e-05
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Mid2Polygon" type="Polygon2D" parent="Skeleton2D/Palm/Mid1/Mid2"]
+color = Color(0.476252, 0.380246, 0.346791, 1)
+skeleton = NodePath("../../../..")
+polygon = PackedVector2Array(0.571377, 3.79493, 0.0396423, -2.52335, 15.8007, -1.64476, 15.7313, 2.7711)
+
+[node name="Mid Select" type="Button" parent="Skeleton2D/Palm/Mid1/Mid2/Mid2Polygon"]
+anchors_preset = -1
+anchor_left = -0.024
+anchor_top = 0.074
+anchor_right = -0.017
+anchor_bottom = 0.086
+offset_left = 7.0
+offset_top = -4.0
+offset_right = 15.0
+offset_bottom = 4.0
+
+[node name="Mid Anchor" type="Node2D" parent="Skeleton2D/Palm/Mid1/Mid2"]
+position = Vector2(16.0006, 0.000744581)
+
+[node name="Mid1Polygon" type="Polygon2D" parent="Skeleton2D/Palm/Mid1"]
+color = Color(0.666569, 0.666569, 0.666569, 1)
+skeleton = NodePath("../../..")
+polygon = PackedVector2Array(-7, 1, 4, 0, 2, 25, -8, 26)
+
+[node name="Ring1" type="Bone2D" parent="Skeleton2D/Palm"]
+position = Vector2(12, 27)
+rest = Transform2D(1, 0, 0, 1, 12, 27)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Ring2" type="Bone2D" parent="Skeleton2D/Palm/Ring1"]
+position = Vector2(0, 20)
+rotation = 1.55509
+scale = Vector2(1.495, 1.495)
+rest = Transform2D(0.0234824, 1.49482, -1.49482, 0.0234824, 0, 20)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = -1.36604e-05
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Ring2Polygon" type="Polygon2D" parent="Skeleton2D/Palm/Ring1/Ring2"]
+color = Color(0.476252, 0.380246, 0.346791, 1)
+skeleton = NodePath("../../../..")
+polygon = PackedVector2Array(0.616282, 3.35458, 0.0420265, -2.67525, 16.7729, -3.08141, 17.3576, 2.27961)
+
+[node name="Ring Select" type="Button" parent="Skeleton2D/Palm/Ring1/Ring2/Ring2Polygon"]
+anchors_preset = -1
+anchor_left = -0.001
+anchor_top = 0.065
+anchor_right = 0.006
+anchor_bottom = 0.077
+offset_left = 8.06922
+offset_top = -4.88899
+offset_right = 16.0692
+offset_bottom = 3.11101
+
+[node name="Ring Anchor" type="Node2D" parent="Skeleton2D/Palm/Ring1/Ring2"]
+position = Vector2(16.0006, 0.000744581)
+
+[node name="Ring1Polygon" type="Polygon2D" parent="Skeleton2D/Palm/Ring1"]
+color = Color(0.666569, 0.666569, 0.666569, 1)
+skeleton = NodePath("../../..")
+polygon = PackedVector2Array(-6, 1, 2, 0, 4, 19, -5, 20)
+
+[node name="Pinky1" type="Bone2D" parent="Skeleton2D/Palm"]
+position = Vector2(19, 26)
+rest = Transform2D(1, 0, 0, 1, 19, 26)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Pinky2" type="Bone2D" parent="Skeleton2D/Palm/Pinky1"]
+position = Vector2(5, 14)
+rotation = 1.1973
+scale = Vector2(1, 1)
+rest = Transform2D(0.364877, 0.931056, -0.931056, 0.364877, 5, 14)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 2.04906e-05
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Pinky2Polygon" type="Polygon2D" parent="Skeleton2D/Palm/Pinky1/Pinky2"]
+color = Color(0.476252, 0.380246, 0.346791, 1)
+skeleton = NodePath("../../../..")
+polygon = PackedVector2Array(0.402611, 4.45398, 0.267593, 0.1544, 0.163574, -3.15804, 17.6146, -3.83741, 17.6523, 1.54762)
+
+[node name="Pinky Select" type="Button" parent="Skeleton2D/Palm/Pinky1/Pinky2/Pinky2Polygon"]
+anchors_preset = -1
+anchor_left = 0.017
+anchor_top = 0.06
+anchor_right = 0.024
+anchor_bottom = 0.073
+offset_left = 10.1121
+offset_top = -4.83034
+offset_right = 18.1121
+offset_bottom = 3.16966
+
+[node name="Pinky Anchor" type="Node2D" parent="Skeleton2D/Palm/Pinky1/Pinky2"]
+position = Vector2(16.0006, 0.000744581)
+
+[node name="Pinky1Polygon" type="Polygon2D" parent="Skeleton2D/Palm/Pinky1"]
+position = Vector2(0, -3)
+color = Color(0.666569, 0.666569, 0.666569, 1)
+skeleton = NodePath("../../..")
+polygon = PackedVector2Array(-4, 4, 4, 3, 8, 15, 1, 18)
+
+[connection signal="button_down" from="Skeleton2D/Palm/PalmPolygon/Palm Select" to="Skeleton2D" method="_on_palm_select_button_down"]
+[connection signal="button_up" from="Skeleton2D/Palm/PalmPolygon/Palm Select" to="Skeleton2D" method="_on_palm_select_button_up"]
+[connection signal="button_down" from="Skeleton2D/Palm/Thumb1/Thumb2/Thumb2Polygon/Thumb Select" to="Skeleton2D" method="_on_thumb_select_button_down"]
+[connection signal="button_up" from="Skeleton2D/Palm/Thumb1/Thumb2/Thumb2Polygon/Thumb Select" to="Skeleton2D" method="_on_thumb_select_button_up"]
+[connection signal="button_down" from="Skeleton2D/Palm/Index1/Index2/Index2Polygon/Index Select" to="Skeleton2D" method="_on_index_select_button_down"]
+[connection signal="button_up" from="Skeleton2D/Palm/Index1/Index2/Index2Polygon/Index Select" to="Skeleton2D" method="_on_index_select_button_up"]
+[connection signal="button_down" from="Skeleton2D/Palm/Mid1/Mid2/Mid2Polygon/Mid Select" to="Skeleton2D" method="_on_mid_select_button_down"]
+[connection signal="button_up" from="Skeleton2D/Palm/Mid1/Mid2/Mid2Polygon/Mid Select" to="Skeleton2D" method="_on_mid_select_button_up"]
+[connection signal="button_down" from="Skeleton2D/Palm/Ring1/Ring2/Ring2Polygon/Ring Select" to="Skeleton2D" method="_on_ring_select_button_down"]
+[connection signal="button_up" from="Skeleton2D/Palm/Ring1/Ring2/Ring2Polygon/Ring Select" to="Skeleton2D" method="_on_ring_select_button_up"]
+[connection signal="button_down" from="Skeleton2D/Palm/Pinky1/Pinky2/Pinky2Polygon/Pinky Select" to="Skeleton2D" method="_on_pinky_select_button_down"]
+[connection signal="button_up" from="Skeleton2D/Palm/Pinky1/Pinky2/Pinky2Polygon/Pinky Select" to="Skeleton2D" method="_on_pinky_select_button_up"]
