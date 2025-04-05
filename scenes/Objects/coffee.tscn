@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bni4j3r7dp4jg"]
+
+[ext_resource type="Script" uid="uid://doxc1kpf73yrl" path="res://classes/coffee.gd" id="1_kukex"]
+
+[node name="Coffee" type="RigidBody2D"]
+mass = 0.6
+script = ExtResource("1_kukex")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(60, 141, 115, -137, 138, -145, -120, -144, -99, -136, -65, 141)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-65, 141, 60, 141, 115, -137, 138, -145, -121, -144, -99, -136)

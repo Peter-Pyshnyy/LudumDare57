@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr0wiqnxvve8h"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://c6sq0wqlx2vq1" path="res://scenes/Objects/physics_mat_rough.tres" id="1_31iws"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1f2to"]
+radius = 36.1248
+
+[node name="Skateboard" type="Node2D"]
+
+[node name="Board" type="RigidBody2D" parent="."]
+mass = 0.1
+physics_material_override = ExtResource("1_31iws")
+
+[node name="Polygon2D" type="Polygon2D" parent="Board"]
+polygon = PackedVector2Array(-214.5, 12, 219, 12, 278, -21, 265, -36, 213, -9, -209, -10, -268, -38, -276, -18)
+uv = PackedVector2Array(-513.5, 16, 64.5, 21, 2.5, -17, -233.5, -29, -435.5, -23)
+
+[node name="Polygon2D2" type="CollisionPolygon2D" parent="Board"]
+polygon = PackedVector2Array(-214.5, 12, 219, 12, 278, -21, 265, -36, 213, -9, -209, -10, -268, -38, -276, -18)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(-175, 54)
+node_a = NodePath("../Board")
+node_b = NodePath("../Wheel")
+
+[node name="Wheel" type="RigidBody2D" parent="."]
+position = Vector2(-175, 54)
+mass = 0.05
+physics_material_override = ExtResource("1_31iws")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel"]
+shape = SubResource("CircleShape2D_1f2to")
+
+[node name="Polygon2D" type="Polygon2D" parent="Wheel"]
+polygon = PackedVector2Array(0, -36, 28, -23, 34, 6, 17, 29, -5, 36, -28, 22, -36, -5, -27, -26, -10, -35)
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(181, 54)
+node_a = NodePath("../Board")
+node_b = NodePath("../Wheel")
+
+[node name="Wheel2" type="RigidBody2D" parent="."]
+position = Vector2(181, 54)
+mass = 0.05
+physics_material_override = ExtResource("1_31iws")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel2"]
+shape = SubResource("CircleShape2D_1f2to")
+
+[node name="Polygon2D" type="Polygon2D" parent="Wheel2"]
+polygon = PackedVector2Array(0, -36, 28, -23, 34, 6, 17, 29, -5, 36, -28, 22, -36, -5, -27, -26, -10, -35)

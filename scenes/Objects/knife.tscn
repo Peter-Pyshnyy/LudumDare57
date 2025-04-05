@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://1sqahkj7o667"]
+
+[node name="Knife" type="RigidBody2D"]
+collision_layer = 16
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-22, -56, 10, -60, 17, 65, -25, 62)
+
+[node name="Handle" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-25, 62, 17, 65, 10, -60, -22, -56)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-22, -56, -33, -62, -36, -279, 4, -247, 41, -145, 42, -61, 10, -60)
+
+[node name="Knife" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-33, -63, -22, -56, 42, -61, 42, -97, -34, -96)
+
+[node name="Knife1" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-34, -150, 41, -146, 42, -97, -34, -96)
+
+[node name="Knife2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-34, -150, 41, -146, 17, -211, -35, -212)
+
+[node name="Knife3" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-36, -280, 4, -248, 17, -211, -35, -212)
