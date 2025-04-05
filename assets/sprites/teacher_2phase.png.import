@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ijg42vncnmwn"
-path="res://.godot/imported/teacher_2phase.png-83fe779dadeb2166d70b2f5336e732dc.ctex"
+uid="uid://bdf7exye6ryhx"
+path="res://.godot/imported/Teacher_2phase.png-637be9351624512d1ddae6c35fdd04bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/teacher_2phase.png"
-dest_files=["res://.godot/imported/teacher_2phase.png-83fe779dadeb2166d70b2f5336e732dc.ctex"]
+source_file="res://assets/sprites/Teacher_2phase.png"
+dest_files=["res://.godot/imported/Teacher_2phase.png-637be9351624512d1ddae6c35fdd04bb.ctex"]
 
 [params]
 
