@@ -1,0 +1,117 @@
+[gd_scene load_steps=16 format=3 uid="uid://dwsah4eiyfy4v"]
+
+[ext_resource type="Script" uid="uid://d3iraddllcna7" path="res://classes/backpack_level.gd" id="1_kd5y1"]
+[ext_resource type="Texture2D" uid="uid://cfh3ljsqxh4hr" path="res://assets/Background/backpack/Backpack_BG.png" id="1_xgqdl"]
+[ext_resource type="Texture2D" uid="uid://btlom8710gcig" path="res://assets/Background/backpack/L13-Layer 10.png" id="2_kd5y1"]
+[ext_resource type="Texture2D" uid="uid://c16eqkoxsbtne" path="res://assets/Background/backpack/L10-Layer 12++.png" id="3_g2ape"]
+[ext_resource type="Texture2D" uid="uid://cpvo0afsg33at" path="res://assets/Background/backpack/L8-Layer 12+.png" id="4_0h82l"]
+[ext_resource type="Texture2D" uid="uid://do6uhae0tf2k5" path="res://assets/Background/backpack/L9-Layer 13.png" id="5_dmo7p"]
+[ext_resource type="Texture2D" uid="uid://6tm1r7qd8rq" path="res://assets/Background/backpack/L2-Layer 19.png" id="6_10fj1"]
+[ext_resource type="Texture2D" uid="uid://dqsv4wabtr1y0" path="res://assets/Background/backpack/L7-Layer 14.png" id="7_jegnj"]
+[ext_resource type="Texture2D" uid="uid://vnyibalqxe1d" path="res://assets/Background/backpack/nutella.png" id="8_joo0d"]
+[ext_resource type="Texture2D" uid="uid://4eieicx0d6fn" path="res://assets/Background/backpack/L5-Layer 18.png" id="9_xemht"]
+[ext_resource type="Texture2D" uid="uid://cmxj3uyjjq841" path="res://assets/Background/backpack/L4-Layer 16.png" id="10_ty5h4"]
+[ext_resource type="Texture2D" uid="uid://my8k3yqt11fw" path="res://assets/Background/backpack/L3-Layer 15.png" id="11_xhu8u"]
+[ext_resource type="Texture2D" uid="uid://mxt52wbeq47b" path="res://assets/Background/backpack/L1-Layer 7.png" id="12_6yu5o"]
+[ext_resource type="Texture2D" uid="uid://br3wsxuvuvytu" path="res://assets/Background/backpack/Backpack_front_details.png" id="13_pwosd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgqdl"]
+bg_color = Color(0.336176, 0.616865, 0.479606, 1)
+
+[node name="backpack_level" type="Node2D"]
+script = ExtResource("1_kd5y1")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1154.0
+offset_bottom = 1573.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xgqdl")
+
+[node name="Backpack_BG" type="Sprite2D" parent="."]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("1_xgqdl")
+
+[node name="floor_1_lvl" type="Sprite2D" parent="Backpack_BG"]
+texture = ExtResource("2_kd5y1")
+
+[node name="2_level" type="Node" parent="Backpack_BG"]
+
+[node name="penholders" type="Sprite2D" parent="Backpack_BG/2_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("3_g2ape")
+
+[node name="pens" type="Sprite2D" parent="Backpack_BG/2_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("4_0h82l")
+
+[node name="sock_paper" type="Sprite2D" parent="Backpack_BG/2_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("5_dmo7p")
+
+[node name="Spot" type="Sprite2D" parent="Backpack_BG/2_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("6_10fj1")
+
+[node name="3_level" type="Node2D" parent="Backpack_BG"]
+position = Vector2(-216.269, -287.11)
+scale = Vector2(0.374817, 0.374817)
+
+[node name="floor_3_lvl" type="Sprite2D" parent="Backpack_BG/3_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("7_jegnj")
+
+[node name="Nutella" type="Sprite2D" parent="Backpack_BG/3_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("8_joo0d")
+
+[node name="Sprite2D" type="Sprite2D" parent="Backpack_BG/3_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("9_xemht")
+
+[node name="apple" type="Sprite2D" parent="Backpack_BG/3_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("10_ty5h4")
+
+[node name="mushrooms" type="Sprite2D" parent="Backpack_BG/3_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("11_xhu8u")
+
+[node name="spiders" type="Sprite2D" parent="Backpack_BG/3_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("12_6yu5o")
+
+[node name="Backpack_front_details" type="Sprite2D" parent="."]
+position = Vector2(577, 766)
+scale = Vector2(2.668, 2.668)
+texture = ExtResource("13_pwosd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 324)
+position_smoothing_enabled = true
+
+[node name="movement" type="Button" parent="."]
+offset_left = 290.0
+offset_top = 370.0
+offset_right = 401.0
+offset_bottom = 401.0
+text = "Move next lvl"
+
+[node name="move_level_3" type="Button" parent="."]
+offset_left = 290.0
+offset_top = 714.0
+offset_right = 423.0
+offset_bottom = 745.0
+text = "to the next level"
+
+[connection signal="pressed" from="movement" to="." method="_on_movement_pressed"]
+[connection signal="pressed" from="move_level_3" to="." method="_on_move_level_3_pressed"]
