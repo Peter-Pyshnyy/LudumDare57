@@ -37,7 +37,7 @@ polygon = PackedVector2Array(0, -36, 28, -23, 34, 6, 17, 29, -5, 36, -28, 22, -3
 [node name="PinJoint2D2" type="PinJoint2D" parent="."]
 position = Vector2(181, 54)
 node_a = NodePath("../Board")
-node_b = NodePath("../Wheel")
+node_b = NodePath("../Wheel2")
 
 [node name="Wheel2" type="RigidBody2D" parent="."]
 position = Vector2(181, 54)
