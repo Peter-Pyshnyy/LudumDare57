@@ -21,11 +21,9 @@ var dir: Vector2
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			rotate(deg_to_rad(-3))
-			offset = get_global_mouse_position() - target.global_position
+			palm.rotate(deg_to_rad(-3))
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			rotate(deg_to_rad(3))
-			offset = get_global_mouse_position() - target.global_position
+			palm.rotate(deg_to_rad(3))
 
 func _physics_process(delta):
 	if is_dragging:
