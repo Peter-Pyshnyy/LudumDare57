@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4g21r2e13581"]
+[gd_scene load_steps=3 format=3 uid="uid://b4g21r2e13581"]
 
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/hand.tscn" id="1_o5qli"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o5qli"]
+distance = -149.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -8,6 +11,10 @@
 position = Vector2(-22, 41)
 scale = Vector2(1, 1)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 12)
+shape = SubResource("WorldBoundaryShape2D_o5qli")
+
 [node name="Hand" parent="." instance=ExtResource("1_o5qli")]
-position = Vector2(-12, -80)
-scale = Vector2(2.12, 2.12)
+position = Vector2(-3, -144)
+scale = Vector2(1.795, 1.795)

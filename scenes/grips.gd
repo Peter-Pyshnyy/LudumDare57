@@ -19,7 +19,7 @@ var offset: Vector2
 var dir: Vector2
 
 func _input(event):
-	if event is InputEventMouseButton:
+	if is_palm and event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			palm.rotate(deg_to_rad(-3))
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
@@ -28,7 +28,6 @@ func _input(event):
 func _physics_process(delta):
 	if is_dragging:
 		target.global_position = get_global_mouse_position() - offset
-		print(target.position)
 
 func focus_target(t: Node2D):
 	target = t
@@ -85,8 +84,10 @@ func _on_pinky_select_button_up():
 
 
 func _on_palm_select_button_down():
+	is_palm = true
 	focus_target(palm)
 
 
 func _on_palm_select_button_up():
+	is_palm = false
 	unfocus()
