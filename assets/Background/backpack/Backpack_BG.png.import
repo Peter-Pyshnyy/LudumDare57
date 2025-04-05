@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jmdrogu5mnqh"
-path="res://.godot/imported/Teacher_4phase.png-e38f1ce7a813b08f829a2fa2c666cb50.ctex"
+uid="uid://cfh3ljsqxh4hr"
+path="res://.godot/imported/Backpack_BG.png-b9fde721f903cb658df771c1b5a91da1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Teacher_4phase.png"
-dest_files=["res://.godot/imported/Teacher_4phase.png-e38f1ce7a813b08f829a2fa2c666cb50.ctex"]
+source_file="res://assets/Background/backpack/Backpack_BG.png"
+dest_files=["res://.godot/imported/Backpack_BG.png-b9fde721f903cb658df771c1b5a91da1.ctex"]
 
 [params]
 

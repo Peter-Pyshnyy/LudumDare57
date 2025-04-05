@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxxwppbgbph57"
-path="res://.godot/imported/teacher_good.png-75c5c737fe15bce0c6b4336ed37766a8.ctex"
+uid="uid://mxt52wbeq47b"
+path="res://.godot/imported/L1-Layer 7.png-8bc6851a42105e8c31ff8c550d3c8134.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/teacher_good.png"
-dest_files=["res://.godot/imported/teacher_good.png-75c5c737fe15bce0c6b4336ed37766a8.ctex"]
+source_file="res://assets/Background/backpack/L1-Layer 7.png"
+dest_files=["res://.godot/imported/L1-Layer 7.png-8bc6851a42105e8c31ff8c550d3c8134.ctex"]
 
 [params]
 
