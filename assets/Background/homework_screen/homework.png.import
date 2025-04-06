@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4lbxtn02ho21"
-path="res://.godot/imported/thumb_2.png-435726a8c1e71c816a71159d3a84d15d.ctex"
+uid="uid://c77nucth0hqhi"
+path="res://.godot/imported/homework.png-9a29ff05cde2aaf33e693ea68d41cccb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/hand/thumb_2.png"
-dest_files=["res://.godot/imported/thumb_2.png-435726a8c1e71c816a71159d3a84d15d.ctex"]
+source_file="res://assets/Background/homework_screen/homework.png"
+dest_files=["res://.godot/imported/homework.png-9a29ff05cde2aaf33e693ea68d41cccb.ctex"]
 
 [params]
 
