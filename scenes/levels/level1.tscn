@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://baw4loy5iwkq7"]
+[gd_scene load_steps=7 format=3 uid="uid://baw4loy5iwkq7"]
 
-[ext_resource type="Script" path="res://classes/Level.gd" id="1_bfxgj"]
+[ext_resource type="Script" uid="uid://c5tnood4o4tnv" path="res://classes/Level.gd" id="1_bfxgj"]
 [ext_resource type="PackedScene" uid="uid://xstywed8a4ni" path="res://scenes/Objects/zipper.tscn" id="1_x6ivy"]
 [ext_resource type="PackedScene" uid="uid://bni4j3r7dp4jg" path="res://scenes/Objects/coffee.tscn" id="2_dd0lh"]
 [ext_resource type="PackedScene" uid="uid://cr0wiqnxvve8h" path="res://scenes/Objects/skateboard.tscn" id="3_bfxgj"]
+
+[ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="5_dywbp"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dywbp"]
 size = Vector2(1277, 95)
@@ -15,7 +18,10 @@ script = ExtResource("1_bfxgj")
 position = Vector2(743, 572)
 
 [node name="Coffee" parent="." instance=ExtResource("2_dd0lh")]
-position = Vector2(692, 271)
+position = Vector2(1088, 520)
+
+[node name="Skateboard" parent="." instance=ExtResource("3_bfxgj")]
+position = Vector2(423, 472)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(580, 586)
@@ -24,5 +30,5 @@ position = Vector2(580, 586)
 position = Vector2(38.5, 37.5)
 shape = SubResource("RectangleShape2D_dywbp")
 
-[node name="Skateboard" parent="StaticBody2D" instance=ExtResource("3_bfxgj")]
-position = Vector2(-157, -114)
+[node name="Hand" parent="." instance=ExtResource("5_dywbp")]
+position = Vector2(970, 234)
