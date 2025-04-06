@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dw5dep2lvaeic"]
+[gd_scene load_steps=33 format=3 uid="uid://dw5dep2lvaeic"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="2_264po"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://damplki3il6ju" path="res://scenes/Objects/cutable.tscn" id="23_bt5mj"]
 [ext_resource type="PackedScene" uid="uid://1sqahkj7o667" path="res://scenes/Objects/knife.tscn" id="23_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://cr0wiqnxvve8h" path="res://scenes/Objects/skateboard.tscn" id="24_e1j6l"]
+[ext_resource type="AudioStream" uid="uid://c36uk4sahkpt7" path="res://assets/sound/soundtrack.wav" id="25_pl11u"]
 
 [sub_resource type="Gradient" id="Gradient_nepv3"]
 
@@ -328,6 +329,10 @@ text = "Move next lvl"
 
 [node name="Hand" parent="." instance=ExtResource("2_264po")]
 position = Vector2(615, -111)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_pl11u")
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="time_out"]
 [connection signal="exit_level" from="Level1/Exit" to="." method="exit_level"]
