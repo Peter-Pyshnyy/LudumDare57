@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3pgwvggt6yia"]
+
+[ext_resource type="Script" uid="uid://cponuk8qy05hc" path="res://classes/grip_lock.gd" id="1_k54dl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6rh4"]
+
+[node name="grip_lock" type="Area2D"]
+collision_layer = 262144
+collision_mask = 262144
+script = ExtResource("1_k54dl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g6rh4")

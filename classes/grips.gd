@@ -11,6 +11,7 @@ extends Skeleton2D
 @onready var limb_mid = $"Palm/IK Targets/Limb Mid"
 @onready var limb_ring = $"Palm/IK Targets/Limb Ring"
 @onready var limb_pinky = $"Palm/IK Targets/Limb Pinky"
+@onready var grip_manager = $"../Grip Manager"
 
 
 
@@ -31,6 +32,8 @@ func _physics_process(delta):
 	pass
 
 func focus_limb(l: Limb):
+	if not is_palm and  grip_manager.ready_to_unlock:
+		grip_manager.unlock()
 	limb = l
 	limb.offset = get_global_mouse_position() - limb.global_position
 	limb._dragging = true

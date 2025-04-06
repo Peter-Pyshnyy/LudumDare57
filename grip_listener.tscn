@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1qysyyri348q"]
+
+[ext_resource type="Script" uid="uid://c6dtwsb72spua" path="res://scenes/Objects/grip_listener.gd" id="1_0i871"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fxc5h"]
+radius = 5.0
+
+[node name="GripListener" type="Area2D"]
+collision_layer = 262144
+collision_mask = 262144
+script = ExtResource("1_0i871")
+metadata/_custom_type_script = "uid://c6dtwsb72spua"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fxc5h")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
