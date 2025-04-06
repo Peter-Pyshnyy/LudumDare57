@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfh3ljsqxh4hr"
-path="res://.godot/imported/Backpack_BG.png-b9fde721f903cb658df771c1b5a91da1.ctex"
+uid="uid://bwimv2n56m6n1"
+path="res://.godot/imported/coffee.png-d4e16374d9af712ec45c54294253452f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Background/backpack/Backpack_BG.png"
-dest_files=["res://.godot/imported/Backpack_BG.png-b9fde721f903cb658df771c1b5a91da1.ctex"]
+source_file="res://assets/Background/end_bg/coffee.png"
+dest_files=["res://.godot/imported/coffee.png-d4e16374d9af712ec45c54294253452f.ctex"]
 
 [params]
 

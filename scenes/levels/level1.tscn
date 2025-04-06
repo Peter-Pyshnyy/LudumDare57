@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://cr0wiqnxvve8h" path="res://scenes/Objects/skateboard.tscn" id="3_bfxgj"]
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="5_dywbp"]
 
+[ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="5_dywbp"]
+
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dywbp"]
 size = Vector2(1277, 95)
 
