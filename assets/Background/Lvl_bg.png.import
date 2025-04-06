@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/sprites/Coffee.png.import
-uid="uid://bqn25axww7j0l"
-path="res://.godot/imported/Coffee.png-22587736a55489716595dfb42b4fed92.ctex"
-========
-uid="uid://cvgvtb1sgw63a"
+uid="uid://drfj6088g0o48"
 path="res://.godot/imported/Lvl_bg.png-bae41c07b81e6bbf4ad3d5a1e2d309ed.ctex"
->>>>>>>> main:assets/Background/Lvl_bg.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/sprites/Coffee.png.import
-source_file="res://assets/sprites/Coffee.png"
-dest_files=["res://.godot/imported/Coffee.png-22587736a55489716595dfb42b4fed92.ctex"]
-========
 source_file="res://assets/Background/Lvl_bg.png"
 dest_files=["res://.godot/imported/Lvl_bg.png-bae41c07b81e6bbf4ad3d5a1e2d309ed.ctex"]
->>>>>>>> main:assets/Background/Lvl_bg.png.import
 
 [params]
 
