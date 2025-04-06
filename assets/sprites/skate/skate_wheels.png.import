@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0vt716gq15p4"
-path="res://.godot/imported/hand.png-744ea7defc7540bf94610be755c2a9e6.ctex"
+uid="uid://crtcc3t6qqr1u"
+path="res://.godot/imported/skate_wheels.png-0f661310f4d2376b242be0b4058d5190.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/hand/hand.png"
-dest_files=["res://.godot/imported/hand.png-744ea7defc7540bf94610be755c2a9e6.ctex"]
+source_file="res://assets/sprites/skate/skate_wheels.png"
+dest_files=["res://.godot/imported/skate_wheels.png-0f661310f4d2376b242be0b4058d5190.ctex"]
 
 [params]
 
