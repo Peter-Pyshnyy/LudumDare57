@@ -1,11 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bni4j3r7dp4jg"]
 
 [ext_resource type="Script" uid="uid://doxc1kpf73yrl" path="res://classes/coffee.gd" id="1_kukex"]
-[ext_resource type="PackedScene" uid="uid://c3pgwvggt6yia" path="res://scenes/Objects/grip_lock.tscn" id="2_21xrd"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_21xrd"]
-friction = 0.0
-rough = true
+[ext_resource type="PackedScene" uid="uid://c3pgwvggt6yia" path="res://scenes/Objects/grip_detector.tscn" id="2_21xrd"]
+[ext_resource type="Texture2D" uid="uid://cadladukmr410" path="res://assets/sprites/Coffee.png" id="3_0woxd"]
 
 [sub_resource type="Gradient" id="Gradient_kukex"]
 colors = PackedColorArray(0.32771, 0.170355, 0.017865, 1, 0.88371, 0.599381, 0.341616, 1)
@@ -70,3 +67,8 @@ scale = Vector2(2.27756, 6.91)
 position = Vector2(-95, -80)
 rotation = -0.132416
 scale = Vector2(2.38989, 6.91)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -18.1818)
+scale = Vector2(4.04545, 4.04545)
+texture = ExtResource("3_0woxd")
