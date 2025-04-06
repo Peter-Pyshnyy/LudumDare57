@@ -49,6 +49,7 @@ func load_next_level() -> void:
 	tween.tween_property(camera, "position", current_level.camera_pos.global_position, 1)
 	#move hand
 	tween.tween_property(hand, "position", current_level.hand_start_pos.global_position, 1)
+	tween.tween_property(hand, "rotation", 0, 1)
 	
 	tween.tween_property(current_level.ceiling, "process_mode", Node.PROCESS_MODE_INHERIT, 1)
 	
