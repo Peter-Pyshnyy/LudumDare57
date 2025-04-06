@@ -11,6 +11,7 @@ extends Skeleton2D
 @onready var limb_mid = $"Palm/IK Targets/Limb Mid"
 @onready var limb_ring = $"Palm/IK Targets/Limb Ring"
 @onready var limb_pinky = $"Palm/IK Targets/Limb Pinky"
+@onready var grip_manager = $"../Grip Manager"
 
 
 
@@ -47,12 +48,16 @@ func reset_anchors():
 	limb_pinky.global_position = pinky_anchor.global_position
 
 func _on_thumb_select_button_down():
+	if grip_manager.ready_to_unlock:
+		grip_manager.unlock()
 	focus_limb(limb_thumb)
 	
 func _on_thumb_select_button_up():
 	unfocus_limb()
 
 func _on_index_select_button_down():
+	if grip_manager.ready_to_unlock:
+		grip_manager.unlock()
 	focus_limb(limb_index)
 
 
