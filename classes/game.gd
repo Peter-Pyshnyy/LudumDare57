@@ -21,6 +21,10 @@ func start_game() -> void:
 	get_tree().create_tween().tween_callback(timer.start).set_delay(1)
 
 	timer.start()
+	
+	#for level: Level in levels:
+	#	remove_child(level)
+	
 	#load level
 	load_next_level()
 
@@ -31,19 +35,22 @@ func exit_level() -> void:
 		load_next_level()
 
 func load_next_level() -> void:
-	if current_level:
+	#if current_level:
 		# disable old level
-		current_level.set_deferred("process_mode", Node.PROCESS_MODE_DISABLED)
+		#current_level.set_deferred("process_mode", Node.PROCESS_MODE_DISABLED)
 	
 	#enable new Level scene
 	current_level = levels[next_level]
-	current_level.set_deferred("process_mode", Node.PROCESS_MODE_INHERIT)
+	
+	#add_child(current_level)
 	
 	var tween = get_tree().create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD).set_parallel(true)
 	#move cam
 	tween.tween_property(camera, "position", current_level.camera_pos.global_position, 1)
 	#move hand
 	tween.tween_property(hand, "position", current_level.hand_start_pos.global_position, 1)
+	
+	tween.tween_property(current_level.ceiling, "process_mode", Node.PROCESS_MODE_INHERIT, 1)
 	
 	
 	next_level += 1

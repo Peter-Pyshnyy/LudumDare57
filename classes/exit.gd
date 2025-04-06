@@ -9,3 +9,4 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Limb && !activated:
 		activated = true
 		exit_level.emit()
+		queue_free()
