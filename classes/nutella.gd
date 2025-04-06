@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	
 	
 	var mouse_pos = get_global_mouse_position().x - 577
-	print(mouse_pos)
+	#print(mouse_pos)
 	
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		velocity.x += mouse_pos * delta 

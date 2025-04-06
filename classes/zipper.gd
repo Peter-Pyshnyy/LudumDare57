@@ -14,3 +14,11 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if collision_shape:
 		collision_shape.b.x = slider.position.x
+
+
+func _on_handle_body_entered(body):
+	pass
+
+
+func _on_handle_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	pass # Replace with function body.

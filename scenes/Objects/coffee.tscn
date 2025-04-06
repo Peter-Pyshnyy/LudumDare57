@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bni4j3r7dp4jg"]
+[gd_scene load_steps=8 format=3 uid="uid://bni4j3r7dp4jg"]
 
 [ext_resource type="Script" uid="uid://doxc1kpf73yrl" path="res://classes/coffee.gd" id="1_kukex"]
+[ext_resource type="PackedScene" uid="uid://c3pgwvggt6yia" path="res://scenes/Objects/grip_detector.tscn" id="2_21xrd"]
 
 [sub_resource type="Gradient" id="Gradient_kukex"]
 colors = PackedColorArray(0.32771, 0.170355, 0.017865, 1, 0.88371, 0.599381, 0.341616, 1)
@@ -31,9 +32,14 @@ scale_max = 49.8
 scale_curve = SubResource("CurveTexture_4nv5d")
 color_initial_ramp = SubResource("GradientTexture1D_21xrd")
 
-[node name="Coffee" type="RigidBody2D"]
-mass = 0.6
+[node name="Coffee" type="RigidBody2D" node_paths=PackedStringArray("grips")]
+scale = Vector2(0.275, 0.275)
+collision_layer = 196608
+collision_mask = 287
+mass = 0.5
+center_of_mass_mode = 1
 script = ExtResource("1_kukex")
+grips = [NodePath("grip_detector"), NodePath("grip_detector2")]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(-61, -141)
@@ -44,7 +50,17 @@ randomness = 0.02
 process_material = SubResource("ParticleProcessMaterial_f7x7d")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(60, 141, 115, -137, 138, -145, -120, -144, -99, -136, -65, 141)
+polygon = PackedVector2Array(60, 141, 115, -137, 155, -146, -144, -145, -100, -135, -65, 141)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(-65, 141, 60, 141, 115, -137, 138, -145, -121, -144, -99, -136)
+polygon = PackedVector2Array(-65, 141, 60, 141, 115, -137, 154, -146, -140, -145, -99, -136)
+
+[node name="grip_detector" parent="." instance=ExtResource("2_21xrd")]
+position = Vector2(109, -81)
+rotation = 0.200041
+scale = Vector2(2.27756, 6.91)
+
+[node name="grip_detector2" parent="." instance=ExtResource("2_21xrd")]
+position = Vector2(-95, -80)
+rotation = -0.132416
+scale = Vector2(2.38989, 6.91)
