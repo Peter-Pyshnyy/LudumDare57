@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmo50do0b76f1"]
+[gd_scene load_steps=16 format=3 uid="uid://dmo50do0b76f1"]
 
 [ext_resource type="Texture2D" uid="uid://by7jgeaocp7eq" path="res://assets/Background/Main_menu.png" id="1_ekxnf"]
+[ext_resource type="Script" uid="uid://c1hlbvgo4acmm" path="res://classes/main_menu.gd" id="1_wu84c"]
 [ext_resource type="Texture2D" uid="uid://b2sdmk85cbn8g" path="res://assets/Background/Character_main_menu.png" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://cmmhdkj4pwjjh" path="res://assets/sprites/Teacher_1phase.png" id="3_rtw2f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vue75"]
 
@@ -14,6 +16,56 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dd4i"]
+atlas = ExtResource("3_rtw2f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgwnu"]
+atlas = ExtResource("3_rtw2f")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flqon"]
+atlas = ExtResource("3_rtw2f")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcqid"]
+atlas = ExtResource("3_rtw2f")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ajci"]
+atlas = ExtResource("3_rtw2f")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b55j"]
+atlas = ExtResource("3_rtw2f")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5pajh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dd4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgwnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flqon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcqid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ajci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b55j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -23,13 +75,14 @@ offset_left = 1.0
 offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wu84c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576, 324.438)
 scale = Vector2(3.74937, 3.59375)
 texture = ExtResource("1_ekxnf")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="boy" type="Sprite2D" parent="."]
 position = Vector2(834, 338)
 scale = Vector2(6.47266, 6.47266)
 texture = ExtResource("2_bqqt6")
@@ -87,3 +140,11 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
 text = "Quit
 "
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(178, 550)
+scale = Vector2(6.04688, 6.04688)
+sprite_frames = SubResource("SpriteFrames_5pajh")
+frame_progress = 0.297903
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
