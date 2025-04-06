@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dwsah4eiyfy4v"]
+[gd_scene load_steps=26 format=3 uid="uid://dwsah4eiyfy4v"]
 
 [ext_resource type="Script" uid="uid://d3iraddllcna7" path="res://classes/backpack_level.gd" id="1_kd5y1"]
 [ext_resource type="Texture2D" uid="uid://cfh3ljsqxh4hr" path="res://assets/Background/backpack/Backpack_BG.png" id="1_xgqdl"]
@@ -16,12 +16,14 @@
 [ext_resource type="Texture2D" uid="uid://mxt52wbeq47b" path="res://assets/Background/backpack/L1-Layer 7.png" id="12_6yu5o"]
 [ext_resource type="Texture2D" uid="uid://br3wsxuvuvytu" path="res://assets/Background/backpack/Backpack_front_details.png" id="13_pwosd"]
 [ext_resource type="Script" uid="uid://djola5gl6hnaf" path="res://classes/nutella.gd" id="15_g2ape"]
+[ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="17_dmo7p"]
+[ext_resource type="PackedScene" uid="uid://bni4j3r7dp4jg" path="res://scenes/Objects/coffee.tscn" id="18_10fj1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgqdl"]
 bg_color = Color(0.336176, 0.616865, 0.479606, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0h82l"]
-size = Vector2(267.619, 7.49634)
+size = Vector2(267.619, 37.4816)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmo7p"]
 size = Vector2(258.061, 5.24745)
@@ -51,18 +53,16 @@ scale = Vector2(2.66797, 2.66797)
 texture = ExtResource("1_xgqdl")
 
 [node name="1_level" type="Node2D" parent="Backpack_BG"]
-scale = Vector2(1, 1)
 
 [node name="floor_1_level" type="StaticBody2D" parent="Backpack_BG/1_level"]
-scale = Vector2(1, 1)
+collision_layer = 256
+collision_mask = 0
 
 [node name="floor_1_lvl" type="Sprite2D" parent="Backpack_BG/1_level/floor_1_level"]
-scale = Vector2(1, 1)
 texture = ExtResource("2_kd5y1")
 
 [node name="collision_floor_1_lvl" type="CollisionShape2D" parent="Backpack_BG/1_level/floor_1_level"]
-position = Vector2(-7.689e-06, -68.2166)
-scale = Vector2(1, 1)
+position = Vector2(0, -53.224)
 shape = SubResource("RectangleShape2D_0h82l")
 
 [node name="StaticBody2D" type="Sprite2D" parent="Backpack_BG/1_level"]
@@ -91,10 +91,11 @@ scale = Vector2(2.66797, 2.66797)
 texture = ExtResource("6_10fj1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Backpack_BG/2_level"]
+collision_layer = 256
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Backpack_BG/2_level/StaticBody2D"]
 position = Vector2(1.96779, 75.7131)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dmo7p")
 
 [node name="3_level" type="Node2D" parent="Backpack_BG"]
@@ -140,6 +141,8 @@ texture = ExtResource("12_6yu5o")
 [node name="front_side" type="StaticBody2D" parent="Backpack_BG"]
 position = Vector2(-216.269, -287.11)
 scale = Vector2(0.374817, 0.374817)
+collision_layer = 256
+collision_mask = 0
 
 [node name="Backpack_front_details" type="Sprite2D" parent="Backpack_BG/front_side"]
 position = Vector2(577, 766)
@@ -184,6 +187,13 @@ offset_top = 714.0
 offset_right = 423.0
 offset_bottom = 745.0
 text = "to the next level"
+
+[node name="Hand" parent="." instance=ExtResource("17_dmo7p")]
+position = Vector2(471, 158)
+scale = Vector2(2.28, 2.28)
+
+[node name="Coffee" parent="." instance=ExtResource("18_10fj1")]
+position = Vector2(655, 517)
 
 [connection signal="pressed" from="movement" to="." method="_on_movement_pressed"]
 [connection signal="pressed" from="move_level_3" to="." method="_on_move_level_3_pressed"]
