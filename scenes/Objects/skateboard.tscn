@@ -17,7 +17,7 @@ physics_material_override = ExtResource("1_31iws")
 
 [node name="Polygon2D2" type="CollisionPolygon2D" parent="Board"]
 scale = Vector2(0.35, 0.35)
-polygon = PackedVector2Array(-214.5, 12, 219, 12, 311.429, -45.7143, 300, -62.8571, 217.143, -2.85714, 168.571, -8.57143, -160, -11.4286, -205.714, -2.85714, -294.286, -60, -302.857, -45.7143)
+polygon = PackedVector2Array(-214.5, 12, 219, 12, 311.429, -45.7143, 300, -62.8571, 217.143, -2.85714, 168.571, -34.2857, 168.571, -5.71429, -160, -11.4286, -205.714, -2.85714, -294.286, -60, -302.857, -45.7143)
 
 [node name="TextureRect" type="TextureRect" parent="Board"]
 z_index = 1

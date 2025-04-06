@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dw5dep2lvaeic"]
+[gd_scene load_steps=33 format=3 uid="uid://dw5dep2lvaeic"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="2_264po"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://damplki3il6ju" path="res://scenes/Objects/cutable.tscn" id="23_bt5mj"]
 [ext_resource type="PackedScene" uid="uid://1sqahkj7o667" path="res://scenes/Objects/knife.tscn" id="23_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://cr0wiqnxvve8h" path="res://scenes/Objects/skateboard.tscn" id="24_e1j6l"]
+[ext_resource type="AudioStream" uid="uid://c36uk4sahkpt7" path="res://assets/sound/soundtrack.wav" id="25_pl11u"]
 
 [sub_resource type="Gradient" id="Gradient_nepv3"]
 
@@ -106,8 +107,8 @@ scale = Vector2(2.66797, 2.66797)
 texture = ExtResource("11_bhx41")
 
 [node name="Nutella" type="Sprite2D" parent="Background/3_level"]
-position = Vector2(580, 745)
-scale = Vector2(2.66797, 2.66797)
+position = Vector2(298.999, 1329)
+scale = Vector2(2.65474, 2.65474)
 texture = ExtResource("12_qnb83")
 
 [node name="Nutella_back" type="Sprite2D" parent="Background/3_level"]
@@ -314,6 +315,11 @@ collision_mask = 31
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level3/StaticBody2D"]
 polygon = PackedVector2Array(-64, -27, -57, 83, 51, 80, 57, -28, 70, -29, 62, 93, -65, 95, -74, -29)
 
+[node name="Sprite2D" type="Sprite2D" parent="Level3/StaticBody2D"]
+position = Vector2(-33, 26)
+scale = Vector2(2.68514, 2.68514)
+texture = ExtResource("12_qnb83")
+
 [node name="movement" type="Button" parent="."]
 offset_left = 290.0
 offset_top = 370.0
@@ -323,6 +329,10 @@ text = "Move next lvl"
 
 [node name="Hand" parent="." instance=ExtResource("2_264po")]
 position = Vector2(615, -111)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_pl11u")
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="time_out"]
 [connection signal="exit_level" from="Level1/Exit" to="." method="exit_level"]
