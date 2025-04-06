@@ -1,45 +1,58 @@
-[gd_scene load_steps=3 format=3 uid="uid://bh5g4ybcrpp2a"]
+[gd_scene load_steps=4 format=3 uid="uid://bh5g4ybcrpp2a"]
 
 [ext_resource type="PackedScene" uid="uid://damplki3il6ju" path="res://scenes/Objects/cutable.tscn" id="1_balhv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xejpx"]
-size = Vector2(587, 150.998)
+size = Vector2(441.996, 150.998)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_balhv"]
+size = Vector2(442, 46)
 
 [node name="Seam" type="Node2D"]
 
 [node name="Stopper" type="Area2D" parent="."]
 rotation = -0.000770674
-collision_layer = 8
-collision_mask = 16
+collision_layer = 4194304
+collision_mask = 8388608
 monitorable = false
 gravity_space_override = 3
 gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)
 gravity = 0.0
 linear_damp_space_override = 1
-linear_damp = 13.23
+linear_damp = 4.843
+angular_damp_space_override = 1
+angular_damp = 7.129
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stopper"]
-position = Vector2(0.5, 97.4984)
+position = Vector2(-0.0705199, 97.4984)
 shape = SubResource("RectangleShape2D_xejpx")
 
 [node name="Cutable" parent="." instance=ExtResource("1_balhv")]
-position = Vector2(-171, 0)
+position = Vector2(-189, 0)
 
 [node name="Cutable2" parent="." instance=ExtResource("1_balhv")]
-position = Vector2(-253, 0)
+position = Vector2(-125, 0)
 
 [node name="Cutable3" parent="." instance=ExtResource("1_balhv")]
-position = Vector2(-88, 0)
+position = Vector2(-63, 0)
 
 [node name="Cutable4" parent="." instance=ExtResource("1_balhv")]
-position = Vector2(-4, 0)
+position = Vector2(1, -1)
 
 [node name="Cutable5" parent="." instance=ExtResource("1_balhv")]
-position = Vector2(80, 0)
+position = Vector2(64, 0)
 
 [node name="Cutable6" parent="." instance=ExtResource("1_balhv")]
-position = Vector2(163, 0)
+position = Vector2(127, 0)
 
 [node name="Cutable7" parent="." instance=ExtResource("1_balhv")]
-position = Vector2(249, 0)
+position = Vector2(190, 0)
+
+[node name="HardStop" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 8388608
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HardStop"]
+position = Vector2(0, 154)
+shape = SubResource("RectangleShape2D_balhv")

@@ -1,25 +1,37 @@
-[gd_scene load_steps=0 format=3 uid="uid://1sqahkj7o667"]
+[gd_scene load_steps=2 format=3 uid="uid://1sqahkj7o667"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://c6sq0wqlx2vq1" path="res://scenes/Objects/physics_mat_rough.tres" id="1_75mib"]
 
 [node name="Knife" type="RigidBody2D"]
-collision_layer = 16
+collision_layer = 8388608
+collision_mask = 196895
+mass = 0.651
+physics_material_override = ExtResource("1_75mib")
 
 [node name="Polygon2D2" type="Polygon2D" parent="."]
+scale = Vector2(0.676088, 0.676088)
 polygon = PackedVector2Array(-22, -56, 10, -60, 17, 65, -25, 62)
 
 [node name="Handle" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.676088, 0.676088)
 polygon = PackedVector2Array(-25, 62, 17, 65, 10, -60, -22, -56)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+scale = Vector2(0.676088, 0.676088)
 polygon = PackedVector2Array(-22, -56, -33, -62, -36, -279, 4, -247, 41, -145, 42, -61, 10, -60)
 
 [node name="Knife" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.676088, 0.676088)
 polygon = PackedVector2Array(-33, -63, -22, -56, 42, -61, 42, -97, -34, -96)
 
 [node name="Knife1" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.676088, 0.676088)
 polygon = PackedVector2Array(-34, -150, 41, -146, 42, -97, -34, -96)
 
 [node name="Knife2" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.676088, 0.676088)
 polygon = PackedVector2Array(-34, -150, 41, -146, 17, -211, -35, -212)
 
 [node name="Knife3" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.676088, 0.676088)
 polygon = PackedVector2Array(-36, -280, 4, -248, 17, -211, -35, -212)

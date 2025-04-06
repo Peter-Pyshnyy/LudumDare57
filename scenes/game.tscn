@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dw5dep2lvaeic"]
+[gd_scene load_steps=32 format=3 uid="uid://dw5dep2lvaeic"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="2_264po"]
@@ -21,6 +21,9 @@
 [ext_resource type="Script" uid="uid://c5tnood4o4tnv" path="res://classes/Level.gd" id="19_js0lu"]
 [ext_resource type="PackedScene" uid="uid://v6cdwcpvgjeu" path="res://scenes/Objects/exit.tscn" id="20_1kice"]
 [ext_resource type="PackedScene" uid="uid://bni4j3r7dp4jg" path="res://scenes/Objects/coffee.tscn" id="21_5newe"]
+[ext_resource type="PackedScene" uid="uid://damplki3il6ju" path="res://scenes/Objects/cutable.tscn" id="23_bt5mj"]
+[ext_resource type="PackedScene" uid="uid://1sqahkj7o667" path="res://scenes/Objects/knife.tscn" id="23_e1j6l"]
+[ext_resource type="PackedScene" uid="uid://cr0wiqnxvve8h" path="res://scenes/Objects/skateboard.tscn" id="24_e1j6l"]
 
 [sub_resource type="Gradient" id="Gradient_nepv3"]
 
@@ -40,7 +43,7 @@ size = Vector2(535, 31.5)
 size = Vector2(714, 24.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37s47"]
-size = Vector2(437, 31.5)
+size = Vector2(381.5, 41.75)
 
 [node name="Game" type="Node" node_paths=PackedStringArray("levels")]
 script = ExtResource("1_uwrxv")
@@ -257,12 +260,12 @@ position = Vector2(-3, 15)
 gizmo_extents = 36.4
 
 [node name="Floor" type="StaticBody2D" parent="Level3"]
-position = Vector2(0, 186)
+position = Vector2(-180, 186)
 collision_layer = 256
 collision_mask = 196927
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level3/Floor"]
-position = Vector2(140.5, 44)
+position = Vector2(-55.25, 38.875)
 shape = SubResource("RectangleShape2D_37s47")
 
 [node name="Ceiling" type="StaticBody2D" parent="Level3"]
@@ -276,7 +279,37 @@ position = Vector2(8, 22.25)
 shape = SubResource("RectangleShape2D_5newe")
 
 [node name="Exit" parent="Level3" instance=ExtResource("20_1kice")]
-position = Vector2(-246, 343)
+position = Vector2(155, 371)
+
+[node name="Knife" parent="Level3" instance=ExtResource("23_e1j6l")]
+position = Vector2(-260, -46)
+rotation = -3.11584
+
+[node name="Cutable" parent="Level3" instance=ExtResource("23_bt5mj")]
+position = Vector2(317, 221)
+
+[node name="Cutable2" parent="Level3" instance=ExtResource("23_bt5mj")]
+position = Vector2(252, 221)
+
+[node name="Cutable3" parent="Level3" instance=ExtResource("23_bt5mj")]
+position = Vector2(188, 221)
+
+[node name="Cutable4" parent="Level3" instance=ExtResource("23_bt5mj")]
+position = Vector2(123, 221)
+
+[node name="Cutable5" parent="Level3" instance=ExtResource("23_bt5mj")]
+position = Vector2(58, 221)
+
+[node name="Cutable6" parent="Level3" instance=ExtResource("23_bt5mj")]
+position = Vector2(-9, 221)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Level3"]
+position = Vector2(-253, 108)
+collision_layer = 256
+collision_mask = 31
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level3/StaticBody2D"]
+polygon = PackedVector2Array(-64, -27, -57, 83, 51, 80, 57, -28, 70, -29, 62, 93, -65, 95, -74, -29)
 
 [node name="movement" type="Button" parent="."]
 offset_left = 290.0
@@ -284,6 +317,9 @@ offset_top = 370.0
 offset_right = 401.0
 offset_bottom = 401.0
 text = "Move next lvl"
+
+[node name="Skateboard" parent="." instance=ExtResource("24_e1j6l")]
+position = Vector2(408, 539)
 
 [connection signal="timeout" from="Timer" to="." method="time_out"]
 [connection signal="exit_level" from="Level1/Exit" to="." method="exit_level"]
