@@ -55,18 +55,14 @@ texture = ExtResource("2_0h82l")
 [node name="1_level" type="Node2D" parent="Backpack_BG"]
 
 [node name="floor_1_level" type="StaticBody2D" parent="Backpack_BG/1_level"]
-
 collision_layer = 256
 collision_mask = 0
-
 
 [node name="floor_1_lvl" type="Sprite2D" parent="Backpack_BG/1_level/floor_1_level"]
 texture = ExtResource("2_kd5y1")
 
 [node name="collision_floor_1_lvl" type="CollisionShape2D" parent="Backpack_BG/1_level/floor_1_level"]
-
 position = Vector2(0, -53.224)
-
 shape = SubResource("RectangleShape2D_0h82l")
 
 [node name="StaticBody2D" type="Sprite2D" parent="Backpack_BG/1_level"]
@@ -142,25 +138,6 @@ position = Vector2(577, 766)
 scale = Vector2(2.66797, 2.66797)
 texture = ExtResource("12_6yu5o")
 
-[node name="front_side" type="StaticBody2D" parent="Backpack_BG"]
-position = Vector2(-216.269, -287.11)
-scale = Vector2(0.374817, 0.374817)
-collision_layer = 256
-collision_mask = 0
-
-[node name="Backpack_front_details" type="Sprite2D" parent="Backpack_BG/front_side"]
-position = Vector2(577, 766)
-scale = Vector2(2.668, 2.668)
-texture = ExtResource("15_dmo7p")
-
-[node name="left_collision_wall" type="CollisionPolygon2D" parent="Backpack_BG/front_side"]
-polygon = PackedVector2Array(195, 1399, 198, 1253, 228, 1112, 238, 998, 234, 945, 225, 893, 228, 795, 211, 754, 222, 727, 217, 656, 217, 517, 217, 412, 255, 356, 245, 177, 208, 156, 179, 229, 159, 1377)
-
-[node name="right_collision_wall" type="CollisionPolygon2D" parent="Backpack_BG/front_side"]
-position = Vector2(1154, 6.10352e-05)
-scale = Vector2(-1, 1)
-polygon = PackedVector2Array(195, 1399, 198, 1253, 228, 1112, 238, 998, 234, 945, 225, 893, 228, 795, 211, 754, 222, 727, 217, 656, 217, 517, 217, 412, 255, 356, 245, 177, 208, 156, 179, 229, 159, 1377)
-
 [node name="nutella" type="CharacterBody2D" parent="Backpack_BG"]
 position = Vector2(0, -80.5857)
 script = ExtResource("15_g2ape")
@@ -198,6 +175,25 @@ scale = Vector2(2.28, 2.28)
 
 [node name="Coffee" parent="." instance=ExtResource("18_10fj1")]
 position = Vector2(655, 517)
+
+[node name="backpack_front_side" type="StaticBody2D" parent="."]
+position = Vector2(0.000793457, -0.000793457)
+scale = Vector2(1, 1)
+collision_layer = 256
+collision_mask = 0
+
+[node name="Backpack_front_details" type="Sprite2D" parent="backpack_front_side"]
+position = Vector2(577, 766)
+scale = Vector2(2.668, 2.668)
+texture = ExtResource("15_dmo7p")
+
+[node name="left_collision_wall" type="CollisionPolygon2D" parent="backpack_front_side"]
+polygon = PackedVector2Array(195, 1399, 198, 1253, 228, 1112, 238, 998, 234, 945, 225, 893, 228, 795, 211, 754, 222, 727, 217, 656, 217, 517, 217, 412, 255, 356, 245, 177, 208, 156, 179, 229, 159, 1377)
+
+[node name="right_collision_wall" type="CollisionPolygon2D" parent="backpack_front_side"]
+position = Vector2(1154, 6.10352e-05)
+scale = Vector2(-1, 1)
+polygon = PackedVector2Array(195, 1399, 198, 1253, 228, 1112, 238, 998, 234, 945, 225, 893, 228, 795, 211, 754, 222, 727, 217, 656, 217, 517, 217, 412, 255, 356, 245, 177, 208, 156, 179, 229, 159, 1377)
 
 [connection signal="pressed" from="movement" to="." method="_on_movement_pressed"]
 [connection signal="pressed" from="move_level_3" to="." method="_on_move_level_3_pressed"]
