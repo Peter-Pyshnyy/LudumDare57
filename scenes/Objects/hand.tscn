@@ -1,12 +1,13 @@
-[gd_scene load_steps=42 format=3 uid="uid://cyiacwvceu3mp"]
+[gd_scene load_steps=43 format=3 uid="uid://cyiacwvceu3mp"]
 
 [ext_resource type="Script" uid="uid://cfbetsvoob6r8" path="res://classes/grips.gd" id="1_eyfoh"]
 [ext_resource type="Script" uid="uid://dfdneti23ltj3" path="res://classes/limb.gd" id="1_k7pjy"]
 [ext_resource type="PackedScene" uid="uid://b1qysyyri348q" path="res://grip_listener.tscn" id="3_3omnj"]
 [ext_resource type="Texture2D" uid="uid://0vt716gq15p4" path="res://assets/sprites/hand/hand.png" id="3_8hl2f"]
 [ext_resource type="Script" uid="uid://bvxyj07e63ltu" path="res://scenes/Objects/grip_manager.gd" id="4_3omnj"]
-[ext_resource type="Texture2D" uid="uid://bfgh06cf0oeru" path="res://assets/sprites/hand/thumb_2.png" id="5_men20"]
+[ext_resource type="Texture2D" uid="uid://d4lbxtn02ho21" path="res://assets/sprites/hand/thumb_2.png" id="5_men20"]
 [ext_resource type="Texture2D" uid="uid://cn2xn2shrci8p" path="res://assets/sprites/hand/index_2.png" id="6_2vuue"]
+[ext_resource type="Texture2D" uid="uid://j3w6reatga5d" path="res://assets/sprites/hand/thumb_1.png" id="6_f1fl8"]
 [ext_resource type="Texture2D" uid="uid://d2xjk8j30bdpk" path="res://assets/sprites/hand/index_1.png" id="7_0p6md"]
 [ext_resource type="Texture2D" uid="uid://bdq72vksbkkxi" path="res://assets/sprites/hand/middle_2.png" id="8_radla"]
 [ext_resource type="Texture2D" uid="uid://06t2enxrlvig" path="res://assets/sprites/hand/middle_1.png" id="9_f1fl8"]
@@ -159,15 +160,15 @@ position = Vector2(-1.14441e-05, 2.86102e-06)
 
 [node name="Inner Thumb1" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Thumb"]
 z_index = 11
-position = Vector2(13.9629, -26.0342)
-rotation = 2.11241
+position = Vector2(11.8347, -21.3321)
+rotation = 2.43472
 scale = Vector2(0.999976, 0.999976)
 shape = SubResource("RectangleShape2D_cmdsa")
 
 [node name="Inner Thumb2" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Thumb"]
 z_index = 11
-position = Vector2(4.9222, -9.27565)
-rotation = 2.11115
+position = Vector2(0.924675, -7.19157)
+rotation = 1.7972
 scale = Vector2(0.99998, 0.99998)
 shape = SubResource("RectangleShape2D_k7pjy")
 
@@ -289,8 +290,8 @@ expand_mode = 1
 
 [node name="Thumb1" type="Bone2D" parent="Skeleton2D/Palm"]
 z_index = 5
-position = Vector2(-23.6667, -1.22222)
-rotation = -0.275144
+position = Vector2(-21, 7.66667)
+rotation = 0.225901
 scale = Vector2(0.999991, 0.999991)
 rest = Transform2D(0.81804, 0.575161, -0.575161, 0.81804, -23, 4)
 metadata/_local_pose_override_enabled_ = true
@@ -325,12 +326,12 @@ rotation = -0.091436
 scale = Vector2(1.676, 1.676)
 
 [node name="RT Outer Thumb2" type="RemoteTransform2D" parent="Skeleton2D/Palm/Thumb1/Thumb2"]
-position = Vector2(8.41795, -0.717277)
+position = Vector2(8.75089, -0.161763)
 rotation = 0.120837
 remote_path = NodePath("../../../../../Outer Thumb2")
 
 [node name="RT Inner Thumb2" type="RemoteTransform2D" parent="Skeleton2D/Palm/Thumb1/Thumb2"]
-position = Vector2(8.41795, -0.717277)
+position = Vector2(8.75089, -0.161763)
 rotation = 0.120837
 remote_path = NodePath("../../../IK Targets/Limb Thumb/Inner Thumb2")
 
@@ -339,26 +340,26 @@ position = Vector2(10.2759, -2.98067)
 remote_path = NodePath("../../../../../Btns/Thumb Btn Anchor")
 
 [node name="RT Outer Thumb1" type="RemoteTransform2D" parent="Skeleton2D/Palm/Thumb1"]
-position = Vector2(-8.05188, 10.7788)
-rotation = 0.875315
+position = Vector2(-7.73754, 9.9869)
+rotation = 0.696571
 scale = Vector2(0.999995, 0.999995)
 remote_path = NodePath("../../../../Outer Thumb1")
 
 [node name="RT Inner Thumb1" type="RemoteTransform2D" parent="Skeleton2D/Palm/Thumb1"]
-position = Vector2(-7.6154, 11.0909)
-rotation = 2.45494
+position = Vector2(-7.30106, 10.299)
+rotation = 2.2762
 scale = Vector2(0.999995, 0.999995)
 remote_path = NodePath("../../IK Targets/Limb Thumb/Inner Thumb1")
 
 [node name="TextureRect" type="TextureRect" parent="Skeleton2D/Palm/Thumb1"]
 z_index = 5
-offset_left = 4.73996
-offset_top = -8.25007
-offset_right = 44.74
-offset_bottom = 50.7499
-rotation = 0.812056
-scale = Vector2(0.301614, 0.600673)
-texture = ExtResource("5_men20")
+offset_left = -24.8244
+offset_top = 7.07334
+offset_right = 51.1756
+offset_bottom = 66.0733
+rotation = -0.5411
+scale = Vector2(0.374486, 0.323552)
+texture = ExtResource("6_f1fl8")
 
 [node name="Index1" type="Bone2D" parent="Skeleton2D/Palm"]
 z_index = 4
@@ -646,14 +647,14 @@ offset_right = 1.66667
 offset_bottom = 17.0
 
 [node name="Outer Thumb1" type="CollisionShape2D" parent="."]
-position = Vector2(-27.4872, 10.3386)
-rotation = 0.600171
+position = Vector2(-29.7778, 14.6666)
+rotation = 0.922475
 scale = Vector2(0.999986, 0.999986)
 shape = SubResource("RectangleShape2D_kdemd")
 
 [node name="Outer Thumb2" type="CollisionShape2D" parent="."]
-position = Vector2(-37.131, 26.6323)
-rotation = 2.17853
+position = Vector2(-41.2599, 28.4426)
+rotation = 1.86459
 scale = Vector2(0.99999, 0.99999)
 shape = SubResource("RectangleShape2D_cw0k3")
 
@@ -724,8 +725,8 @@ script = ExtResource("4_3omnj")
 [node name="Btns" type="Node" parent="."]
 
 [node name="Thumb Btn Anchor" type="Node2D" parent="Btns"]
-position = Vector2(282, 225)
-rotation = 2.0577
+position = Vector2(275.823, 227.467)
+rotation = 1.74375
 scale = Vector2(2.24998, 2.24998)
 
 [node name="Thumb Select" type="Button" parent="Btns/Thumb Btn Anchor"]
