@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bni4j3r7dp4jg"]
+[gd_scene load_steps=10 format=3 uid="uid://bni4j3r7dp4jg"]
 
 [ext_resource type="Script" uid="uid://doxc1kpf73yrl" path="res://classes/coffee.gd" id="1_kukex"]
 [ext_resource type="PackedScene" uid="uid://c3pgwvggt6yia" path="res://scenes/Objects/grip_lock.tscn" id="2_21xrd"]
+[ext_resource type="Texture2D" uid="uid://bqn25axww7j0l" path="res://assets/sprites/Coffee.png" id="3_0woxd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_21xrd"]
 friction = 0.0
@@ -50,23 +51,30 @@ grips = [NodePath("grip_detector"), NodePath("grip_detector2")]
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(-61, -141)
 rotation = -1.57079
+scale = Vector2(1.25, 1.25)
 amount = 113
 lifetime = 1.05
 randomness = 0.02
 process_material = SubResource("ParticleProcessMaterial_f7x7d")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(60, 141, 115, -137, 127.273, -141.818, 149.091, -138.182, 127.273, -145.455, -123.636, -145.455, -145.455, -134.545, -116.364, -141.818, -100, -135, -65, 141)
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(-65, 141, 60, 141, 115, -137, 127.273, -141.818, 149.091, -138.182, 127.273, -145.455, -123.636, -145.455, -145.455, -134.545, -120, -141.818, -99, -136)
+scale = Vector2(1.25, 1.25)
+polygon = PackedVector2Array(60.1504, 128.503, 109.091, -116.364, 116.364, -123.636, 141.818, -116.364, 141.818, -141.818, -2.73411, -153.11, -141.818, -141.818, -149.091, -116.364, -123.636, -123.636, -112.727, -116.364, -62.8845, 128.503)
 
 [node name="grip_detector" parent="." instance=ExtResource("2_21xrd")]
-position = Vector2(109, -81)
+position = Vector2(145.455, -72.7272)
 rotation = 0.200041
-scale = Vector2(2.27756, 6.91)
+scale = Vector2(2.64859, 8.60304)
 
 [node name="grip_detector2" parent="." instance=ExtResource("2_21xrd")]
-position = Vector2(-95, -80)
-rotation = -0.132416
-scale = Vector2(2.38989, 6.91)
+position = Vector2(-134.545, -69.0909)
+rotation = -0.213866
+scale = Vector2(2.6486, 8.60304)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -178.182
+offset_top = -189.091
+offset_right = 103.818
+offset_bottom = 92.9091
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_0woxd")

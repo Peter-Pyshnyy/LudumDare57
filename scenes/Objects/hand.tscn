@@ -166,9 +166,9 @@ shape = SubResource("RectangleShape2D_cmdsa")
 
 [node name="Inner Thumb2" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Thumb"]
 z_index = 11
-position = Vector2(4.92218, -9.27557)
+position = Vector2(4.9222, -9.27565)
 rotation = 2.11115
-scale = Vector2(0.999979, 0.999979)
+scale = Vector2(0.99998, 0.99998)
 shape = SubResource("RectangleShape2D_k7pjy")
 
 [node name="Limb Index" type="CharacterBody2D" parent="Skeleton2D/Palm/IK Targets"]
@@ -190,7 +190,7 @@ shape = SubResource("RectangleShape2D_f44jc")
 
 [node name="Inner Index2" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Index"]
 z_index = 11
-position = Vector2(9.31771, 0.581841)
+position = Vector2(9.31767, 0.581825)
 rotation = -3.09226
 scale = Vector2(0.999991, 0.999991)
 shape = SubResource("RectangleShape2D_ysndn")
@@ -213,16 +213,16 @@ position = Vector2(9.13246e-07, -9.35575e-06)
 
 [node name="Inner Mid1" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Mid"]
 z_index = 11
-position = Vector2(-1.21219, -36.7589)
-rotation = 0.0363434
-scale = Vector2(0.999854, 0.999854)
+position = Vector2(-1.21214, -36.7572)
+rotation = 0.0363445
+scale = Vector2(0.999984, 0.999984)
 shape = SubResource("RectangleShape2D_n04oe")
 
 [node name="Inner Mid2" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Mid"]
 z_index = 11
-position = Vector2(-0.719559, -13.6079)
+position = Vector2(-0.719452, -13.6031)
 rotation = -0.0277142
-scale = Vector2(0.999867, 0.999867)
+scale = Vector2(0.999997, 0.999997)
 shape = SubResource("RectangleShape2D_yinqy")
 
 [node name="Limb Ring" type="CharacterBody2D" parent="Skeleton2D/Palm/IK Targets"]
@@ -239,15 +239,15 @@ position = Vector2(1.15633e-05, 2.42144e-06)
 
 [node name="Inner Ring1" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Ring"]
 z_index = 11
-position = Vector2(-4.79726, -35.7793)
-rotation = -0.121473
+position = Vector2(-4.79723, -35.7793)
+rotation = -0.121472
 scale = Vector2(0.999988, 0.999988)
 shape = SubResource("RectangleShape2D_ligq1")
 
 [node name="Inner Ring2" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Ring"]
 z_index = 11
-position = Vector2(-1.81938, -13.4207)
-rotation = -0.143421
+position = Vector2(-1.81938, -13.4208)
+rotation = -0.143422
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_y1wyv")
 
@@ -265,19 +265,20 @@ position = Vector2(7.62939e-06, 3.8147e-06)
 
 [node name="Inner Pinky1" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Pinky"]
 z_index = 11
-position = Vector2(-9.94168, -21.9233)
-rotation = -0.408415
-scale = Vector2(0.999988, 0.999988)
+position = Vector2(-9.94218, -21.9245)
+rotation = -0.408418
+scale = Vector2(0.999818, 0.999818)
 shape = SubResource("RectangleShape2D_v24qn")
 
 [node name="Inner Pinky2" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Pinky"]
 z_index = 11
-position = Vector2(-3.69141, -7.49286)
+position = Vector2(-3.69293, -7.49652)
 rotation = -0.431229
-scale = Vector2(0.999996, 0.999996)
+scale = Vector2(0.999827, 0.999827)
 shape = SubResource("RectangleShape2D_bfalx")
 
 [node name="TextureRect" type="TextureRect" parent="Skeleton2D/Palm"]
+z_index = 1
 offset_left = -26.3333
 offset_top = -4.33333
 offset_right = 13.6667
@@ -285,18 +286,6 @@ offset_bottom = 35.6667
 rotation = -0.128942
 texture = ExtResource("3_8hl2f")
 expand_mode = 1
-
-[node name="Palm Select" type="Button" parent="Skeleton2D/Palm/TextureRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.011
-anchor_top = -0.012
-anchor_right = 0.005
-anchor_bottom = 0.017
-offset_left = 16.44
-offset_top = 15.5911
-offset_right = 24.44
-offset_bottom = 23.5911
 
 [node name="Thumb1" type="Bone2D" parent="Skeleton2D/Palm"]
 z_index = 5
@@ -317,6 +306,16 @@ length = 16.0
 bone_angle = -1.82123e-06
 metadata/_local_pose_override_enabled_ = true
 
+[node name="TextureRect" type="TextureRect" parent="Skeleton2D/Palm/Thumb1/Thumb2"]
+z_index = 5
+offset_left = -2.2656
+offset_top = 3.3553
+offset_right = 37.7344
+offset_bottom = 62.3553
+rotation = -1.48522
+scale = Vector2(0.247002, 0.313201)
+texture = ExtResource("5_men20")
+
 [node name="Thumb Anchor" type="Node2D" parent="Skeleton2D/Palm/Thumb1/Thumb2"]
 position = Vector2(16.0009, -0.000105707)
 
@@ -335,29 +334,9 @@ position = Vector2(8.41795, -0.717277)
 rotation = 0.120837
 remote_path = NodePath("../../../IK Targets/Limb Thumb/Inner Thumb2")
 
-[node name="TextureRect" type="TextureRect" parent="Skeleton2D/Palm/Thumb1/Thumb2"]
-z_index = 5
-offset_left = -2.2656
-offset_top = 3.3553
-offset_right = 37.7344
-offset_bottom = 62.3553
-rotation = -1.48522
-scale = Vector2(0.247002, 0.313201)
-texture = ExtResource("5_men20")
-
-[node name="Thumb Select" type="Button" parent="Skeleton2D/Palm/Thumb1/Thumb2/TextureRect"]
-z_index = 5
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.052
-anchor_top = 0.006
-anchor_right = -0.045
-anchor_bottom = 0.019
-offset_left = 4.76994
-offset_top = 33.3764
-offset_right = 12.7699
-offset_bottom = 41.3764
-scale = Vector2(3.52531, 2.50572)
+[node name="RT Btn" type="RemoteTransform2D" parent="Skeleton2D/Palm/Thumb1/Thumb2"]
+position = Vector2(10.2759, -2.98067)
+remote_path = NodePath("../../../../../Btns/Thumb Btn Anchor")
 
 [node name="RT Outer Thumb1" type="RemoteTransform2D" parent="Skeleton2D/Palm/Thumb1"]
 position = Vector2(-8.05188, 10.7788)
@@ -410,15 +389,6 @@ rotation = -1.56086
 scale = Vector2(0.1226, 0.282666)
 texture = ExtResource("6_2vuue")
 
-[node name="Index Select" type="Button" parent="Skeleton2D/Palm/Index1/Index2/TextureRect"]
-z_index = 4
-layout_mode = 0
-offset_left = 5.03282
-offset_top = 46.8769
-offset_right = 13.0328
-offset_bottom = 54.8769
-scale = Vector2(3.29317, 2.03328)
-
 [node name="Index Anchor" type="Node2D" parent="Skeleton2D/Palm/Index1/Index2"]
 position = Vector2(16.0006, 0.000747681)
 
@@ -433,6 +403,11 @@ remote_path = NodePath("../../../../../Outer Index2")
 position = Vector2(8.16872, -0.000366092)
 rotation = -0.0129895
 remote_path = NodePath("../../../IK Targets/Limb Index/Inner Index2")
+
+[node name="RT Btn" type="RemoteTransform2D" parent="Skeleton2D/Palm/Index1/Index2"]
+position = Vector2(14.4029, -0.155698)
+rotation = -0.140937
+remote_path = NodePath("../../../../../Btns/Index Btn Anchor")
 
 [node name="RT Outer Index1" type="RemoteTransform2D" parent="Skeleton2D/Palm/Index1"]
 position = Vector2(-2.7933, 12.2566)
@@ -483,20 +458,6 @@ rotation = -1.54984
 scale = Vector2(0.132762, 0.253919)
 texture = ExtResource("8_radla")
 
-[node name="Mid Select" type="Button" parent="Skeleton2D/Palm/Mid1/Mid2/TextureRect"]
-z_index = 3
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.024
-anchor_top = 0.074
-anchor_right = -0.017
-anchor_bottom = 0.086
-offset_left = 8.4005
-offset_top = 41.6886
-offset_right = 16.4005
-offset_bottom = 49.6886
-scale = Vector2(3.80539, 2.12051)
-
 [node name="Mid Anchor" type="Node2D" parent="Skeleton2D/Palm/Mid1/Mid2"]
 position = Vector2(16.0006, 0.000744581)
 
@@ -511,6 +472,10 @@ position = Vector2(7.86944, 0.176428)
 rotation = -1.5662
 scale = Vector2(0.630923, 0.630923)
 remote_path = NodePath("../../../IK Targets/Limb Mid/Inner Mid2")
+
+[node name="RT Btn" type="RemoteTransform2D" parent="Skeleton2D/Palm/Mid1/Mid2"]
+position = Vector2(11.3393, -2.06489)
+remote_path = NodePath("../../../../../Btns/Mid Btn Anchor")
 
 [node name="RT Outer Mid1" type="RemoteTransform2D" parent="Skeleton2D/Palm/Mid1"]
 position = Vector2(-0.803772, 13.8972)
@@ -566,6 +531,10 @@ rotation = -1.59833
 scale = Vector2(0.668904, 0.668904)
 remote_path = NodePath("../../../IK Targets/Limb Ring/Inner Ring2")
 
+[node name="RT Btn" type="RemoteTransform2D" parent="Skeleton2D/Palm/Ring1/Ring2"]
+position = Vector2(11.7379, -2.35246)
+remote_path = NodePath("../../../../../Btns/Ring Btn Anchor")
+
 [node name="TextureRect" type="TextureRect" parent="Skeleton2D/Palm/Ring1/Ring2"]
 z_index = 2
 offset_left = -1.9057
@@ -575,20 +544,6 @@ offset_bottom = 64.1086
 rotation = -1.60839
 scale = Vector2(0.130663, 0.303483)
 texture = ExtResource("10_radla")
-
-[node name="Ring Select" type="Button" parent="Skeleton2D/Palm/Ring1/Ring2/TextureRect"]
-z_index = 2
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.001
-anchor_top = 0.065
-anchor_right = 0.006
-anchor_bottom = 0.077
-offset_left = 5.76708
-offset_top = 43.1999
-offset_right = 13.7671
-offset_bottom = 51.1999
-scale = Vector2(3.54724, 1.52935)
 
 [node name="RT Outer Ring1" type="RemoteTransform2D" parent="Skeleton2D/Palm/Ring1"]
 position = Vector2(-0.627942, 9.73735)
@@ -644,6 +599,10 @@ rotation = -1.59067
 scale = Vector2(1.00001, 1.00001)
 remote_path = NodePath("../../../IK Targets/Limb Pinky/Inner Pinky2")
 
+[node name="RT Btn" type="RemoteTransform2D" parent="Skeleton2D/Palm/Pinky1/Pinky2"]
+position = Vector2(11.6296, -2.78565)
+remote_path = NodePath("../../../../../Btns/Pinky Btn Anchor")
+
 [node name="TextureRect" type="TextureRect" parent="Skeleton2D/Palm/Pinky1/Pinky2"]
 z_index = 1
 offset_left = -2.13968
@@ -653,20 +612,6 @@ offset_bottom = 54.9271
 rotation = -1.56054
 scale = Vector2(0.182085, 0.383066)
 texture = ExtResource("12_2lli3")
-
-[node name="Pinky Select" type="Button" parent="Skeleton2D/Palm/Pinky1/Pinky2/TextureRect"]
-z_index = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.017
-anchor_top = 0.06
-anchor_right = 0.024
-anchor_bottom = 0.073
-offset_left = 8.38339
-offset_top = 32.0399
-offset_right = 16.3834
-offset_bottom = 40.0399
-scale = Vector2(3.49151, 1.6793)
 
 [node name="RT Outer Pinky1" type="RemoteTransform2D" parent="Skeleton2D/Palm/Pinky1"]
 position = Vector2(2.21678, 7.23672)
@@ -688,6 +633,18 @@ rotation = -0.282304
 scale = Vector2(0.207287, 0.450811)
 texture = ExtResource("13_c2n2t")
 
+[node name="Palm Select2" type="Button" parent="Skeleton2D/Palm"]
+z_index = 10
+anchors_preset = -1
+anchor_left = -0.011
+anchor_top = -0.012
+anchor_right = 0.005
+anchor_bottom = 0.017
+offset_left = -6.33333
+offset_top = 9.0
+offset_right = 1.66667
+offset_bottom = 17.0
+
 [node name="Outer Thumb1" type="CollisionShape2D" parent="."]
 position = Vector2(-27.4872, 10.3386)
 rotation = 0.600171
@@ -695,7 +652,7 @@ scale = Vector2(0.999986, 0.999986)
 shape = SubResource("RectangleShape2D_kdemd")
 
 [node name="Outer Thumb2" type="CollisionShape2D" parent="."]
-position = Vector2(-37.131, 26.6324)
+position = Vector2(-37.131, 26.6323)
 rotation = 2.17853
 scale = Vector2(0.99999, 0.99999)
 shape = SubResource("RectangleShape2D_cw0k3")
@@ -709,73 +666,153 @@ shape = SubResource("RectangleShape2D_m1v21")
 
 [node name="Outer Index2" type="CollisionShape2D" parent="."]
 z_index = 11
-position = Vector2(-18.5118, 63.8549)
+position = Vector2(-18.5119, 63.8549)
 rotation = 1.68751
 scale = Vector2(1.59998, 1.59998)
 shape = SubResource("RectangleShape2D_0eb3b")
 
 [node name="Outer Mid1" type="CollisionShape2D" parent="."]
 z_index = 11
-position = Vector2(-3.17879, 43.2425)
-rotation = 0.103727
-scale = Vector2(0.999865, 0.999865)
+position = Vector2(-3.17886, 43.2442)
+rotation = 0.103728
+scale = Vector2(0.999994, 0.999994)
 shape = SubResource("RectangleShape2D_nq5tb")
 
 [node name="Outer Mid2" type="CollisionShape2D" parent="."]
 z_index = 11
-position = Vector2(-4.24609, 66.3744)
+position = Vector2(-4.24632, 66.3792)
 rotation = 0.0396693
-scale = Vector2(0.999877, 0.999877)
+scale = Vector2(1.00001, 1.00001)
 shape = SubResource("RectangleShape2D_imbvm")
 
 [node name="Outer Ring1" type="CollisionShape2D" parent="."]
 z_index = 11
-position = Vector2(7.84494, 38.2008)
-rotation = -0.0540896
+position = Vector2(7.84492, 38.2007)
+rotation = -0.0540886
 scale = Vector2(0.999998, 0.999998)
 shape = SubResource("RectangleShape2D_wiqd4")
 
 [node name="Outer Ring2" type="CollisionShape2D" parent="."]
 z_index = 11
-position = Vector2(9.31062, 60.7093)
-rotation = -0.0760374
+position = Vector2(9.31058, 60.7093)
+rotation = -0.0760384
 scale = Vector2(1.00001, 1.00001)
 shape = SubResource("RectangleShape2D_h1yym")
 
 [node name="Outer Pinky1" type="CollisionShape2D" parent="."]
 z_index = 11
-position = Vector2(17.3347, 32.5679)
-rotation = -0.341032
-scale = Vector2(0.999998, 0.999998)
+position = Vector2(17.3344, 32.5667)
+rotation = -0.341035
+scale = Vector2(0.999828, 0.999828)
 shape = SubResource("RectangleShape2D_ohfqw")
 
 [node name="Outer Pinky2" type="CollisionShape2D" parent="."]
 z_index = 11
-position = Vector2(22.5992, 47.3866)
+position = Vector2(22.598, 47.3828)
 rotation = -0.363846
-scale = Vector2(1.00001, 1.00001)
+scale = Vector2(0.999837, 0.999837)
 shape = SubResource("RectangleShape2D_dth4f")
 
 [node name="Palm" type="CollisionShape2D" parent="."]
 position = Vector2(-2.97884, 11.4036)
 rotation = -0.130748
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7g3cn")
 
 [node name="Grip Manager" type="Node" parent="."]
 script = ExtResource("4_3omnj")
 
+[node name="Btns" type="Node" parent="."]
+
+[node name="Thumb Btn Anchor" type="Node2D" parent="Btns"]
+position = Vector2(282, 225)
+rotation = 2.0577
+scale = Vector2(2.24998, 2.24998)
+
+[node name="Thumb Select" type="Button" parent="Btns/Thumb Btn Anchor"]
+z_index = 15
+anchors_preset = -1
+anchor_left = -0.052
+anchor_top = 0.006
+anchor_right = -0.045
+anchor_bottom = 0.019
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(0.693351, 0.771626)
+
+[node name="Index Btn Anchor" type="Node2D" parent="Btns"]
+position = Vector2(319, 325)
+rotation = 1.55956
+scale = Vector2(3.59996, 3.59996)
+
+[node name="Index Select" type="Button" parent="Btns/Index Btn Anchor"]
+z_index = 15
+offset_left = -1.77777
+offset_top = -2.22221
+offset_right = 6.22223
+offset_bottom = 5.77779
+rotation = 0.188648
+scale = Vector2(0.559097, 0.490883)
+
+[node name="Mid Btn Anchor" type="Node2D" parent="Btns"]
+position = Vector2(361, 321)
+rotation = 1.60587
+scale = Vector2(3.56623, 3.56623)
+
+[node name="Mid Select" type="Button" parent="Btns/Mid Btn Anchor"]
+z_index = 15
+anchors_preset = -1
+anchor_left = -0.024
+anchor_top = 0.074
+anchor_right = -0.017
+anchor_bottom = 0.086
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(0.594524, 0.591454)
+
+[node name="Ring Btn Anchor" type="Node2D" parent="Btns"]
+position = Vector2(393, 307)
+rotation = 1.52229
+scale = Vector2(3.36374, 3.36374)
+
+[node name="Ring Select" type="Button" parent="Btns/Ring Btn Anchor"]
+z_index = 15
+anchors_preset = -1
+anchor_left = -0.001
+anchor_top = 0.065
+anchor_right = 0.006
+anchor_bottom = 0.077
+offset_right = 8.00002
+offset_bottom = 8.0
+scale = Vector2(0.590214, 0.601798)
+
+[node name="Pinky Btn Anchor" type="Node2D" parent="Btns"]
+position = Vector2(423, 270)
+rotation = 1.22682
+scale = Vector2(2.24961, 2.24961)
+
+[node name="Pinky Select" type="Button" parent="Btns/Pinky Btn Anchor"]
+z_index = 15
+anchors_preset = -1
+anchor_left = 0.017
+anchor_top = 0.06
+anchor_right = 0.024
+anchor_bottom = 0.073
+offset_right = 8.00001
+offset_bottom = 8.0
+rotation = -1.51199
+scale = Vector2(-0.795792, 0.749136)
+
 [connection signal="input_event" from="." to="." method="_on_Draggable_input_event"]
 [connection signal="input_event" from="Skeleton2D/Palm/IK Targets/Limb Index" to="Skeleton2D/Palm/IK Targets/Limb Index" method="_on_Draggable_input_event"]
-[connection signal="button_down" from="Skeleton2D/Palm/TextureRect/Palm Select" to="Skeleton2D" method="_on_palm_select_button_down"]
-[connection signal="button_up" from="Skeleton2D/Palm/TextureRect/Palm Select" to="Skeleton2D" method="_on_palm_select_button_up"]
-[connection signal="button_down" from="Skeleton2D/Palm/Thumb1/Thumb2/TextureRect/Thumb Select" to="Skeleton2D" method="_on_thumb_select_button_down"]
-[connection signal="button_up" from="Skeleton2D/Palm/Thumb1/Thumb2/TextureRect/Thumb Select" to="Skeleton2D" method="_on_thumb_select_button_up"]
-[connection signal="button_down" from="Skeleton2D/Palm/Index1/Index2/TextureRect/Index Select" to="Skeleton2D" method="_on_index_select_button_down"]
-[connection signal="button_up" from="Skeleton2D/Palm/Index1/Index2/TextureRect/Index Select" to="Skeleton2D" method="_on_index_select_button_up"]
-[connection signal="button_down" from="Skeleton2D/Palm/Mid1/Mid2/TextureRect/Mid Select" to="Skeleton2D" method="_on_mid_select_button_down"]
-[connection signal="button_up" from="Skeleton2D/Palm/Mid1/Mid2/TextureRect/Mid Select" to="Skeleton2D" method="_on_mid_select_button_up"]
-[connection signal="button_down" from="Skeleton2D/Palm/Ring1/Ring2/TextureRect/Ring Select" to="Skeleton2D" method="_on_ring_select_button_down"]
-[connection signal="button_up" from="Skeleton2D/Palm/Ring1/Ring2/TextureRect/Ring Select" to="Skeleton2D" method="_on_ring_select_button_up"]
-[connection signal="button_down" from="Skeleton2D/Palm/Pinky1/Pinky2/TextureRect/Pinky Select" to="Skeleton2D" method="_on_pinky_select_button_down"]
-[connection signal="button_up" from="Skeleton2D/Palm/Pinky1/Pinky2/TextureRect/Pinky Select" to="Skeleton2D" method="_on_pinky_select_button_up"]
+[connection signal="button_down" from="Skeleton2D/Palm/Palm Select2" to="Skeleton2D" method="_on_palm_select_button_down"]
+[connection signal="button_up" from="Skeleton2D/Palm/Palm Select2" to="Skeleton2D" method="_on_palm_select_button_up"]
+[connection signal="button_down" from="Btns/Thumb Btn Anchor/Thumb Select" to="Skeleton2D" method="_on_thumb_select_button_down"]
+[connection signal="button_up" from="Btns/Thumb Btn Anchor/Thumb Select" to="Skeleton2D" method="_on_thumb_select_button_up"]
+[connection signal="button_down" from="Btns/Index Btn Anchor/Index Select" to="Skeleton2D" method="_on_index_select_button_down"]
+[connection signal="button_up" from="Btns/Index Btn Anchor/Index Select" to="Skeleton2D" method="_on_index_select_button_up"]
+[connection signal="button_down" from="Btns/Mid Btn Anchor/Mid Select" to="Skeleton2D" method="_on_mid_select_button_down"]
+[connection signal="button_up" from="Btns/Mid Btn Anchor/Mid Select" to="Skeleton2D" method="_on_mid_select_button_up"]
+[connection signal="button_down" from="Btns/Ring Btn Anchor/Ring Select" to="Skeleton2D" method="_on_ring_select_button_down"]
+[connection signal="button_up" from="Btns/Ring Btn Anchor/Ring Select" to="Skeleton2D" method="_on_ring_select_button_up"]
+[connection signal="button_down" from="Btns/Pinky Btn Anchor/Pinky Select" to="Skeleton2D" method="_on_pinky_select_button_down"]
+[connection signal="button_up" from="Btns/Pinky Btn Anchor/Pinky Select" to="Skeleton2D" method="_on_pinky_select_button_up"]
