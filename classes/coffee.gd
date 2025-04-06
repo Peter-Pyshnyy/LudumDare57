@@ -17,11 +17,11 @@ func _ready():
 		grip.connect("is_gripped", grip_count_inc)
 		grip.connect("is_released", grip_count_dec)
 
-func grip_count_inc():
+func grip_count_inc(body):
 	current_grip_count += 1
 	print(current_grip_count)
 
-func grip_count_dec():
+func grip_count_dec(body):
 	current_grip_count -= 1
 	print(current_grip_count)
 
