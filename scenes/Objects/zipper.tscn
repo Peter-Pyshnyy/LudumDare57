@@ -18,6 +18,7 @@ func _physics_process(delta):
 "
 
 [node name="Zipper" type="Node2D"]
+position = Vector2(641, 414)
 script = ExtResource("1_tbvg1")
 
 [node name="Base" type="StaticBody2D" parent="."]

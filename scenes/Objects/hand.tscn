@@ -265,19 +265,20 @@ position = Vector2(7.62939e-06, 3.8147e-06)
 
 [node name="Inner Pinky1" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Pinky"]
 z_index = 11
-position = Vector2(-9.94176, -21.9234)
+position = Vector2(-9.94218, -21.9245)
 rotation = -0.408418
-scale = Vector2(0.999974, 0.999974)
+scale = Vector2(0.999818, 0.999818)
 shape = SubResource("RectangleShape2D_v24qn")
 
 [node name="Inner Pinky2" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Pinky"]
 z_index = 11
-position = Vector2(-3.69154, -7.49317)
+position = Vector2(-3.69293, -7.49652)
 rotation = -0.431229
-scale = Vector2(0.999983, 0.999983)
+scale = Vector2(0.999827, 0.999827)
 shape = SubResource("RectangleShape2D_bfalx")
 
 [node name="TextureRect" type="TextureRect" parent="Skeleton2D/Palm"]
+z_index = 1
 offset_left = -26.3333
 offset_top = -4.33333
 offset_right = 13.6667
@@ -305,6 +306,16 @@ length = 16.0
 bone_angle = -1.82123e-06
 metadata/_local_pose_override_enabled_ = true
 
+[node name="TextureRect" type="TextureRect" parent="Skeleton2D/Palm/Thumb1/Thumb2"]
+z_index = 5
+offset_left = -2.2656
+offset_top = 3.3553
+offset_right = 37.7344
+offset_bottom = 62.3553
+rotation = -1.48522
+scale = Vector2(0.247002, 0.313201)
+texture = ExtResource("5_men20")
+
 [node name="Thumb Anchor" type="Node2D" parent="Skeleton2D/Palm/Thumb1/Thumb2"]
 position = Vector2(16.0009, -0.000105707)
 
@@ -325,18 +336,7 @@ remote_path = NodePath("../../../IK Targets/Limb Thumb/Inner Thumb2")
 
 [node name="RT Btn" type="RemoteTransform2D" parent="Skeleton2D/Palm/Thumb1/Thumb2"]
 position = Vector2(10.2759, -2.98067)
-scale = Vector2(1, 1)
 remote_path = NodePath("../../../../../Btns/Thumb Btn Anchor")
-
-[node name="TextureRect" type="TextureRect" parent="Skeleton2D/Palm/Thumb1/Thumb2"]
-z_index = 5
-offset_left = -2.2656
-offset_top = 3.3553
-offset_right = 37.7344
-offset_bottom = 62.3553
-rotation = -1.48522
-scale = Vector2(0.247002, 0.313201)
-texture = ExtResource("5_men20")
 
 [node name="RT Outer Thumb1" type="RemoteTransform2D" parent="Skeleton2D/Palm/Thumb1"]
 position = Vector2(-8.05188, 10.7788)
@@ -601,7 +601,6 @@ remote_path = NodePath("../../../IK Targets/Limb Pinky/Inner Pinky2")
 
 [node name="RT Btn" type="RemoteTransform2D" parent="Skeleton2D/Palm/Pinky1/Pinky2"]
 position = Vector2(11.6296, -2.78565)
-scale = Vector2(1, 1)
 remote_path = NodePath("../../../../../Btns/Pinky Btn Anchor")
 
 [node name="TextureRect" type="TextureRect" parent="Skeleton2D/Palm/Pinky1/Pinky2"]
@@ -702,16 +701,16 @@ shape = SubResource("RectangleShape2D_h1yym")
 
 [node name="Outer Pinky1" type="CollisionShape2D" parent="."]
 z_index = 11
-position = Vector2(17.3347, 32.5678)
+position = Vector2(17.3344, 32.5667)
 rotation = -0.341035
-scale = Vector2(0.999984, 0.999984)
+scale = Vector2(0.999828, 0.999828)
 shape = SubResource("RectangleShape2D_ohfqw")
 
 [node name="Outer Pinky2" type="CollisionShape2D" parent="."]
 z_index = 11
-position = Vector2(22.5992, 47.3863)
+position = Vector2(22.598, 47.3828)
 rotation = -0.363846
-scale = Vector2(0.999993, 0.999993)
+scale = Vector2(0.999837, 0.999837)
 shape = SubResource("RectangleShape2D_dth4f")
 
 [node name="Palm" type="CollisionShape2D" parent="."]
@@ -787,9 +786,9 @@ offset_bottom = 8.0
 scale = Vector2(0.590214, 0.601798)
 
 [node name="Pinky Btn Anchor" type="Node2D" parent="Btns"]
-position = Vector2(423.004, 270.008)
+position = Vector2(423, 270)
 rotation = 1.22682
-scale = Vector2(2.24996, 2.24996)
+scale = Vector2(2.24961, 2.24961)
 
 [node name="Pinky Select" type="Button" parent="Btns/Pinky Btn Anchor"]
 z_index = 15
