@@ -1,15 +1,245 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw5dep2lvaeic"]
+[gd_scene load_steps=27 format=3 uid="uid://dw5dep2lvaeic"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://baw4loy5iwkq7" path="res://scenes/levels/level1.tscn" id="2_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://dgmllju2ikp5e" path="res://scenes/levels/level_3.tscn" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="2_264po"]
+[ext_resource type="Texture2D" uid="uid://cfh3ljsqxh4hr" path="res://assets/Background/backpack/Backpack_BG.png" id="4_264po"]
+[ext_resource type="Texture2D" uid="uid://btlom8710gcig" path="res://assets/Background/backpack/L13-Layer 10.png" id="5_1kice"]
+[ext_resource type="Texture2D" uid="uid://cumihxja0v7bw" path="res://assets/Background/backpack/L12-Layer 11.png" id="6_5newe"]
+[ext_resource type="Texture2D" uid="uid://c16eqkoxsbtne" path="res://assets/Background/backpack/L10-Layer 12++.png" id="7_37s47"]
+[ext_resource type="Texture2D" uid="uid://cpvo0afsg33at" path="res://assets/Background/backpack/L8-Layer 12+.png" id="8_bt5mj"]
+[ext_resource type="Texture2D" uid="uid://do6uhae0tf2k5" path="res://assets/Background/backpack/L9-Layer 13.png" id="9_e1j6l"]
+[ext_resource type="Texture2D" uid="uid://6tm1r7qd8rq" path="res://assets/Background/backpack/L2-Layer 19.png" id="10_pl11u"]
+[ext_resource type="Texture2D" uid="uid://dqsv4wabtr1y0" path="res://assets/Background/backpack/L7-Layer 14.png" id="11_bhx41"]
+[ext_resource type="Texture2D" uid="uid://vnyibalqxe1d" path="res://assets/Background/backpack/nutella.png" id="12_qnb83"]
+[ext_resource type="Texture2D" uid="uid://4eieicx0d6fn" path="res://assets/Background/backpack/L5-Layer 18.png" id="13_sww3w"]
+[ext_resource type="Texture2D" uid="uid://cmxj3uyjjq841" path="res://assets/Background/backpack/L4-Layer 16.png" id="14_suyxu"]
+[ext_resource type="Texture2D" uid="uid://my8k3yqt11fw" path="res://assets/Background/backpack/L3-Layer 15.png" id="15_sgl2t"]
+[ext_resource type="Texture2D" uid="uid://mxt52wbeq47b" path="res://assets/Background/backpack/L1-Layer 7.png" id="16_qouja"]
+[ext_resource type="Script" uid="uid://djola5gl6hnaf" path="res://classes/nutella.gd" id="17_wljb1"]
+[ext_resource type="PackedScene" uid="uid://xstywed8a4ni" path="res://scenes/Objects/zipper.tscn" id="18_ssvqc"]
+[ext_resource type="Texture2D" uid="uid://br3wsxuvuvytu" path="res://assets/Background/backpack/Backpack_front_details.png" id="18_v2yb1"]
+[ext_resource type="Script" uid="uid://c5tnood4o4tnv" path="res://classes/Level.gd" id="19_js0lu"]
+[ext_resource type="PackedScene" uid="uid://v6cdwcpvgjeu" path="res://scenes/Objects/exit.tscn" id="20_1kice"]
 
-[node name="Game" type="Node"]
+[sub_resource type="Gradient" id="Gradient_nepv3"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7025r"]
+gradient = SubResource("Gradient_nepv3")
+fill_to = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4url"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_264po"]
+size = Vector2(390, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1kice"]
+size = Vector2(535, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5newe"]
+size = Vector2(714, 72.5)
+
+[node name="Game" type="Node" node_paths=PackedStringArray("levels")]
 script = ExtResource("1_uwrxv")
-levels = Array[PackedScene]([ExtResource("2_lnu2h"), ExtResource("3_lbhrr")])
+levels = [NodePath("Level1"), NodePath("Level2")]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 180.0
 one_shot = true
 
+[node name="Hand" parent="." instance=ExtResource("2_264po")]
+z_index = 50
+position = Vector2(604, -20)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(580, 346)
+zoom = Vector2(1.075, 1.075)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("4_264po")
+
+[node name="1_level" type="Node2D" parent="Background"]
+
+[node name="floor_1_lvl" type="Sprite2D" parent="Background/1_level"]
+texture = ExtResource("5_1kice")
+
+[node name="StaticBody2D" type="Sprite2D" parent="Background/1_level"]
+texture = ExtResource("6_5newe")
+
+[node name="2_level" type="Node2D" parent="Background"]
+
+[node name="penholders" type="Sprite2D" parent="Background/2_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("7_37s47")
+
+[node name="pens" type="Sprite2D" parent="Background/2_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("8_bt5mj")
+
+[node name="sock_paper" type="Sprite2D" parent="Background/2_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("9_e1j6l")
+
+[node name="Spot" type="Sprite2D" parent="Background/2_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("10_pl11u")
+
+[node name="3_level" type="Node2D" parent="Background"]
+position = Vector2(-216.269, -287.11)
+scale = Vector2(0.374817, 0.374817)
+
+[node name="floor_3_lvl" type="Sprite2D" parent="Background/3_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("11_bhx41")
+
+[node name="Nutella" type="Sprite2D" parent="Background/3_level"]
+position = Vector2(580, 745)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("12_qnb83")
+
+[node name="Nutella_back" type="Sprite2D" parent="Background/3_level"]
+position = Vector2(580, 745)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("13_sww3w")
+
+[node name="apple" type="Sprite2D" parent="Background/3_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("14_suyxu")
+
+[node name="mushrooms" type="Sprite2D" parent="Background/3_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("15_sgl2t")
+
+[node name="spiders" type="Sprite2D" parent="Background/3_level"]
+position = Vector2(577, 766)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("16_qouja")
+
+[node name="nutella" type="CharacterBody2D" parent="Background"]
+visible = false
+position = Vector2(0, -80.5857)
+script = ExtResource("17_wljb1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/nutella"]
+position = Vector2(-1.14441e-05, -20.9897)
+scale = Vector2(0.330161, 0.330161)
+texture = SubResource("GradientTexture2D_7025r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/nutella"]
+position = Vector2(0, -20.9898)
+shape = SubResource("RectangleShape2D_m4url")
+
+[node name="Foreground" type="StaticBody2D" parent="."]
+z_index = 100
+position = Vector2(0.000793457, -0.000793457)
+collision_layer = 256
+collision_mask = 0
+
+[node name="Backpack_front_details" type="Sprite2D" parent="Foreground"]
+position = Vector2(577, 766)
+scale = Vector2(2.668, 2.668)
+texture = ExtResource("18_v2yb1")
+
+[node name="left_collision_wall" type="CollisionPolygon2D" parent="Foreground"]
+polygon = PackedVector2Array(195, 1399, 198, 1253, 228, 1112, 238, 998, 234, 945, 225, 893, 228, 795, 211, 754, 222, 727, 217, 656, 217, 517, 217, 412, 255, 356, 245, 177, 208, 156, 179, 229, 159, 1377)
+
+[node name="right_collision_wall" type="CollisionPolygon2D" parent="Foreground"]
+position = Vector2(1154, 6.10352e-05)
+scale = Vector2(-1, 1)
+polygon = PackedVector2Array(195, 1399, 198, 1253, 228, 1112, 238, 998, 234, 945, 225, 893, 228, 795, 211, 754, 222, 727, 217, 656, 217, 517, 217, 412, 255, 356, 245, 177, 208, 156, 179, 229, 159, 1377)
+
+[node name="Level1" type="Node2D" parent="." node_paths=PackedStringArray("hand_start_pos", "camera_pos")]
+process_mode = 4
+position = Vector2(585, 399)
+script = ExtResource("19_js0lu")
+hand_start_pos = NodePath("HandPos")
+camera_pos = NodePath("CameraPos")
+metadata/_custom_type_script = "uid://c5tnood4o4tnv"
+
+[node name="HandPos" type="Marker2D" parent="Level1"]
+position = Vector2(4, -222)
+gizmo_extents = 36.4
+
+[node name="CameraPos" type="Marker2D" parent="Level1"]
+position = Vector2(-3, -46)
+gizmo_extents = 36.4
+
+[node name="Floor" type="StaticBody2D" parent="Level1"]
+position = Vector2(0, 186)
+collision_layer = 256
+collision_mask = 196927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Floor"]
+position = Vector2(157, 35)
+shape = SubResource("RectangleShape2D_264po")
+
+[node name="Ceiling" type="StaticBody2D" parent="Level1"]
+position = Vector2(0, -289)
+collision_layer = 256
+collision_mask = 196927
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level1/Ceiling"]
+polygon = PackedVector2Array(-338, 60, -325, -31, -131, -67, 207, -58, 305, -31, 325, 66, 411, 77, 391, -135, -394, -121, -411, 72)
+
+[node name="Zipper" parent="Level1" instance=ExtResource("18_ssvqc")]
+position = Vector2(-42, 182)
+
+[node name="Exit" parent="Level1" instance=ExtResource("20_1kice")]
+position = Vector2(-211, 186)
+
+[node name="Level2" type="Node2D" parent="." node_paths=PackedStringArray("hand_start_pos", "camera_pos")]
+process_mode = 4
+position = Vector2(585, 788)
+script = ExtResource("19_js0lu")
+hand_start_pos = NodePath("HandPos")
+camera_pos = NodePath("CameraPos")
+metadata/_custom_type_script = "uid://c5tnood4o4tnv"
+
+[node name="HandPos" type="Marker2D" parent="Level2"]
+position = Vector2(-230, -135)
+gizmo_extents = 36.4
+
+[node name="CameraPos" type="Marker2D" parent="Level2"]
+position = Vector2(-3, 25)
+gizmo_extents = 36.4
+
+[node name="Floor" type="StaticBody2D" parent="Level2"]
+position = Vector2(0, 186)
+collision_layer = 256
+collision_mask = 196927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/Floor"]
+position = Vector2(-83.5, 35)
+shape = SubResource("RectangleShape2D_1kice")
+
+[node name="Ceiling" type="StaticBody2D" parent="Level2"]
+position = Vector2(-15, -233)
+collision_layer = 256
+collision_mask = 196927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/Ceiling"]
+position = Vector2(6, 30.75)
+shape = SubResource("RectangleShape2D_5newe")
+
+[node name="Exit" parent="Level2" instance=ExtResource("20_1kice")]
+position = Vector2(190, 355)
+
+[node name="movement" type="Button" parent="."]
+offset_left = 290.0
+offset_top = 370.0
+offset_right = 401.0
+offset_bottom = 401.0
+text = "Move next lvl"
+
 [connection signal="timeout" from="Timer" to="." method="time_out"]
+[connection signal="exit_level" from="Level1/Exit" to="." method="exit_level"]
+[connection signal="exit_level" from="Level2/Exit" to="." method="exit_level"]
+[connection signal="pressed" from="movement" to="." method="exit_level"]

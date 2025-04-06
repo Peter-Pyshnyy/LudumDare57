@@ -1,6 +1,10 @@
 class_name Game extends Node
 
-@export var levels: Array[PackedScene]
+@onready var timer: Timer = $Timer
+@onready var hand: Limb = $Hand
+@onready var camera: Camera2D = $Camera2D
+
+@export var levels: Array[Level]
 var current_level: Level
 var next_level = 0
 
@@ -9,8 +13,14 @@ var nutella_spilled: bool = false
 var mayo_spilled:bool = false
 var blood_spilled:bool = false
 
+func _ready() -> void:
+	start_game()
+
 func start_game() -> void:
 	#start timer
+	get_tree().create_tween().tween_callback(timer.start).set_delay(1)
+
+	timer.start()
 	#load level
 	load_next_level()
 
@@ -22,34 +32,27 @@ func exit_level() -> void:
 
 func load_next_level() -> void:
 	if current_level:
-		#disconnect signlas
-		current_level.coffee_spilled.disconnect(set_coffee_spilled)
-		current_level.nutella_spilled.disconnect(set_nutella_spilled)
-		current_level.mayo_spilled.disconnect(set_mayo_spilled)
-		current_level.blood_spilled.disconnect(set_blood_spilled)
-		
-		current_level.level_exited.disconnect(exit_level)
-		
-		# remove scene
-		current_level.queue_free()
+		# disable old level
+		current_level.set_deferred("process_mode", Node.PROCESS_MODE_DISABLED)
 	
-	#intantiate scene
-	current_level = levels[next_level].instantiate()
-	# connect signals
-	current_level.coffee_spilled.connect(set_coffee_spilled)
-	current_level.nutella_spilled.connect(set_nutella_spilled)
-	current_level.mayo_spilled.connect(set_mayo_spilled)
-	current_level.blood_spilled.connect(set_blood_spilled)
-
-	current_level.level_exited.connect(exit_level)
+	#enable new Level scene
+	current_level = levels[next_level]
+	current_level.set_deferred("process_mode", Node.PROCESS_MODE_INHERIT)
+	
+	var tween = get_tree().create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD).set_parallel(true)
+	#move cam
+	tween.tween_property(camera, "position", current_level.camera_pos.global_position, 1)
+	#move hand
+	tween.tween_property(hand, "position", current_level.hand_start_pos.global_position, 1)
+	
 	
 	next_level += 1
 
 func time_out() -> void:
-	pass
+	print("game over")
 
 func won_game() -> void:
-	pass
+	print("won game")
 
 func set_coffee_spilled() -> void:
 	coffee_spilled = true
