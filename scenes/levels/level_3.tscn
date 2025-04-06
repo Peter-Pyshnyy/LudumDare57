@@ -20,18 +20,5 @@ shape = SubResource("RectangleShape2D_rkukh")
 position = Vector2(604, 269)
 rotation = 3.00762
 
-[node name="Seam" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(653, 567)
-script = null
-
 [node name="Hand" parent="." instance=ExtResource("3_0ljxa")]
 position = Vector2(209, 194)

@@ -39,11 +39,11 @@ scale = Vector2(0.676088, 0.676088)
 polygon = PackedVector2Array(-36, -280, 4, -248, 17, -211, -35, -212)
 
 [node name="grip_lock" parent="." instance=ExtResource("2_8sr72")]
-position = Vector2(-16, 7)
+position = Vector2(-13, 8)
 rotation = 0.0403123
-scale = Vector2(0.563191, 3.51793)
+scale = Vector2(1.0428, 3.51793)
 
 [node name="grip_lock2" parent="." instance=ExtResource("2_8sr72")]
-position = Vector2(8, 9)
+position = Vector2(5, 8)
 rotation = -0.0610769
-scale = Vector2(0.563191, 3.51793)
+scale = Vector2(1.06031, 3.60465)
