@@ -237,7 +237,6 @@ shape = SubResource("RectangleShape2D_ligq1")
 z_index = 11
 position = Vector2(-1.07803, -10.3382)
 rotation = -0.174081
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_y1wyv")
 
 [node name="Limb Pinky" type="CharacterBody2D" parent="Skeleton2D/Palm/IK Targets"]
@@ -285,6 +284,7 @@ offset_bottom = 8.776
 [node name="Thumb1" type="Bone2D" parent="Skeleton2D/Palm"]
 position = Vector2(-23, 4)
 rotation = 0.222616
+scale = Vector2(1, 1)
 rest = Transform2D(0.81804, 0.575161, -0.575161, 0.81804, -23, 4)
 metadata/_local_pose_override_enabled_ = true
 

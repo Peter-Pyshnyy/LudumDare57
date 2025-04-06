@@ -40,9 +40,10 @@ color_initial_ramp = SubResource("GradientTexture1D_21xrd")
 scale = Vector2(0.275, 0.275)
 collision_layer = 196608
 collision_mask = 287
-mass = 0.5
+mass = 0.087
 physics_material_override = SubResource("PhysicsMaterial_21xrd")
 center_of_mass_mode = 1
+linear_damp = 5.165
 script = ExtResource("1_kukex")
 grips = [NodePath("grip_detector"), NodePath("grip_detector2")]
 

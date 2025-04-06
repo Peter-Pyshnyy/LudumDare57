@@ -32,8 +32,6 @@ func _physics_process(delta):
 	pass
 
 func focus_limb(l: Limb):
-	if not is_palm and  grip_manager.ready_to_unlock:
-		grip_manager.unlock()
 	limb = l
 	limb.offset = get_global_mouse_position() - limb.global_position
 	limb._dragging = true
@@ -50,12 +48,16 @@ func reset_anchors():
 	limb_pinky.global_position = pinky_anchor.global_position
 
 func _on_thumb_select_button_down():
+	if grip_manager.ready_to_unlock:
+		grip_manager.unlock()
 	focus_limb(limb_thumb)
 	
 func _on_thumb_select_button_up():
 	unfocus_limb()
 
 func _on_index_select_button_down():
+	if grip_manager.ready_to_unlock:
+		grip_manager.unlock()
 	focus_limb(limb_index)
 
 
