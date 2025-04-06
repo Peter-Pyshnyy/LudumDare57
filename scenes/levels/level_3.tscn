@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dgmllju2ikp5e"]
 
 [ext_resource type="PackedScene" uid="uid://1sqahkj7o667" path="res://scenes/Objects/knife.tscn" id="1_o8c3j"]
-[ext_resource type="PackedScene" uid="uid://bh5g4ybcrpp2a" path="res://scenes/Objects/seam.tscn" id="2_44gv1"]
+[ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="3_0ljxa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkukh"]
 size = Vector2(1282, 176)
@@ -13,12 +13,12 @@ position = Vector2(645, 720)
 collision_mask = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-82, 65)
+position = Vector2(-71, -83)
 shape = SubResource("RectangleShape2D_rkukh")
 
 [node name="Knife" parent="." instance=ExtResource("1_o8c3j")]
 position = Vector2(604, 269)
 rotation = 3.00762
 
-[node name="Seam" parent="." instance=ExtResource("2_44gv1")]
-position = Vector2(653, 567)
+[node name="Hand" parent="." instance=ExtResource("3_0ljxa")]
+position = Vector2(209, 194)
