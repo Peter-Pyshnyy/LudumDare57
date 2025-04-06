@@ -111,7 +111,7 @@ size = Vector2(6.33412, 17.4449)
 [node name="Hand" type="CharacterBody2D"]
 position = Vector2(363, 159)
 scale = Vector2(2.25, 2.25)
-collision_mask = 65792
+collision_mask = 12648704
 input_pickable = true
 script = ExtResource("1_k7pjy")
 push_force = 0.75
@@ -132,7 +132,7 @@ scale = Vector2(1.00001, 1.00001)
 [node name="Limb Thumb" type="CharacterBody2D" parent="Skeleton2D/Palm/IK Targets"]
 position = Vector2(-42.0749, 39.1031)
 collision_layer = 2
-collision_mask = 65792
+collision_mask = 12648704
 input_pickable = true
 script = ExtResource("1_k7pjy")
 push_force = 0.125
@@ -150,8 +150,8 @@ shape = SubResource("RectangleShape2D_cmdsa")
 
 [node name="Inner Thumb2" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Thumb"]
 z_index = 11
-position = Vector2(-0.507248, -7.59892)
-rotation = 1.53067
+position = Vector2(-0.507217, -7.59892)
+rotation = 1.53066
 scale = Vector2(0.999989, 0.999989)
 shape = SubResource("RectangleShape2D_k7pjy")
 
@@ -160,21 +160,21 @@ position = Vector2(-20.884, 85.7817)
 rotation = -1.5708
 scale = Vector2(1.59998, 1.59998)
 collision_layer = 4
-collision_mask = 65792
+collision_mask = 12648704
 input_pickable = true
 script = ExtResource("1_k7pjy")
 push_force = 0.125
 
 [node name="Inner Index1" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Index"]
 z_index = 11
-position = Vector2(20.9176, 6.71381)
+position = Vector2(20.9176, 6.7138)
 rotation = 1.34288
 scale = Vector2(0.624999, 0.624999)
 shape = SubResource("RectangleShape2D_f44jc")
 
 [node name="Inner Index2" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Index"]
 z_index = 11
-position = Vector2(6.85776, 3.78154)
+position = Vector2(6.85776, 3.78152)
 rotation = -2.6507
 scale = Vector2(0.999998, 0.999998)
 shape = SubResource("RectangleShape2D_ysndn")
@@ -186,7 +186,7 @@ scale = Vector2(0.625009, 0.625009)
 [node name="Limb Mid" type="CharacterBody2D" parent="Skeleton2D/Palm/IK Targets"]
 position = Vector2(10.3147, 87.6853)
 collision_layer = 8
-collision_mask = 65792
+collision_mask = 12648704
 input_pickable = true
 script = ExtResource("1_k7pjy")
 push_force = 0.125
@@ -197,21 +197,22 @@ position = Vector2(0, -2.28882e-05)
 
 [node name="Inner Mid1" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Mid"]
 z_index = 11
-position = Vector2(-4.30179, -37.8568)
-rotation = -0.256953
+position = Vector2(-4.3018, -37.8568)
+rotation = -0.256951
 scale = Vector2(0.999987, 0.999987)
 shape = SubResource("RectangleShape2D_n04oe")
 
 [node name="Inner Mid2" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Mid"]
 z_index = 11
-position = Vector2(-1.87303, -12.9031)
-rotation = -0.00342499
+position = Vector2(-1.87308, -12.903)
+rotation = -0.00342429
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_yinqy")
 
 [node name="Limb Ring" type="CharacterBody2D" parent="Skeleton2D/Palm/IK Targets"]
 position = Vector2(25.6722, 77.6285)
 collision_layer = 16
-collision_mask = 65792
+collision_mask = 12648704
 input_pickable = true
 script = ExtResource("1_k7pjy")
 push_force = 0.125
@@ -222,22 +223,22 @@ position = Vector2(1.15633e-05, 2.42144e-06)
 
 [node name="Inner Ring1" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Ring"]
 z_index = 11
-position = Vector2(-7.71585, -32.6165)
-rotation = -0.472658
+position = Vector2(-7.71581, -32.6165)
+rotation = -0.472664
 scale = Vector2(0.999989, 0.999989)
 shape = SubResource("RectangleShape2D_ligq1")
 
 [node name="Inner Ring2" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Ring"]
 z_index = 11
-position = Vector2(-1.07806, -10.3382)
-rotation = -0.174085
+position = Vector2(-1.07802, -10.3382)
+rotation = -0.17408
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_y1wyv")
 
 [node name="Limb Pinky" type="CharacterBody2D" parent="Skeleton2D/Palm/IK Targets"]
 position = Vector2(42.3519, 57.4598)
 collision_layer = 32
-collision_mask = 65792
+collision_mask = 12648704
 input_pickable = true
 script = ExtResource("1_k7pjy")
 push_force = 0.125
@@ -249,15 +250,15 @@ position = Vector2(7.62939e-06, 3.8147e-06)
 [node name="Inner Pinky1" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Pinky"]
 z_index = 11
 position = Vector2(-14.9761, -17.7122)
-rotation = -0.753262
+rotation = -0.753265
 scale = Vector2(0.999989, 0.999989)
 shape = SubResource("RectangleShape2D_v24qn")
 
 [node name="Inner Pinky2" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Pinky"]
 z_index = 11
-position = Vector2(-4.3949, -5.71696)
+position = Vector2(-4.39485, -5.717)
 rotation = -0.714918
-scale = Vector2(0.999998, 0.999998)
+scale = Vector2(0.999997, 0.999997)
 shape = SubResource("RectangleShape2D_bfalx")
 
 [node name="PalmPolygon" type="Polygon2D" parent="Skeleton2D/Palm"]
@@ -607,7 +608,7 @@ shape = SubResource("RectangleShape2D_cw0k3")
 [node name="Outer Index1" type="CollisionShape2D" parent="."]
 z_index = 11
 position = Vector2(-14.0289, 41.3311)
-rotation = -0.152965
+rotation = -0.152964
 scale = Vector2(0.999996, 0.999996)
 shape = SubResource("RectangleShape2D_m1v21")
 
@@ -620,36 +621,36 @@ shape = SubResource("RectangleShape2D_0eb3b")
 
 [node name="Outer Mid1" type="CollisionShape2D" parent="."]
 z_index = 11
-position = Vector2(2.25697, 39.9391)
-rotation = -0.189569
+position = Vector2(2.25696, 39.9391)
+rotation = -0.189568
 scale = Vector2(0.999997, 0.999997)
 shape = SubResource("RectangleShape2D_nq5tb")
 
 [node name="Outer Mid2" type="CollisionShape2D" parent="."]
 z_index = 11
-position = Vector2(3.00002, 65)
-rotation = 0.0639585
+position = Vector2(2.99998, 65)
+rotation = 0.0639592
 scale = Vector2(1.00001, 1.00001)
 shape = SubResource("RectangleShape2D_imbvm")
 
 [node name="Outer Ring1" type="CollisionShape2D" parent="."]
 z_index = 11
 position = Vector2(14.4978, 35.9376)
-rotation = -0.405275
+rotation = -0.40528
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_wiqd4")
 
 [node name="Outer Ring2" type="CollisionShape2D" parent="."]
 z_index = 11
 position = Vector2(19.6205, 58.6126)
-rotation = -0.106702
+rotation = -0.106697
 scale = Vector2(1.00001, 1.00001)
 shape = SubResource("RectangleShape2D_h1yym")
 
 [node name="Outer Pinky1" type="CollisionShape2D" parent="."]
 z_index = 11
 position = Vector2(24.2504, 31.3194)
-rotation = -0.685878
+rotation = -0.685881
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_ohfqw")
 
