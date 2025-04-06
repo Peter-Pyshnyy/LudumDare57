@@ -4,9 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://xstywed8a4ni" path="res://scenes/Objects/zipper.tscn" id="1_x6ivy"]
 [ext_resource type="PackedScene" uid="uid://bni4j3r7dp4jg" path="res://scenes/Objects/coffee.tscn" id="2_dd0lh"]
 [ext_resource type="PackedScene" uid="uid://cr0wiqnxvve8h" path="res://scenes/Objects/skateboard.tscn" id="3_bfxgj"]
-
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="5_dywbp"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dywbp"]
 size = Vector2(1277, 95)
