@@ -49,6 +49,9 @@ size = Vector2(466, 35.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhx41"]
 size = Vector2(354, 651.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sww3w"]
+size = Vector2(4.81259, 4.28038)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kice"]
 size = Vector2(535, 31.5)
 
@@ -225,7 +228,7 @@ position = Vector2(-211, 349)
 position = Vector2(-121, 179)
 
 [node name="Coffee" parent="Level1" instance=ExtResource("21_5newe")]
-position = Vector2(-56, 135)
+position = Vector2(-66, 138)
 
 [node name="Skateboard" parent="Level1" instance=ExtResource("24_e1j6l")]
 position = Vector2(-249, 142)
@@ -255,6 +258,16 @@ position = Vector2(28, 91)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Skateboard detector"]
 position = Vector2(149, -228.25)
 shape = SubResource("RectangleShape2D_bhx41")
+
+[node name="Coffe Stopper" type="StaticBody2D" parent="Level1"]
+position = Vector2(-8, 367)
+scale = Vector2(2.66797, 2.66797)
+collision_layer = 8192
+collision_mask = 196608
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Coffe Stopper"]
+position = Vector2(-9.37042, -66.3426)
+shape = SubResource("RectangleShape2D_sww3w")
 
 [node name="Level2" type="Node2D" parent="." node_paths=PackedStringArray("hand_start_pos", "camera_pos", "ceiling")]
 position = Vector2(585, 788)
