@@ -3,7 +3,7 @@ extends Control
 @onready var level_fade: Fade = $LevelFade
 
 func back_to_menu() -> void:
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/UI/main_menu.tscn")
 
 
 func _input(event: InputEvent) -> void:

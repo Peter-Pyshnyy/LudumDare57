@@ -14,7 +14,7 @@
 default_font = ExtResource("1_pt43x")
 default_font_size = 25
 Button/colors/font_color = Color(1, 1, 1, 1)
-Button/colors/font_hover_color = Color(0.67, 0.67, 0.67, 1)
+Button/colors/font_hover_color = Color(0.92549, 0.752941, 0.364706, 1)
 Button/font_sizes/font_size = 71
 Button/styles/focus = SubResource("StyleBoxEmpty_pt43x")
 Button/styles/hover = SubResource("StyleBoxEmpty_eyq4f")

@@ -15,7 +15,7 @@ colors = PackedColorArray(0.32771, 0.170355, 0.017865, 1, 0.88371, 0.599381, 0.3
 gradient = SubResource("Gradient_kukex")
 
 [sub_resource type="Curve" id="Curve_0woxd"]
-_data = [Vector2(0, 0), 0.0, 20.7422, 0, 0, Vector2(0.12476, 1), 0.146392, 0.146392, 0, 0, Vector2(1, 0.493741), -1.0205, 0.0, 0, 0]
+_data = [Vector2(0.00178891, 0.011598), 0.0, 10.1451, 0, 0, Vector2(0.264758, 1), 0.146392, 0.146392, 0, 0, Vector2(1, 0), -2.50602, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_4nv5d"]
@@ -29,11 +29,11 @@ angle_min = 1.07288e-05
 angle_max = 1.07288e-05
 direction = Vector3(0, 0, 0)
 spread = 18.328
-initial_velocity_min = 124.38
-initial_velocity_max = 286.84
-gravity = Vector3(0, 900, 0)
-scale_min = 3.89
-scale_max = 49.8
+initial_velocity_min = 234.93
+initial_velocity_max = 427.55
+gravity = Vector3(0, 700, 0)
+scale_min = 0.54
+scale_max = 19.65
 scale_curve = SubResource("CurveTexture_4nv5d")
 color_initial_ramp = SubResource("GradientTexture1D_21xrd")
 
@@ -49,12 +49,13 @@ script = ExtResource("1_kukex")
 grips = [NodePath("grip_detector"), NodePath("grip_detector2")]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(-61, -141)
+position = Vector2(3.63636, -192.727)
 rotation = -1.57079
 scale = Vector2(1.25, 1.25)
 amount = 113
-lifetime = 1.05
+lifetime = 0.6
 randomness = 0.02
+trail_lifetime = 0.17
 process_material = SubResource("ParticleProcessMaterial_f7x7d")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
