@@ -84,17 +84,8 @@ levels = [NodePath("Level1"), NodePath("Level2"), NodePath("Level3")]
 wait_time = 350.0
 one_shot = true
 
-[node name="Camera2D_old" type="Camera2D" parent="."]
-position = Vector2(604, 54)
-enabled = false
-zoom = Vector2(1.075, 1.075)
-limit_left = 15
-limit_right = 1075
-limit_smoothed = true
-position_smoothing_speed = 2.0
-
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(621, 763)
+position = Vector2(604, 54)
 zoom = Vector2(1.075, 1.075)
 limit_left = 15
 limit_right = 1075
@@ -335,7 +326,6 @@ collision_mask = 196639
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/Sepparator"]
 position = Vector2(40.9368, 17.5461)
 rotation = 0.280921
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qnb83")
 
 [node name="ColorRect" type="ColorRect" parent="Level2/Sepparator/CollisionShape2D"]
@@ -394,13 +384,11 @@ shape = SubResource("RectangleShape2D_qouja")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Level2/pen exit-block"]
 position = Vector2(9, 230)
 rotation = 0.358795
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qouja")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Level2/pen exit-block"]
 position = Vector2(-342, 172)
 rotation = -0.605937
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qouja")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Level2/pen exit-block"]
@@ -415,7 +403,6 @@ scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/pen area"]
 position = Vector2(88.7114, 11.4971)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_v2yb1")
 
 [node name="pen2" parent="Level2" instance=ExtResource("23_qnb83")]
@@ -505,7 +492,7 @@ offset_bottom = 401.0
 text = "Move next lvl"
 
 [node name="Hand" parent="." instance=ExtResource("2_264po")]
-position = Vector2(388, 627)
+position = Vector2(589, 168)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_pl11u")
