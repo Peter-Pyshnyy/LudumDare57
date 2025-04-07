@@ -29,6 +29,11 @@ func start_game() -> void:
 	
 	#load level
 	load_next_level()
+	
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:  # Check if the event is a keyboard event
+		if event.pressed and event.keycode == KEY_R:  # Check if "R" is pressed
+			get_tree().reload_current_scene()
 
 func exit_level() -> void:
 	if next_level > levels.size() -1:
