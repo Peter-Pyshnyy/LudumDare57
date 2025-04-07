@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://cu58ertqb1plt" path="res://assets/Background/backpack/Bag_for_pen.png" id="23_sgl2t"]
 [ext_resource type="PackedScene" uid="uid://cr0wiqnxvve8h" path="res://scenes/Objects/skateboard.tscn" id="24_e1j6l"]
 [ext_resource type="AudioStream" uid="uid://c36uk4sahkpt7" path="res://assets/sound/soundtrack.wav" id="25_pl11u"]
-[ext_resource type="Script" uid="uid://c0ls8sxtb1aqq" path="res://classes/final_exit.gd" id="26_v2yb1"]
+[ext_resource type="Script" path="res://classes/final_exit.gd" id="26_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://c7of1kowtd34p" path="res://assets/sprites/seam/seam_end_front.png" id="28_qouja"]
 [ext_resource type="PackedScene" uid="uid://b111tmamgk5ip" path="res://scenes/Objects/homework.tscn" id="29_wljb1"]
 [ext_resource type="Texture2D" uid="uid://cd5pgod48irx7" path="res://assets/sprites/seam/seam_end.png" id="31_wljb1"]

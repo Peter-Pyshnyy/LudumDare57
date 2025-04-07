@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1vws2ppxlkln"]
+
+[ext_resource type="VideoStream" path="res://assets/video/News.ogv" id="1_3hdrv"]
+[ext_resource type="Script" uid="uid://doouwosh8pbq3" path="res://classes/lore_cutscene.gd" id="1_ldjp7"]
+
+[node name="Lore_cutscene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ldjp7")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource("1_3hdrv")
+autoplay = true
+expand = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
