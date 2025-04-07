@@ -1,19 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://bett2b74shf8q"]
+[gd_scene load_steps=4 format=3 uid="uid://bett2b74shf8q"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0nxin"]
+[ext_resource type="PackedScene" uid="uid://c3pgwvggt6yia" path="res://scenes/Objects/grip_lock.tscn" id="1_bfk0o"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bfk0o"]
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfk0o"]
+size = Vector2(158, 17)
 
 [node name="pen" type="Node2D"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_0nxin")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+collision_layer = 196608
+collision_mask = 16671
+mass = 0.162
+physics_material_override = SubResource("PhysicsMaterial_bfk0o")
 
 [node name="Polygon2D" type="Polygon2D" parent="RigidBody2D"]
-polygon = PackedVector2Array(19, 1, 19, 21, 22, 13, 31, 13, 31, 20, 206, 20, 218, 13, 206, 4, 30, 3, 30, 8, 22, 8)
+polygon = PackedVector2Array(10, -1, 10, 22, 17, 13, 31, 13, 31, 20, 152, 20, 168, 12, 152, 5, 64, 5, 60, 1, 56, 5, 50, 1, 45, 5, 40, 1, 36, 5, 31, 1, 31, 8, 17, 8)
 
 [node name="Handle" type="CollisionPolygon2D" parent="RigidBody2D"]
 position = Vector2(110, 14)
 rotation = 1.59221
 scale = Vector2(0.676088, 0.676088)
-polygon = PackedVector2Array(-14.8636, 134.947, 11.7541, 134.377, 1.30776, 130.162, 1.02277, 116.854, 11.3741, 116.632, 5.80105, -143.63, -4.86691, -158.196, -17.8591, -143.123, -13.7331, 118.649, -6.33936, 118.491, -6.08604, 130.321)
+polygon = PackedVector2Array(-19.0143, 148.351, 14.9971, 147.622, 1.4666, 137.556, 1.02277, 116.854, 11.3741, 116.632, 7.54239, -62.2979, 5.52523, -87.4051, -13.6986, -86.9934, -14.7023, -64.7803, -11.852, 68.3079, -17.6403, 74.3496, -11.5986, 80.138, -17.3236, 89.1372, -11.2502, 96.4043, -17.0069, 103.925, -10.9652, 109.713, -16.7219, 117.234, -6.37058, 117.012, -5.92719, 137.715)
+
+[node name="grip_lock" parent="RigidBody2D" instance=ExtResource("1_bfk0o")]
+position = Vector2(23, 19)
+scale = Vector2(1.28113, 0.746853)
+
+[node name="grip_lock2" parent="RigidBody2D" instance=ExtResource("1_bfk0o")]
+position = Vector2(38, 3)
+scale = Vector2(2.84, 0.588083)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(89, 11.5)
+shape = SubResource("RectangleShape2D_bfk0o")
+disabled = true

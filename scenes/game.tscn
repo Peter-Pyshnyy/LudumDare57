@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dw5dep2lvaeic"]
+[gd_scene load_steps=42 format=3 uid="uid://dw5dep2lvaeic"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="2_264po"]
@@ -24,11 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://bni4j3r7dp4jg" path="res://scenes/Objects/coffee.tscn" id="21_5newe"]
 [ext_resource type="PackedScene" uid="uid://damplki3il6ju" path="res://scenes/Objects/cutable.tscn" id="23_bt5mj"]
 [ext_resource type="PackedScene" uid="uid://1sqahkj7o667" path="res://scenes/Objects/knife.tscn" id="23_e1j6l"]
+[ext_resource type="PackedScene" uid="uid://bett2b74shf8q" path="res://scenes/Objects/pen.tscn" id="23_qnb83"]
 [ext_resource type="PackedScene" uid="uid://cr0wiqnxvve8h" path="res://scenes/Objects/skateboard.tscn" id="24_e1j6l"]
 [ext_resource type="AudioStream" uid="uid://c36uk4sahkpt7" path="res://assets/sound/soundtrack.wav" id="25_pl11u"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnb83"]
-size = Vector2(230.138, 20)
 
 [sub_resource type="Gradient" id="Gradient_nepv3"]
 
@@ -53,7 +51,19 @@ size = Vector2(354, 651.5)
 size = Vector2(4.81259, 4.28038)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kice"]
-size = Vector2(535, 31.5)
+size = Vector2(535, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnb83"]
+size = Vector2(58.843, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_suyxu"]
+size = Vector2(3.97388, 19.9213)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgl2t"]
+size = Vector2(231, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qouja"]
+size = Vector2(20, 102.704)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37s47"]
 size = Vector2(381.5, 41.75)
@@ -65,11 +75,20 @@ levels = [NodePath("Level1"), NodePath("Level2"), NodePath("Level3")]
 [node name="LevelFade" parent="." instance=ExtResource("2_bhx41")]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 100.0
+wait_time = 350.0
 one_shot = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D_old" type="Camera2D" parent="."]
 position = Vector2(604, 54)
+enabled = false
+zoom = Vector2(1.075, 1.075)
+limit_left = 15
+limit_right = 1075
+limit_smoothed = true
+position_smoothing_speed = 2.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(621, 763)
 zoom = Vector2(1.075, 1.075)
 limit_left = 15
 limit_right = 1075
@@ -110,15 +129,6 @@ texture = ExtResource("9_e1j6l")
 position = Vector2(577, 766)
 scale = Vector2(2.66797, 2.66797)
 texture = ExtResource("10_pl11u")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Background/2_level"]
-collision_layer = 256
-collision_mask = 196639
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/2_level/StaticBody2D"]
-position = Vector2(-56.9722, 40.4802)
-rotation = 0.410185
-shape = SubResource("RectangleShape2D_qnb83")
 
 [node name="3_level" type="Node2D" parent="Background"]
 position = Vector2(-216.269, -287.11)
@@ -278,7 +288,8 @@ ceiling = NodePath("Ceiling")
 metadata/_custom_type_script = "uid://c5tnood4o4tnv"
 
 [node name="HandPos" type="Marker2D" parent="Level2"]
-position = Vector2(-250, -145)
+position = Vector2(-175, -133)
+scale = Vector2(0.958333, 1)
 gizmo_extents = 36.4
 
 [node name="CameraPos" type="Marker2D" parent="Level2"]
@@ -291,7 +302,7 @@ collision_layer = 256
 collision_mask = 196927
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/Floor"]
-position = Vector2(-83.5, 10.25)
+position = Vector2(-83.5, 12.5)
 shape = SubResource("RectangleShape2D_1kice")
 
 [node name="Ceiling" type="StaticBody2D" parent="Level2"]
@@ -306,6 +317,87 @@ shape = SubResource("RectangleShape2D_5newe")
 
 [node name="Exit" parent="Level2" instance=ExtResource("20_1kice")]
 position = Vector2(190, 355)
+
+[node name="Sepparator" type="StaticBody2D" parent="Level2"]
+position = Vector2(84, 27)
+rotation = 1.28396
+scale = Vector2(2.66797, 2.66797)
+collision_layer = 131328
+collision_mask = 196639
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/Sepparator"]
+position = Vector2(43.2464, 12.3655)
+rotation = 0.280921
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_qnb83")
+
+[node name="ColorRect" type="ColorRect" parent="Level2/Sepparator/CollisionShape2D"]
+offset_left = -29.8023
+offset_top = -10.0772
+offset_right = -19.8023
+offset_bottom = 29.9228
+rotation = 0.00419113
+scale = Vector2(5.69658, 0.514077)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level2/Sepparator"]
+position = Vector2(-53.6721, -15.4408)
+rotation = 0.280921
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_qnb83")
+
+[node name="ColorRect2" type="ColorRect" parent="Level2/Sepparator/CollisionShape2D2"]
+offset_left = -27.5465
+offset_top = -11.241
+offset_right = -17.5465
+offset_bottom = 28.7589
+rotation = 0.0108738
+scale = Vector2(5.69658, 0.514077)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Level2/Sepparator"]
+position = Vector2(32.2104, 32.5572)
+rotation = -1.27954
+scale = Vector2(1.37841, -2.14366)
+shape = SubResource("RectangleShape2D_suyxu")
+
+[node name="ColorRect" type="ColorRect" parent="Level2/Sepparator/CollisionShape2D4"]
+offset_left = -2.0
+offset_top = -9.0
+offset_right = 38.0
+offset_bottom = 38.0
+scale = Vector2(0.0979681, 0.40166)
+
+[node name="pen" parent="Level2" instance=ExtResource("23_qnb83")]
+position = Vector2(56, -13)
+rotation = 1.57493
+
+[node name="ColorRect" type="ColorRect" parent="Level2"]
+offset_left = 183.0
+offset_top = 189.0
+offset_right = 328.0
+offset_bottom = 217.0
+
+[node name="pen exit-block" type="StaticBody2D" parent="Level2"]
+position = Vector2(-4, -18)
+collision_layer = 16384
+collision_mask = 196608
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/pen exit-block"]
+position = Vector2(228.5, 195.5)
+shape = SubResource("RectangleShape2D_sgl2t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level2/pen exit-block"]
+position = Vector2(118, 144)
+rotation = -0.337165
+shape = SubResource("RectangleShape2D_qouja")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Level2/pen exit-block"]
+position = Vector2(349, 146)
+rotation = 0.316448
+shape = SubResource("RectangleShape2D_qouja")
+
+[node name="pen2" parent="Level2" instance=ExtResource("23_qnb83")]
+position = Vector2(161, 130)
+rotation = -0.166734
 
 [node name="Level3" type="Node2D" parent="." node_paths=PackedStringArray("hand_start_pos", "camera_pos", "ceiling")]
 position = Vector2(585, 1196)
@@ -378,7 +470,7 @@ offset_bottom = 401.0
 text = "Move next lvl"
 
 [node name="Hand" parent="." instance=ExtResource("2_264po")]
-position = Vector2(615, -111)
+position = Vector2(388, 627)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_pl11u")
