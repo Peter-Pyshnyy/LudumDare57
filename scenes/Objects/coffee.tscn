@@ -39,7 +39,7 @@ color_initial_ramp = SubResource("GradientTexture1D_21xrd")
 
 [node name="Coffee" type="RigidBody2D" node_paths=PackedStringArray("grips")]
 scale = Vector2(0.275, 0.275)
-collision_layer = 196608
+collision_layer = 204800
 collision_mask = 287
 mass = 0.087
 physics_material_override = SubResource("PhysicsMaterial_21xrd")
@@ -59,7 +59,7 @@ process_material = SubResource("ParticleProcessMaterial_f7x7d")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(1.25, 1.25)
-polygon = PackedVector2Array(60.1504, 128.503, 109.091, -116.364, 116.364, -123.636, 141.818, -116.364, 141.818, -141.818, -2.73411, -153.11, -141.818, -141.818, -149.091, -116.364, -123.636, -123.636, -112.727, -116.364, -62.8845, 128.503)
+polygon = PackedVector2Array(58.1818, 128, 109.091, -116.364, 116.364, -123.636, 141.818, -116.364, 141.818, -141.818, -2.73411, -153.11, -141.818, -141.818, -149.091, -116.364, -123.636, -123.636, -112.727, -116.364, -58.1818, 128)
 
 [node name="grip_detector" parent="." instance=ExtResource("2_21xrd")]
 position = Vector2(145.455, -72.7272)
