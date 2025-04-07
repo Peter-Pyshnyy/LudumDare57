@@ -87,22 +87,22 @@ func set_blood_spilled() -> void:
 
 func _on_skateboard_detector_body_entered(body):
 	if body.name == "Board":
-		print("Unfrozen")
+		$Level1/Zipper.freeze()
+
+func _on_skateboard_detector_body_exited(body):
+	if body.name == "Board":
 		$Level1/Zipper.unfreeze()
 
-func _on_pen_detector_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	if area.name == "pen2 area":
-		print("Unfrozen")
-		$Level2/Zipper.unfreeze()
-
-
-func _on_bag_closer_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+func _on_pen_detector_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
 	if area.name == "pen area":
 		print("bag closed")
 		$Level2/Sepparator/CollisionShape2D.disabled = false
 
-
 func _on_pen_detector_2_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	if area.name == "pen2 area":
-		print("Unfrozen")
 		$Level2/Zipper.freeze()
+
+
+func _on_pen_detector_2_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
+	if area.name == "pen2 area":
+		$Level2/Zipper.unfreeze()
