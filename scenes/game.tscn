@@ -368,13 +368,13 @@ offset_bottom = 38.0
 scale = Vector2(0.0979681, 0.40166)
 
 [node name="pen" parent="Level2" instance=ExtResource("23_qnb83")]
-position = Vector2(56, -13)
+position = Vector2(58, -13)
 rotation = 1.57493
 
 [node name="pen exit-block" type="StaticBody2D" parent="Level2"]
 position = Vector2(-4, -18)
 collision_layer = 16384
-collision_mask = 262144
+collision_mask = 524288
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/pen exit-block"]
 position = Vector2(228.5, 192)
@@ -401,7 +401,7 @@ rotation = 0.526557
 shape = SubResource("RectangleShape2D_qouja")
 
 [node name="pen area" type="Area2D" parent="Level2"]
-position = Vector2(124, 118)
+position = Vector2(119, 115)
 rotation = -0.0238136
 scale = Vector2(1, 1)
 
@@ -410,14 +410,14 @@ position = Vector2(88.7114, 11.4971)
 shape = SubResource("RectangleShape2D_v2yb1")
 
 [node name="pen2" parent="Level2" instance=ExtResource("23_qnb83")]
-position = Vector2(124, 118)
+position = Vector2(119, 115)
 rotation = -0.0238136
 
 [node name="pen area mover" type="RemoteTransform2D" parent="Level2/pen2"]
 remote_path = NodePath("../../pen area")
 
 [node name="Zipper" parent="Level2" instance=ExtResource("18_ssvqc")]
-position = Vector2(309, 182)
+position = Vector2(311, 181)
 
 [node name="pen detector" type="Area2D" parent="Level2"]
 
@@ -496,7 +496,7 @@ offset_bottom = 401.0
 text = "Move next lvl"
 
 [node name="Hand" parent="." instance=ExtResource("2_264po")]
-position = Vector2(589, 168)
+position = Vector2(589, 177)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_pl11u")
