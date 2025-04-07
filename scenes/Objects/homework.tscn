@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://b111tmamgk5ip"]
+[gd_scene load_steps=3 format=3 uid="uid://b111tmamgk5ip"]
 
+[ext_resource type="Script" uid="uid://s130wi7dvyit" path="res://classes/homework.gd" id="1_3j3op"]
 [ext_resource type="Texture2D" uid="uid://dube00rhdv8in" path="res://assets/sprites/Homework 2.png" id="1_vn3aq"]
 
 [node name="Homework" type="RigidBody2D"]
-collision_layer = 196608
+collision_layer = 1073938432
 collision_mask = 287
+script = ExtResource("1_3j3op")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_vn3aq")

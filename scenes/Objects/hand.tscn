@@ -266,16 +266,16 @@ position = Vector2(7.62939e-06, 3.8147e-06)
 
 [node name="Inner Pinky1" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Pinky"]
 z_index = 11
-position = Vector2(-9.94206, -21.9242)
+position = Vector2(-9.94218, -21.9245)
 rotation = -0.408418
-scale = Vector2(0.999858, 0.999858)
+scale = Vector2(0.999818, 0.999818)
 shape = SubResource("RectangleShape2D_v24qn")
 
 [node name="Inner Pinky2" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Pinky"]
 z_index = 11
-position = Vector2(-3.69258, -7.49565)
+position = Vector2(-3.69293, -7.49652)
 rotation = -0.431229
-scale = Vector2(0.999867, 0.999867)
+scale = Vector2(0.999827, 0.999827)
 shape = SubResource("RectangleShape2D_bfalx")
 
 [node name="TextureRect" type="TextureRect" parent="Skeleton2D/Palm"]
@@ -702,16 +702,16 @@ shape = SubResource("RectangleShape2D_h1yym")
 
 [node name="Outer Pinky1" type="CollisionShape2D" parent="."]
 z_index = 11
-position = Vector2(17.3345, 32.567)
+position = Vector2(17.3344, 32.5667)
 rotation = -0.341035
-scale = Vector2(0.999868, 0.999868)
+scale = Vector2(0.999828, 0.999828)
 shape = SubResource("RectangleShape2D_ohfqw")
 
 [node name="Outer Pinky2" type="CollisionShape2D" parent="."]
 z_index = 11
-position = Vector2(22.5983, 47.3837)
+position = Vector2(22.598, 47.3828)
 rotation = -0.363846
-scale = Vector2(0.999877, 0.999877)
+scale = Vector2(0.999837, 0.999837)
 shape = SubResource("RectangleShape2D_dth4f")
 
 [node name="Palm" type="CollisionShape2D" parent="."]
@@ -790,9 +790,9 @@ offset_bottom = 8.0
 scale = Vector2(0.590214, 0.601798)
 
 [node name="Pinky Btn Anchor" type="Node2D" parent="Btns"]
-position = Vector2(423.001, 270.002)
+position = Vector2(423, 270)
 rotation = 1.22682
-scale = Vector2(2.2497, 2.2497)
+scale = Vector2(2.24961, 2.24961)
 
 [node name="Pinky Select" type="Button" parent="Btns/Pinky Btn Anchor"]
 z_index = 15

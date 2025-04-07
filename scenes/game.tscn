@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dw5dep2lvaeic"]
+[gd_scene load_steps=59 format=3 uid="uid://dw5dep2lvaeic"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="2_264po"]
@@ -29,7 +29,9 @@
 [ext_resource type="Texture2D" uid="uid://cu58ertqb1plt" path="res://assets/Background/backpack/Bag_for_pen.png" id="23_sgl2t"]
 [ext_resource type="PackedScene" uid="uid://cr0wiqnxvve8h" path="res://scenes/Objects/skateboard.tscn" id="24_e1j6l"]
 [ext_resource type="AudioStream" uid="uid://c36uk4sahkpt7" path="res://assets/sound/soundtrack.wav" id="25_pl11u"]
+[ext_resource type="Script" uid="uid://c0ls8sxtb1aqq" path="res://classes/final_exit.gd" id="26_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://c7of1kowtd34p" path="res://assets/sprites/seam/seam_end_front.png" id="28_qouja"]
+[ext_resource type="PackedScene" uid="uid://b111tmamgk5ip" path="res://scenes/Objects/homework.tscn" id="29_wljb1"]
 [ext_resource type="Texture2D" uid="uid://cd5pgod48irx7" path="res://assets/sprites/seam/seam_end.png" id="31_wljb1"]
 
 [sub_resource type="Gradient" id="Gradient_nepv3"]
@@ -100,10 +102,10 @@ size = Vector2(381.5, 261)
 size = Vector2(381.5, 295)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37s47"]
-size = Vector2(381.5, 184)
+size = Vector2(381.5, 172)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ool0"]
-size = Vector2(136.75, 143.875)
+size = Vector2(136.75, 132)
 
 [node name="Game" type="Node" node_paths=PackedStringArray("levels")]
 script = ExtResource("1_uwrxv")
@@ -560,15 +562,17 @@ collision_layer = 256
 collision_mask = 196927
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level3/Floor"]
-position = Vector2(-55.25, 110)
+position = Vector2(-55.25, 116)
 shape = SubResource("RectangleShape2D_37s47")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Level3/Floor"]
-position = Vector2(514.625, 96.0625)
+position = Vector2(514.625, 102)
 shape = SubResource("RectangleShape2D_8ool0")
 
 [node name="Exit" parent="Level3" instance=ExtResource("20_1kice")]
-position = Vector2(112, 401)
+position = Vector2(114, 466)
+collision_mask = 197119
+script = ExtResource("26_v2yb1")
 
 [node name="Knife" parent="Level3" instance=ExtResource("23_e1j6l")]
 z_index = 2
@@ -609,6 +613,10 @@ z_index = 3
 position = Vector2(-33, 26)
 scale = Vector2(2.68514, 2.68514)
 texture = ExtResource("12_qnb83")
+
+[node name="Homework" parent="Level3" instance=ExtResource("29_wljb1")]
+position = Vector2(-117, 139)
+rotation = -1.74619
 
 [node name="Hand" parent="." instance=ExtResource("2_264po")]
 position = Vector2(883, -633)
