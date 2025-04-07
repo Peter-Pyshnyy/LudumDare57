@@ -67,6 +67,7 @@ func load_game_over_scene() -> void:
 func won_game() -> void:
 	var won_scene = preload("res://scenes/EndGameScreen/game_completed.tscn").instantiate()
 	get_tree().root.add_child(won_scene)
+	get_tree().current_scene = won_scene
 	won_scene.set_stain(blood_spilled, mayo_spilled, coffee_spilled)
 	
 	queue_free()

@@ -4,13 +4,16 @@
 
 [node name="LevelFade" type="CanvasLayer"]
 layer = 7
-follow_viewport_enabled = true
 script = ExtResource("1_nukjo")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -15055.0
+offset_top = -18156.0
+offset_right = 15055.0
+offset_bottom = 18156.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3

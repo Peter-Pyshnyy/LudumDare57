@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://dw5dep2lvaeic"]
+[gd_scene load_steps=37 format=3 uid="uid://dw5dep2lvaeic"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="2_264po"]
+[ext_resource type="PackedScene" uid="uid://bs3bk8wwb46eb" path="res://scenes/level_fade.tscn" id="2_bhx41"]
 [ext_resource type="Texture2D" uid="uid://x3nmpdhmakcg" path="res://assets/Background/backpack/backpack_back.png" id="4_264po"]
 [ext_resource type="Texture2D" uid="uid://btlom8710gcig" path="res://assets/Background/backpack/L13-Layer 10.png" id="5_1kice"]
 [ext_resource type="Texture2D" uid="uid://cumihxja0v7bw" path="res://assets/Background/backpack/L12-Layer 11.png" id="6_5newe"]
@@ -58,8 +59,10 @@ size = Vector2(381.5, 41.75)
 script = ExtResource("1_uwrxv")
 levels = [NodePath("Level1"), NodePath("Level2"), NodePath("Level3")]
 
+[node name="LevelFade" parent="." instance=ExtResource("2_bhx41")]
+
 [node name="Timer" type="Timer" parent="."]
-wait_time = 180.0
+wait_time = 100.0
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -216,7 +219,7 @@ collision_mask = 196927
 polygon = PackedVector2Array(-338, 60, -325, -31, -131, -67, 207, -58, 305, -31, 325, 66, 411, 77, 391, -135, -394, -121, -411, 72)
 
 [node name="Exit" parent="Level1" instance=ExtResource("20_1kice")]
-position = Vector2(-211, 345)
+position = Vector2(-211, 349)
 
 [node name="Zipper" parent="Level1" instance=ExtResource("18_ssvqc")]
 position = Vector2(-121, 179)
@@ -370,7 +373,8 @@ autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="time_out"]
 [connection signal="exit_level" from="Level1/Exit" to="." method="exit_level"]
+[connection signal="spilled_signal" from="Level1/Coffee" to="." method="set_coffee_spilled"]
 [connection signal="body_entered" from="Level1/Skateboard detector" to="." method="_on_skateboard_detector_body_entered"]
 [connection signal="exit_level" from="Level2/Exit" to="." method="exit_level"]
 [connection signal="exit_level" from="Level3/Exit" to="." method="exit_level"]
-[connection signal="pressed" from="movement" to="." method="exit_level"]
+[connection signal="pressed" from="movement" to="Level1/Exit" method="exit"]
