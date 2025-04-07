@@ -89,9 +89,6 @@ timer = NodePath("../Timer")
 wait_time = 350.0
 one_shot = true
 
-[node name="Hand" parent="." instance=ExtResource("2_264po")]
-position = Vector2(608, -743)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(604, 54)
 zoom = Vector2(1.4, 1.4)
@@ -156,11 +153,13 @@ scale = Vector2(2.66797, 2.66797)
 texture = ExtResource("13_sww3w")
 
 [node name="apple" type="Sprite2D" parent="Background/3_level"]
+z_index = 1
 position = Vector2(577, 766)
 scale = Vector2(2.66797, 2.66797)
 texture = ExtResource("14_suyxu")
 
 [node name="mushrooms" type="Sprite2D" parent="Background/3_level"]
+z_index = 1
 position = Vector2(577, 766)
 scale = Vector2(2.66797, 2.66797)
 texture = ExtResource("15_sgl2t")
@@ -507,26 +506,24 @@ shape = SubResource("RectangleShape2D_37s47")
 position = Vector2(155, 371)
 
 [node name="Knife" parent="Level3" instance=ExtResource("23_e1j6l")]
+z_index = 2
 position = Vector2(-260, -46)
 rotation = -3.11584
 
-[node name="Cutable" parent="Level3" instance=ExtResource("23_bt5mj")]
-position = Vector2(317, 221)
-
 [node name="Cutable2" parent="Level3" instance=ExtResource("23_bt5mj")]
-position = Vector2(252, 221)
+position = Vector2(231, 221)
 
 [node name="Cutable3" parent="Level3" instance=ExtResource("23_bt5mj")]
-position = Vector2(188, 221)
+position = Vector2(170, 221)
 
 [node name="Cutable4" parent="Level3" instance=ExtResource("23_bt5mj")]
-position = Vector2(123, 221)
+position = Vector2(109, 221)
 
 [node name="Cutable5" parent="Level3" instance=ExtResource("23_bt5mj")]
-position = Vector2(58, 221)
+position = Vector2(48, 221)
 
 [node name="Cutable6" parent="Level3" instance=ExtResource("23_bt5mj")]
-position = Vector2(-9, 221)
+position = Vector2(-13, 221)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Level3"]
 position = Vector2(-253, 108)
@@ -537,6 +534,7 @@ collision_mask = 31
 polygon = PackedVector2Array(-64, -27, -57, 83, 51, 80, 57, -28, 70, -29, 62, 93, -65, 95, -74, -29)
 
 [node name="Sprite2D" type="Sprite2D" parent="Level3/StaticBody2D"]
+z_index = 3
 position = Vector2(-33, 26)
 scale = Vector2(2.68514, 2.68514)
 texture = ExtResource("12_qnb83")
@@ -551,6 +549,9 @@ text = "Move next lvl"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_pl11u")
 autoplay = true
+
+[node name="Hand" parent="." instance=ExtResource("2_264po")]
+position = Vector2(608, -743)
 
 [connection signal="timeout" from="Timer" to="." method="time_out"]
 [connection signal="exit_level" from="Level0/Exit" to="." method="exit_level"]
