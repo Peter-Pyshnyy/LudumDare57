@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://ce4p5nkn307xt"]
+[gd_scene load_steps=19 format=3 uid="uid://ce4p5nkn307xt"]
 
 [ext_resource type="Script" uid="uid://cp0b0g43ycsrq" path="res://classes/game_completed.gd" id="1_vuorg"]
+[ext_resource type="Theme" uid="uid://bgdq1vfbjdske" path="res://assets/Fonts/Pixel_theme.tres" id="2_1ed7h"]
 [ext_resource type="PackedScene" uid="uid://bs3bk8wwb46eb" path="res://scenes/UI/level_fade.tscn" id="2_kfthu"]
 [ext_resource type="Texture2D" uid="uid://spadqf55dn4v" path="res://assets/Background/Main_menu.png" id="3_1ed7h"]
 [ext_resource type="Texture2D" uid="uid://c6it6ayhdqv8a" path="res://assets/Background/end_bg/end_character.png" id="4_yxts4"]
@@ -26,6 +27,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vuorg")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 208.0
+offset_top = 121.0
+offset_right = 489.0
+offset_bottom = 662.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0617534
+theme = ExtResource("2_1ed7h")
+theme_override_font_sizes/font_size = 71
+text = "click!
+"
+horizontal_alignment = 1
 
 [node name="LevelFade" parent="." instance=ExtResource("2_kfthu")]
 
@@ -108,3 +129,25 @@ texture = ExtResource("16_8wavp")
 [node name="HwBlood" type="Sprite2D" parent="Homework"]
 visible = false
 texture = ExtResource("17_0kirx")
+
+[node name="Label3" type="Label" parent="Homework"]
+z_index = 4
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.616
+offset_top = -56.2791
+offset_right = 143.384
+offset_bottom = 484.721
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0739878
+theme = ExtResource("2_1ed7h")
+theme_override_colors/font_color = Color(0.179167, 0.179105, 0.323971, 1)
+theme_override_font_sizes/font_size = 71
+text = "click for 
+menu
+"
+horizontal_alignment = 1

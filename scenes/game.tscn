@@ -630,7 +630,6 @@ text = "Move next lvl"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_pl11u")
-autoplay = true
 
 [node name="SeamEnd" type="Sprite2D" parent="."]
 position = Vector2(511, 1417)
