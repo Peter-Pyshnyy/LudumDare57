@@ -201,14 +201,16 @@ gizmo_extents = 36.4
 position = Vector2(-5.59998, -41)
 gizmo_extents = 36.4
 
+[node name="Zipper" parent="Level0" instance=ExtResource("18_ssvqc")]
+position = Vector2(88, 156)
+
 [node name="Floor" type="StaticBody2D" parent="Level0"]
-process_mode = 4
 position = Vector2(-19, 209)
 collision_layer = 256
 collision_mask = 196927
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level0/Floor"]
-polygon = PackedVector2Array(-352, 40, -130, 67, 129, 70, 329, 38, 381, 16, 320, -25, 149, -55, 112, 11, -122, 12, -147, -57, -362, -8)
+polygon = PackedVector2Array(-352, 40, -130, 67, 129, 70, 329, 38, 381, 16, 320, -25, 149, -55, 117, 57, -127, 49, -147, -57, -362, -8)
 
 [node name="Ceiling" type="StaticBody2D" parent="Level0"]
 process_mode = 4
@@ -220,7 +222,7 @@ collision_mask = 196927
 polygon = PackedVector2Array(-350, 25, -368, -33, -359, -442, -296, -505, -154, -544, -52, -551, 138, -541, 298, -527, 369, -475, 418, -369, 433, -294, 434, -62, 371, 17, 554, 48, 518, -629, -489, -644, -444, 58)
 
 [node name="Exit" parent="Level0" instance=ExtResource("20_1kice")]
-position = Vector2(-19, 266)
+position = Vector2(-19, 301)
 
 [node name="Level1" type="Node2D" parent="." node_paths=PackedStringArray("hand_start_pos", "camera_pos", "ceiling")]
 position = Vector2(585, 399)
@@ -376,7 +378,6 @@ scale = Vector2(5.69658, 0.514077)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Level2/Sepparator"]
 position = Vector2(-53.6721, -15.4408)
 rotation = 0.280921
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qnb83")
 
 [node name="ColorRect2" type="ColorRect" parent="Level2/Sepparator/CollisionShape2D2"]
