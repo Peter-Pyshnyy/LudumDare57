@@ -6,7 +6,7 @@
 size = Vector2(158, 17)
 
 [node name="pen" type="RigidBody2D"]
-collision_layer = 458752
+collision_layer = 983040
 collision_mask = 16671
 mass = 0.174
 

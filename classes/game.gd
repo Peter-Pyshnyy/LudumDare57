@@ -24,7 +24,6 @@ func start_game() -> void:
 	timer.start()
 	$Level1/Zipper.freeze()
 	$Level2/Zipper.freeze()
-	$Level2/Zipper.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	#for level: Level in levels:
 	#	remove_child(level)
