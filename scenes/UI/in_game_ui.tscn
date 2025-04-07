@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://47q2bt4waunc"]
+
+[ext_resource type="Script" uid="uid://bxsu2gg1006px" path="res://classes/in_game_ui.gd" id="1_dyyxj"]
+[ext_resource type="Theme" uid="uid://bgdq1vfbjdske" path="res://assets/Fonts/Pixel_theme.tres" id="2_somwp"]
+
+[node name="InGameUI" type="CanvasLayer"]
+script = ExtResource("1_dyyxj")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 33.0
+offset_top = 32.0
+offset_right = 73.0
+offset_bottom = 55.0
+theme = ExtResource("2_somwp")
+theme_override_font_sizes/font_size = 61
+text = "1:36"
