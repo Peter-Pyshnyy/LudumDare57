@@ -10,14 +10,14 @@ radius = 36.1248
 [node name="Skateboard" type="Node2D"]
 
 [node name="Board" type="RigidBody2D" parent="."]
-collision_layer = 196608
-collision_mask = 287
+collision_layer = 458752
+collision_mask = 4383
 mass = 0.1
 physics_material_override = ExtResource("1_31iws")
 
 [node name="Polygon2D2" type="CollisionPolygon2D" parent="Board"]
 scale = Vector2(0.35, 0.35)
-polygon = PackedVector2Array(-214.5, 12, 219, 12, 311.429, -45.7143, 300, -62.8571, 217.143, -2.85714, 168.571, -34.2857, 168.571, -5.71429, -160, -11.4286, -205.714, -2.85714, -294.286, -60, -302.857, -45.7143)
+polygon = PackedVector2Array(-214.5, 12, 219, 12, 311.429, -45.7143, 300, -62.8571, 217.143, -5.71429, 51.4286, -5.71429, -42.8571, -17.1429, -51.4286, -2.85714, -157.143, -2.85714, -160, -22.8571, -205.714, -2.85714, -294.286, -60, -302.857, -45.7143)
 
 [node name="TextureRect" type="TextureRect" parent="Board"]
 z_index = 1
@@ -35,6 +35,8 @@ node_b = NodePath("../Wheel")
 
 [node name="Wheel" type="RigidBody2D" parent="."]
 position = Vector2(-37, 19)
+collision_layer = 458752
+collision_mask = 4383
 mass = 0.05
 physics_material_override = ExtResource("1_31iws")
 
@@ -57,6 +59,8 @@ node_b = NodePath("../Wheel2")
 
 [node name="Wheel2" type="RigidBody2D" parent="."]
 position = Vector2(34, 19)
+collision_layer = 458752
+collision_mask = 4383
 mass = 0.05
 physics_material_override = ExtResource("1_31iws")
 

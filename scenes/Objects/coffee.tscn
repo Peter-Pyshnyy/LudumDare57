@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://doxc1kpf73yrl" path="res://classes/coffee.gd" id="1_kukex"]
 [ext_resource type="PackedScene" uid="uid://c3pgwvggt6yia" path="res://scenes/Objects/grip_lock.tscn" id="2_21xrd"]
-[ext_resource type="Texture2D" uid="uid://bqn25axww7j0l" path="res://assets/sprites/Coffee.png" id="3_0woxd"]
+[ext_resource type="Texture2D" uid="uid://cav201a1ek0fk" path="res://assets/sprites/Coffee.png" id="3_0woxd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_21xrd"]
 friction = 0.0

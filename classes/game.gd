@@ -21,6 +21,7 @@ func start_game() -> void:
 	get_tree().create_tween().tween_callback(timer.start).set_delay(1)
 
 	timer.start()
+	$Level1/Zipper.freeze()
 	
 	#for level: Level in levels:
 	#	remove_child(level)
@@ -73,3 +74,9 @@ func set_mayo_spilled() -> void:
 	
 func set_blood_spilled() -> void:
 	blood_spilled = true
+
+
+func _on_skateboard_detector_body_entered(body):
+	if body.name == "Board":
+		print("Unfrozen")
+		$Level1/Zipper.unfreeze()
