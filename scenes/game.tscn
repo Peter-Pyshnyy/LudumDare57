@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dw5dep2lvaeic"]
+[gd_scene load_steps=54 format=3 uid="uid://dw5dep2lvaeic"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="2_264po"]
@@ -388,7 +388,6 @@ collision_mask = 589855
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Level2/Sepparator"]
 position = Vector2(-49.0758, -14.1145)
 rotation = 0.280921
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qnb83")
 
 [node name="ColorRect2" type="ColorRect" parent="Level2/Sepparator/CollisionShape2D2"]
@@ -469,7 +468,6 @@ rotation = 1.57493
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/pen area"]
 position = Vector2(-75.8956, -43.019)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_02fa5")
 
 [node name="pen2" parent="Level2" instance=ExtResource("23_qnb83")]
@@ -584,7 +582,7 @@ scale = Vector2(2.68514, 2.68514)
 texture = ExtResource("12_qnb83")
 
 [node name="Hand" parent="." instance=ExtResource("2_264po")]
-position = Vector2(423, 764)
+position = Vector2(883, -633)
 
 [node name="movement2" type="Button" parent="."]
 offset_left = 736.0
@@ -596,9 +594,6 @@ text = "Move next lvl"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_pl11u")
 autoplay = true
-
-[node name="Hand" parent="." instance=ExtResource("2_264po")]
-position = Vector2(608, -743)
 
 [node name="SeamEnd" type="Sprite2D" parent="."]
 position = Vector2(511, 1417)
@@ -615,5 +610,4 @@ texture = ExtResource("31_wljb1")
 [connection signal="area_shape_entered" from="Level2/pen detector2" to="." method="_on_pen_detector_2_area_shape_entered"]
 [connection signal="area_shape_entered" from="Level2/bag closer" to="." method="_on_bag_closer_area_shape_entered"]
 [connection signal="exit_level" from="Level3/Exit" to="." method="exit_level"]
-[connection signal="pressed" from="movement" to="Level1/Exit" method="exit"]
 [connection signal="pressed" from="movement2" to="Level2/Exit" method="exit"]
