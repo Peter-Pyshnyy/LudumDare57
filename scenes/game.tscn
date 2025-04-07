@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dw5dep2lvaeic"]
+[gd_scene load_steps=46 format=3 uid="uid://dw5dep2lvaeic"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="2_264po"]
@@ -37,9 +37,6 @@ gradient = SubResource("Gradient_nepv3")
 fill_to = Vector2(1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4url"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_js0lu"]
-size = Vector2(245, 41.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pl11u"]
 
@@ -104,8 +101,8 @@ limit_smoothed = true
 position_smoothing_speed = 2.0
 
 [node name="LvlBg" type="Sprite2D" parent="."]
-position = Vector2(586, 494)
-scale = Vector2(2.66797, 2.66797)
+position = Vector2(579, 494)
+scale = Vector2(2.57286, 2.57286)
 texture = ExtResource("4_suyxu")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -205,21 +202,17 @@ rotation = 0.461814
 gizmo_extents = 36.4
 
 [node name="CameraPos" type="Marker2D" parent="Level0"]
-position = Vector2(-3, -58)
+position = Vector2(-5.59998, -41)
 gizmo_extents = 36.4
 
 [node name="Floor" type="StaticBody2D" parent="Level0"]
+process_mode = 4
 position = Vector2(-19, 209)
 collision_layer = 256
 collision_mask = 196927
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level0/Floor"]
-position = Vector2(-228.5, 38.875)
-shape = SubResource("RectangleShape2D_js0lu")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level0/Floor"]
-position = Vector2(247, 39)
-shape = SubResource("RectangleShape2D_js0lu")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level0/Floor"]
+polygon = PackedVector2Array(-352, 40, -130, 67, 129, 70, 329, 38, 381, 16, 320, -25, 149, -55, 112, 11, -122, 12, -147, -57, -362, -8)
 
 [node name="Ceiling" type="StaticBody2D" parent="Level0"]
 process_mode = 4
@@ -231,7 +224,7 @@ collision_mask = 196927
 polygon = PackedVector2Array(-350, 25, -368, -33, -359, -442, -296, -505, -154, -544, -52, -551, 138, -541, 298, -527, 369, -475, 418, -369, 433, -294, 434, -62, 371, 17, 554, 48, 518, -629, -489, -644, -444, 58)
 
 [node name="Exit" parent="Level0" instance=ExtResource("20_1kice")]
-position = Vector2(-14, 354)
+position = Vector2(-19, 266)
 
 [node name="Level1" type="Node2D" parent="." node_paths=PackedStringArray("hand_start_pos", "camera_pos", "ceiling")]
 position = Vector2(585, 399)
@@ -246,7 +239,7 @@ position = Vector2(5, -228)
 gizmo_extents = 36.4
 
 [node name="CameraPos" type="Marker2D" parent="Level1"]
-position = Vector2(-3, -46)
+position = Vector2(-5.59998, -46)
 gizmo_extents = 36.4
 
 [node name="Skateboard floor" type="StaticBody2D" parent="Level1"]
@@ -274,7 +267,7 @@ collision_layer = 256
 collision_mask = 196927
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level1/Ceiling"]
-polygon = PackedVector2Array(-338, 60, -325, -31, -131, -67, 207, -58, 305, -31, 325, 66, 411, 77, 391, -135, -394, -121, -411, 72)
+polygon = PackedVector2Array(-338, 60, -173, 77, 2, 88, 228, 72, 290, 60, 325, 66, 332, -9, -373, -21, -379, 48)
 
 [node name="Exit" parent="Level1" instance=ExtResource("20_1kice")]
 position = Vector2(-211, 349)
@@ -338,7 +331,7 @@ scale = Vector2(0.958333, 1)
 gizmo_extents = 36.4
 
 [node name="CameraPos" type="Marker2D" parent="Level2"]
-position = Vector2(-3, 25)
+position = Vector2(-5.59998, 25)
 gizmo_extents = 36.4
 
 [node name="Floor" type="StaticBody2D" parent="Level2"]
@@ -482,7 +475,7 @@ position = Vector2(236, -165)
 gizmo_extents = 36.4
 
 [node name="CameraPos" type="Marker2D" parent="Level3"]
-position = Vector2(-3, 15)
+position = Vector2(-5.59998, 15)
 gizmo_extents = 36.4
 
 [node name="Ceiling" type="StaticBody2D" parent="Level3"]
