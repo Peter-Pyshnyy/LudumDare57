@@ -236,7 +236,7 @@ ceiling = NodePath("Ceiling")
 metadata/_custom_type_script = "uid://c5tnood4o4tnv"
 
 [node name="HandPos" type="Marker2D" parent="Level0"]
-position = Vector2(-5, -74)
+position = Vector2(-5, -79)
 rotation = -1.49747
 gizmo_extents = 36.4
 
@@ -268,14 +268,14 @@ polygon = PackedVector2Array(-350, 25, -368, -33, -359, -442, -296, -505, -154, 
 position = Vector2(-19, 301)
 
 [node name="Padlock" parent="Level0" instance=ExtResource("23_twgab")]
-position = Vector2(-42, 81)
+position = Vector2(-42, 99)
 
 [node name="Padlock floor" type="StaticBody2D" parent="Level0"]
 collision_layer = 524288
 collision_mask = 524288
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level0/Padlock floor"]
-position = Vector2(-19.0339, 165.594)
+position = Vector2(-19.0339, 164.594)
 rotation = 0.00599996
 scale = Vector2(0.997847, 0.883485)
 shape = SubResource("RectangleShape2D_m4url")
