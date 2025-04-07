@@ -2,9 +2,20 @@ extends CanvasLayer
 
 @export var timer: Timer
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var label: Label = $Label
 
 func _process(delta: float) -> void:
+	var percent := timer.time_left / timer.wait_time
+	if percent > 0.75:
+		animated_sprite_2d.animation = "phase1"
+	elif percent > 0.5:
+		animated_sprite_2d.animation = "phase2"
+	elif percent > 0.25:
+		animated_sprite_2d.animation = "phase3"
+	else:
+		animated_sprite_2d.animation = "phase4"
+		
 	label.text = seconds_to_string(timer.time_left)
 
 static func seconds_to_string(time: float, decimals: int = 0) -> String:
