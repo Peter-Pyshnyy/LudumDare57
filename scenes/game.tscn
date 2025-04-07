@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dw5dep2lvaeic"]
+[gd_scene load_steps=56 format=3 uid="uid://dw5dep2lvaeic"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="2_264po"]
@@ -93,8 +93,14 @@ size = Vector2(357, 57)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twgab"]
 size = Vector2(223, 44)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pr1ej"]
+size = Vector2(381.5, 261)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37s47"]
-size = Vector2(381.5, 41.75)
+size = Vector2(381.5, 184)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ool0"]
+size = Vector2(136.75, 143.875)
 
 [node name="Game" type="Node" node_paths=PackedStringArray("levels")]
 script = ExtResource("1_uwrxv")
@@ -529,17 +535,29 @@ collision_mask = 196927
 position = Vector2(8, 22.25)
 shape = SubResource("RectangleShape2D_5newe")
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="Level3"]
+collision_layer = 0
+collision_mask = 8388608
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Level3/StaticBody2D2"]
+position = Vector2(115, 411.5)
+shape = SubResource("RectangleShape2D_pr1ej")
+
 [node name="Floor" type="StaticBody2D" parent="Level3"]
 position = Vector2(-180, 186)
 collision_layer = 256
 collision_mask = 196927
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level3/Floor"]
-position = Vector2(-55.25, 38.875)
+position = Vector2(-55.25, 110)
 shape = SubResource("RectangleShape2D_37s47")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level3/Floor"]
+position = Vector2(514.625, 96.0625)
+shape = SubResource("RectangleShape2D_8ool0")
+
 [node name="Exit" parent="Level3" instance=ExtResource("20_1kice")]
-position = Vector2(155, 371)
+position = Vector2(112, 395)
 
 [node name="Knife" parent="Level3" instance=ExtResource("23_e1j6l")]
 z_index = 2
