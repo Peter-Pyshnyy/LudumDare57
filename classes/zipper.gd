@@ -3,10 +3,13 @@ extends Node2D
 @onready var base_col: CollisionShape2D = $Base/BaseCol
 @onready var groove_joint_2d: GrooveJoint2D = $GrooveJoint2D
 @onready var slider: RigidBody2D = $Handle
+@onready var base = $Base
+
 
 var collision_shape: SegmentShape2D
 
 func _ready() -> void:
+	base_col.shape = base_col.shape.duplicate()
 	collision_shape = base_col.shape
 	if collision_shape:
 		collision_shape.a.x = groove_joint_2d.position.x - groove_joint_2d.length
@@ -26,6 +29,8 @@ func _on_handle_body_shape_entered(body_rid, body, body_shape_index, local_shape
 
 func freeze():
 	$Handle.freeze = true
+	$Handle/Sprite2D.texture = load("res://assets/sprites/zipper/zipper_frozen.png")
 
 func unfreeze():
 	$Handle.freeze = false
+	$Handle/Sprite2D.texture = load("res://assets/sprites/zipper/zipper.png")

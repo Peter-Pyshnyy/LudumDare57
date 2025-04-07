@@ -1,9 +1,11 @@
-[gd_scene load_steps=44 format=3 uid="uid://dw5dep2lvaeic"]
+[gd_scene load_steps=47 format=3 uid="uid://dw5dep2lvaeic"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="2_264po"]
 [ext_resource type="PackedScene" uid="uid://bs3bk8wwb46eb" path="res://scenes/UI/level_fade.tscn" id="2_bhx41"]
+[ext_resource type="PackedScene" uid="uid://47q2bt4waunc" path="res://scenes/UI/in_game_ui.tscn" id="2_sww3w"]
 [ext_resource type="Texture2D" uid="uid://x3nmpdhmakcg" path="res://assets/Background/backpack/backpack_back.png" id="4_264po"]
+[ext_resource type="Texture2D" uid="uid://bw8lknb7uhddv" path="res://assets/Background/Lvl_bg.png" id="4_suyxu"]
 [ext_resource type="Texture2D" uid="uid://btlom8710gcig" path="res://assets/Background/backpack/L13-Layer 10.png" id="5_1kice"]
 [ext_resource type="Texture2D" uid="uid://cumihxja0v7bw" path="res://assets/Background/backpack/L12-Layer 11.png" id="6_5newe"]
 [ext_resource type="Texture2D" uid="uid://do6uhae0tf2k5" path="res://assets/Background/backpack/L9-Layer 13.png" id="9_e1j6l"]
@@ -36,22 +38,25 @@ fill_to = Vector2(1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4url"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pl11u"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_js0lu"]
+size = Vector2(245, 41.75)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5newe"]
-size = Vector2(714, 24.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pl11u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_264po"]
 size = Vector2(466, 35.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhx41"]
-size = Vector2(354, 651.5)
+size = Vector2(354, 395.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sww3w"]
 size = Vector2(4.81259, 4.28038)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kice"]
 size = Vector2(414, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5newe"]
+size = Vector2(714, 24.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnb83"]
 size = Vector2(58.843, 7.74879)
@@ -76,7 +81,10 @@ size = Vector2(381.5, 41.75)
 
 [node name="Game" type="Node" node_paths=PackedStringArray("levels")]
 script = ExtResource("1_uwrxv")
-levels = [NodePath("Level1"), NodePath("Level2"), NodePath("Level3")]
+levels = [NodePath("Level0"), NodePath("Level1"), NodePath("Level2"), NodePath("Level3")]
+
+[node name="InGameUI" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("2_sww3w")]
+timer = NodePath("../Timer")
 
 [node name="LevelFade" parent="." instance=ExtResource("2_bhx41")]
 
@@ -84,22 +92,21 @@ levels = [NodePath("Level1"), NodePath("Level2"), NodePath("Level3")]
 wait_time = 350.0
 one_shot = true
 
-[node name="Camera2D_old" type="Camera2D" parent="."]
+[node name="Hand" parent="." instance=ExtResource("2_264po")]
+position = Vector2(608, -743)
+
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(604, 54)
-enabled = false
-zoom = Vector2(1.075, 1.075)
+zoom = Vector2(1.4, 1.4)
 limit_left = 15
 limit_right = 1075
 limit_smoothed = true
 position_smoothing_speed = 2.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(621, 763)
-zoom = Vector2(1.075, 1.075)
-limit_left = 15
-limit_right = 1075
-limit_smoothed = true
-position_smoothing_speed = 2.0
+[node name="LvlBg" type="Sprite2D" parent="."]
+position = Vector2(586, 494)
+scale = Vector2(2.66797, 2.66797)
+texture = ExtResource("4_suyxu")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(577, 766)
@@ -180,6 +187,48 @@ texture = SubResource("GradientTexture2D_7025r")
 position = Vector2(0, -20.9898)
 shape = SubResource("RectangleShape2D_m4url")
 
+[node name="Level0" type="Node2D" parent="." node_paths=PackedStringArray("hand_start_pos", "camera_pos", "ceiling")]
+position = Vector2(585, -109)
+script = ExtResource("19_js0lu")
+hand_start_pos = NodePath("HandPos")
+camera_pos = NodePath("CameraPos")
+ceiling = NodePath("Ceiling")
+metadata/_custom_type_script = "uid://c5tnood4o4tnv"
+
+[node name="HandPos" type="Marker2D" parent="Level0"]
+position = Vector2(260, -258)
+rotation = 0.461814
+gizmo_extents = 36.4
+
+[node name="CameraPos" type="Marker2D" parent="Level0"]
+position = Vector2(-3, -58)
+gizmo_extents = 36.4
+
+[node name="Floor" type="StaticBody2D" parent="Level0"]
+position = Vector2(-19, 209)
+collision_layer = 256
+collision_mask = 196927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level0/Floor"]
+position = Vector2(-228.5, 38.875)
+shape = SubResource("RectangleShape2D_js0lu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level0/Floor"]
+position = Vector2(247, 39)
+shape = SubResource("RectangleShape2D_js0lu")
+
+[node name="Ceiling" type="StaticBody2D" parent="Level0"]
+process_mode = 4
+position = Vector2(-19, 209)
+collision_layer = 256
+collision_mask = 196927
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level0/Ceiling"]
+polygon = PackedVector2Array(-350, 25, -368, -33, -359, -442, -296, -505, -154, -544, -52, -551, 138, -541, 298, -527, 369, -475, 418, -369, 433, -294, 434, -62, 371, 17, 554, 48, 518, -629, -489, -644, -444, 58)
+
+[node name="Exit" parent="Level0" instance=ExtResource("20_1kice")]
+position = Vector2(-14, 354)
+
 [node name="Level1" type="Node2D" parent="." node_paths=PackedStringArray("hand_start_pos", "camera_pos", "ceiling")]
 position = Vector2(585, 399)
 script = ExtResource("19_js0lu")
@@ -209,16 +258,6 @@ shape = SubResource("RectangleShape2D_pl11u")
 position = Vector2(0, 186)
 collision_layer = 256
 collision_mask = 196927
-
-[node name="Ceiling" type="StaticBody2D" parent="Level1/Floor"]
-process_mode = 4
-position = Vector2(-15, 378)
-collision_layer = 256
-collision_mask = 196927
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Floor/Ceiling"]
-position = Vector2(8, 22.25)
-shape = SubResource("RectangleShape2D_5newe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Floor"]
 position = Vector2(119, 24.25)
@@ -268,7 +307,7 @@ polygon = PackedVector2Array(195, 1399, 198, 1253, 228, 1112, 238, 998, 234, 945
 position = Vector2(28, 91)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Skateboard detector"]
-position = Vector2(149, -228.25)
+position = Vector2(149, -100.25)
 shape = SubResource("RectangleShape2D_bhx41")
 
 [node name="Coffe Stopper" type="StaticBody2D" parent="Level1"]
@@ -440,7 +479,7 @@ position = Vector2(585, 1196)
 script = ExtResource("19_js0lu")
 hand_start_pos = NodePath("HandPos")
 camera_pos = NodePath("CameraPos")
-ceiling = NodePath("../Level1/Floor/Ceiling")
+ceiling = NodePath("Ceiling")
 metadata/_custom_type_script = "uid://c5tnood4o4tnv"
 
 [node name="HandPos" type="Marker2D" parent="Level3"]
@@ -450,6 +489,16 @@ gizmo_extents = 36.4
 [node name="CameraPos" type="Marker2D" parent="Level3"]
 position = Vector2(-3, 15)
 gizmo_extents = 36.4
+
+[node name="Ceiling" type="StaticBody2D" parent="Level3"]
+process_mode = 4
+position = Vector2(-15, -233)
+collision_layer = 256
+collision_mask = 196927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3/Ceiling"]
+position = Vector2(8, 22.25)
+shape = SubResource("RectangleShape2D_5newe")
 
 [node name="Floor" type="StaticBody2D" parent="Level3"]
 position = Vector2(-180, 186)
@@ -505,14 +554,12 @@ offset_right = 401.0
 offset_bottom = 401.0
 text = "Move next lvl"
 
-[node name="Hand" parent="." instance=ExtResource("2_264po")]
-position = Vector2(388, 627)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_pl11u")
 autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="time_out"]
+[connection signal="exit_level" from="Level0/Exit" to="." method="exit_level"]
 [connection signal="exit_level" from="Level1/Exit" to="." method="exit_level"]
 [connection signal="spilled_signal" from="Level1/Coffee" to="." method="set_coffee_spilled"]
 [connection signal="body_entered" from="Level1/Skateboard detector" to="." method="_on_skateboard_detector_body_entered"]

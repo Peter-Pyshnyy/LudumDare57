@@ -56,8 +56,8 @@ texture_progress = ExtResource("3_y1rgw")
 
 [node name="Handle" type="RigidBody2D" parent="."]
 position = Vector2(0, -31)
-collision_layer = 196608
-collision_mask = 196639
+collision_layer = 200704
+collision_mask = 458783
 mass = 1.5
 physics_material_override = SubResource("PhysicsMaterial_6a7oh")
 gravity_scale = 0.0

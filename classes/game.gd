@@ -24,6 +24,7 @@ func start_game() -> void:
 	timer.start()
 	$Level1/Zipper.freeze()
 	$Level2/Zipper.freeze()
+	
 	#for level: Level in levels:
 	#	remove_child(level)
 	
@@ -37,9 +38,7 @@ func exit_level() -> void:
 		load_next_level()
 
 func load_next_level() -> void:
-	#if current_level:
-		# disable old level
-		#current_level.set_deferred("process_mode", Node.PROCESS_MODE_DISABLED)
+
 	
 	#enable new Level scene
 	current_level = levels[next_level]

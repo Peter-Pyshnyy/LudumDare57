@@ -1,7 +1,7 @@
 [gd_scene load_steps=41 format=3 uid="uid://bx0dsa2w83jmc"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_a2inv"]
-[ext_resource type="PackedScene" uid="uid://bs3bk8wwb46eb" path="res://scenes/level_fade.tscn" id="2_q27r4"]
+[ext_resource type="PackedScene" uid="uid://bs3bk8wwb46eb" path="res://scenes/UI/level_fade.tscn" id="2_q27r4"]
 [ext_resource type="Texture2D" uid="uid://x3nmpdhmakcg" path="res://assets/Background/backpack/backpack_back.png" id="3_bvssg"]
 [ext_resource type="Texture2D" uid="uid://btlom8710gcig" path="res://assets/Background/backpack/L13-Layer 10.png" id="4_5w31o"]
 [ext_resource type="Texture2D" uid="uid://cumihxja0v7bw" path="res://assets/Background/backpack/L12-Layer 11.png" id="5_h0ywf"]
@@ -316,7 +316,6 @@ collision_mask = 196639
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/Sepparator"]
 position = Vector2(32.4318, 9.51835)
 rotation = 0.280921
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_a2inv")
 
 [node name="ColorRect" type="ColorRect" parent="Level2/Sepparator/CollisionShape2D"]
@@ -330,7 +329,6 @@ scale = Vector2(5.69658, 0.514077)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Level2/Sepparator"]
 position = Vector2(-48.0634, -13.1331)
 rotation = 0.280921
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qnb83")
 
 [node name="ColorRect2" type="ColorRect" parent="Level2/Sepparator/CollisionShape2D2"]
@@ -344,7 +342,6 @@ scale = Vector2(5.69658, 0.514077)
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Level2/Sepparator"]
 position = Vector2(31.2391, 42.9344)
 rotation = 0.280921
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_q27r4")
 
 [node name="ColorRect" type="ColorRect" parent="Level2/Sepparator/CollisionShape2D3"]
