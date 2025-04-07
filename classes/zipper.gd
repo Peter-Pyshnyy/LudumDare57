@@ -25,6 +25,8 @@ func _on_handle_body_shape_entered(body_rid, body, body_shape_index, local_shape
 
 func freeze():
 	$Handle.freeze = true
+	$Handle/Sprite2D.texture = load("res://assets/sprites/zipper/zipper_frozen.png")
 
 func unfreeze():
 	$Handle.freeze = false
+	$Handle/Sprite2D.texture = load("res://assets/sprites/zipper/zipper.png")
