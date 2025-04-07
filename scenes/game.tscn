@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dw5dep2lvaeic"]
+[gd_scene load_steps=36 format=3 uid="uid://dw5dep2lvaeic"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="2_264po"]
@@ -25,6 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://1sqahkj7o667" path="res://scenes/Objects/knife.tscn" id="23_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://cr0wiqnxvve8h" path="res://scenes/Objects/skateboard.tscn" id="24_e1j6l"]
 [ext_resource type="AudioStream" uid="uid://c36uk4sahkpt7" path="res://assets/sound/soundtrack.wav" id="25_pl11u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnb83"]
+size = Vector2(230.138, 20)
 
 [sub_resource type="Gradient" id="Gradient_nepv3"]
 
@@ -101,6 +104,15 @@ texture = ExtResource("9_e1j6l")
 position = Vector2(577, 766)
 scale = Vector2(2.66797, 2.66797)
 texture = ExtResource("10_pl11u")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background/2_level"]
+collision_layer = 256
+collision_mask = 196639
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/2_level/StaticBody2D"]
+position = Vector2(-56.9722, 40.4802)
+rotation = 0.410185
+shape = SubResource("RectangleShape2D_qnb83")
 
 [node name="3_level" type="Node2D" parent="Background"]
 position = Vector2(-216.269, -287.11)
