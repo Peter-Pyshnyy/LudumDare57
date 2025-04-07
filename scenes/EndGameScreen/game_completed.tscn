@@ -1,0 +1,110 @@
+[gd_scene load_steps=18 format=3 uid="uid://ce4p5nkn307xt"]
+
+[ext_resource type="Texture2D" uid="uid://spadqf55dn4v" path="res://assets/Background/Main_menu.png" id="1_bttqt"]
+[ext_resource type="Script" uid="uid://cp0b0g43ycsrq" path="res://classes/game_completed.gd" id="1_ijgkr"]
+[ext_resource type="Texture2D" uid="uid://c6it6ayhdqv8a" path="res://assets/Background/end_bg/end_character.png" id="2_8u4dm"]
+[ext_resource type="Texture2D" uid="uid://fhgnpfjo2g0j" path="res://assets/Background/end_bg/blood.png" id="3_4s0nd"]
+[ext_resource type="Texture2D" uid="uid://dia50kgsg5mrr" path="res://assets/Background/end_bg/mustard.png" id="4_ijgkr"]
+[ext_resource type="Texture2D" uid="uid://bwimv2n56m6n1" path="res://assets/Background/end_bg/coffee.png" id="5_yavas"]
+[ext_resource type="PackedScene" uid="uid://bs3bk8wwb46eb" path="res://scenes/level_fade.tscn" id="7_yavas"]
+[ext_resource type="Texture2D" uid="uid://c77nucth0hqhi" path="res://assets/Background/homework_screen/homework.png" id="8_yavas"]
+[ext_resource type="Texture2D" uid="uid://dytpgrunu4xlx" path="res://assets/Background/homework_screen/a.png" id="9_1lsx6"]
+[ext_resource type="Texture2D" uid="uid://kxmxjfcpkmd0" path="res://assets/Background/homework_screen/b.png" id="10_que1p"]
+[ext_resource type="Texture2D" uid="uid://bcmk6erhl4vum" path="res://assets/Background/homework_screen/c.png" id="11_vlsh5"]
+[ext_resource type="Texture2D" uid="uid://b12h6dw615tin" path="res://assets/Background/homework_screen/d.png" id="12_b0wyr"]
+[ext_resource type="Texture2D" uid="uid://bgdfwgwk7xq6b" path="res://assets/Background/homework_screen/e.png" id="13_kigjc"]
+[ext_resource type="Texture2D" uid="uid://dx4xknjqdu1qk" path="res://assets/Background/homework_screen/f.png" id="14_u4o4j"]
+[ext_resource type="Texture2D" uid="uid://cckpb37w126h0" path="res://assets/Background/homework_screen/hw_coffe.png" id="15_ew5rq"]
+[ext_resource type="Texture2D" uid="uid://cyq5ko18g7igu" path="res://assets/Background/homework_screen/hw_mustard.png" id="16_l1o1f"]
+[ext_resource type="Texture2D" uid="uid://dptr2cllw0vqs" path="res://assets/Background/homework_screen/hw_blood.png" id="17_ny1mv"]
+
+[node name="GameCompleted" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ijgkr")
+
+[node name="LevelFade" parent="." instance=ExtResource("7_yavas")]
+
+[node name="MainMenu" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(588, 332)
+scale = Vector2(3.75, 3.75)
+texture = ExtResource("1_bttqt")
+
+[node name="end_character" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(269, 383)
+scale = Vector2(3.20607, 3.073)
+texture = ExtResource("2_8u4dm")
+
+[node name="blood" type="Sprite2D" parent="end_character"]
+visible = false
+texture = ExtResource("3_4s0nd")
+
+[node name="mustard" type="Sprite2D" parent="end_character"]
+visible = false
+texture = ExtResource("4_ijgkr")
+
+[node name="caffe" type="Sprite2D" parent="end_character"]
+visible = false
+texture = ExtResource("5_yavas")
+
+[node name="Homework" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(571, 280)
+scale = Vector2(3.44, 3.44)
+texture = ExtResource("8_yavas")
+
+[node name="ColorRect" type="ColorRect" parent="Homework"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -106.0
+offset_right = -109.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.635294)
+
+[node name="A" type="Sprite2D" parent="Homework"]
+visible = false
+texture = ExtResource("9_1lsx6")
+
+[node name="B" type="Sprite2D" parent="Homework"]
+visible = false
+texture = ExtResource("10_que1p")
+
+[node name="C" type="Sprite2D" parent="Homework"]
+visible = false
+texture = ExtResource("11_vlsh5")
+
+[node name="D" type="Sprite2D" parent="Homework"]
+visible = false
+texture = ExtResource("12_b0wyr")
+
+[node name="E" type="Sprite2D" parent="Homework"]
+visible = false
+texture = ExtResource("13_kigjc")
+
+[node name="F" type="Sprite2D" parent="Homework"]
+visible = false
+texture = ExtResource("14_u4o4j")
+
+[node name="HwCoffe" type="Sprite2D" parent="Homework"]
+visible = false
+texture = ExtResource("15_ew5rq")
+
+[node name="HwMustard" type="Sprite2D" parent="Homework"]
+visible = false
+texture = ExtResource("16_l1o1f")
+
+[node name="HwBlood" type="Sprite2D" parent="Homework"]
+visible = false
+texture = ExtResource("17_ny1mv")
