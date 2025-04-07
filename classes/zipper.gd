@@ -22,3 +22,9 @@ func _on_handle_body_entered(body):
 
 func _on_handle_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	pass # Replace with function body.
+
+func freeze():
+	$Handle.freeze = true
+
+func unfreeze():
+	$Handle.freeze = false
