@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dw5dep2lvaeic"]
+[gd_scene load_steps=59 format=3 uid="uid://dw5dep2lvaeic"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="2_264po"]
@@ -31,6 +31,10 @@
 [ext_resource type="Texture2D" uid="uid://cu58ertqb1plt" path="res://assets/Background/backpack/Bag_for_pen.png" id="23_sgl2t"]
 [ext_resource type="PackedScene" uid="uid://cr0wiqnxvve8h" path="res://scenes/Objects/skateboard.tscn" id="24_e1j6l"]
 [ext_resource type="AudioStream" uid="uid://c36uk4sahkpt7" path="res://assets/sound/soundtrack.wav" id="25_pl11u"]
+[ext_resource type="Script" path="res://classes/final_exit.gd" id="26_v2yb1"]
+[ext_resource type="Texture2D" uid="uid://c7of1kowtd34p" path="res://assets/sprites/seam/seam_end_front.png" id="28_qouja"]
+[ext_resource type="PackedScene" uid="uid://b111tmamgk5ip" path="res://scenes/Objects/homework.tscn" id="29_wljb1"]
+[ext_resource type="Texture2D" uid="uid://cd5pgod48irx7" path="res://assets/sprites/seam/seam_end.png" id="31_wljb1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pl11u"]
 
@@ -77,10 +81,25 @@ size = Vector2(20.9731, 160.777)
 size = Vector2(383, 285)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7025r"]
-size = Vector2(225, 78.2936)
+size = Vector2(225, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxtfn"]
+size = Vector2(357, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twgab"]
+size = Vector2(223, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pr1ej"]
+size = Vector2(381.5, 261)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05nbr"]
+size = Vector2(381.5, 295)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37s47"]
-size = Vector2(381.5, 41.75)
+size = Vector2(381.5, 172)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ool0"]
+size = Vector2(136.75, 132)
 
 [node name="Game" type="Node" node_paths=PackedStringArray("levels")]
 script = ExtResource("1_uwrxv")
@@ -481,11 +500,20 @@ position = Vector2(-147.5, 42.5)
 shape = SubResource("RectangleShape2D_wljb1")
 
 [node name="pen detector2" type="Area2D" parent="Level2"]
-scale = Vector2(1.00159, 0.960609)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/pen detector2"]
-position = Vector2(208.669, 120.757)
+position = Vector2(207.5, 128)
 shape = SubResource("RectangleShape2D_7025r")
+
+[node name="bag closer" type="Area2D" parent="Level2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/bag closer"]
+position = Vector2(-186.5, 159)
+shape = SubResource("RectangleShape2D_gxtfn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level2/bag closer"]
+position = Vector2(208, 134)
+shape = SubResource("RectangleShape2D_twgab")
 
 [node name="Level3" type="Node2D" parent="." node_paths=PackedStringArray("hand_start_pos", "camera_pos", "ceiling")]
 position = Vector2(585, 1196)
@@ -513,17 +541,39 @@ collision_mask = 196927
 position = Vector2(8, 22.25)
 shape = SubResource("RectangleShape2D_5newe")
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="Level3"]
+collision_layer = 0
+collision_mask = 8388608
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Level3/StaticBody2D2"]
+position = Vector2(115, 411.5)
+shape = SubResource("RectangleShape2D_pr1ej")
+
+[node name="Handstop" type="StaticBody2D" parent="Level3"]
+collision_layer = 536870912
+collision_mask = 31
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Level3/Handstop"]
+position = Vector2(115, 394.5)
+shape = SubResource("RectangleShape2D_05nbr")
+
 [node name="Floor" type="StaticBody2D" parent="Level3"]
 position = Vector2(-180, 186)
 collision_layer = 256
 collision_mask = 196927
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level3/Floor"]
-position = Vector2(-55.25, 38.875)
+position = Vector2(-55.25, 116)
 shape = SubResource("RectangleShape2D_37s47")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level3/Floor"]
+position = Vector2(514.625, 102)
+shape = SubResource("RectangleShape2D_8ool0")
+
 [node name="Exit" parent="Level3" instance=ExtResource("20_1kice")]
-position = Vector2(155, 371)
+position = Vector2(114, 466)
+collision_mask = 197119
+script = ExtResource("26_v2yb1")
 
 [node name="Knife" parent="Level3" instance=ExtResource("23_e1j6l")]
 z_index = 2
@@ -545,6 +595,12 @@ position = Vector2(48, 221)
 [node name="Cutable6" parent="Level3" instance=ExtResource("23_bt5mj")]
 position = Vector2(-13, 221)
 
+[node name="SeamEndFront" type="Sprite2D" parent="Level3"]
+z_index = 3
+position = Vector2(-74, 221)
+scale = Vector2(2.66, 2.66)
+texture = ExtResource("28_qouja")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="Level3"]
 position = Vector2(-253, 108)
 collision_layer = 256
@@ -559,12 +615,27 @@ position = Vector2(-33, 26)
 scale = Vector2(2.68514, 2.68514)
 texture = ExtResource("12_qnb83")
 
+[node name="Homework" parent="Level3" instance=ExtResource("29_wljb1")]
+position = Vector2(-117, 139)
+rotation = -1.74619
+
 [node name="Hand" parent="." instance=ExtResource("2_264po")]
-position = Vector2(513, -232)
+position = Vector2(883, -633)
+
+[node name="movement2" type="Button" parent="."]
+offset_left = 736.0
+offset_top = 804.0
+offset_right = 847.0
+offset_bottom = 835.0
+text = "Move next lvl"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_pl11u")
-autoplay = true
+
+[node name="SeamEnd" type="Sprite2D" parent="."]
+position = Vector2(511, 1417)
+scale = Vector2(2.66, 2.66)
+texture = ExtResource("31_wljb1")
 
 [connection signal="timeout" from="Timer" to="." method="time_out"]
 [connection signal="exit_level" from="Level0/Exit" to="." method="exit_level"]

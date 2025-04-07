@@ -48,14 +48,14 @@ texture = ExtResource("7_udwsj")
 
 [node name="Collider" type="StaticBody2D" parent="."]
 collision_layer = 4194304
-collision_mask = 196895
+collision_mask = 1073742111
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collider"]
 position = Vector2(0, 15.5)
 shape = SubResource("RectangleShape2D_gl5sc")
 
 [node name="KnifeDetector" type="Area2D" parent="."]
-collision_layer = 4194304
+collision_layer = 0
 collision_mask = 8388608
 monitorable = false
 
@@ -73,7 +73,9 @@ gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)
 gravity = 0.0
 linear_damp_space_override = 1
+linear_damp = 7.842
 angular_damp_space_override = 1
+angular_damp = 8.742
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KnifeStopper"]
 position = Vector2(-0.0362217, 24.4986)

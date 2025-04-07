@@ -4,6 +4,7 @@ class_name Game extends Node
 @onready var hand: Limb = $Hand
 @onready var camera: Camera2D = $Camera2D
 @onready var level_fade: Fade = $LevelFade
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 @export var levels: Array[Level]
 var current_level: Level
@@ -19,9 +20,7 @@ func _ready() -> void:
 
 func start_game() -> void:
 	#start timer
-	get_tree().create_tween().tween_callback(timer.start).set_delay(1)
 
-	timer.start()
 	$Level1/Zipper.freeze()
 	$Level2/Zipper.freeze()
 	
@@ -54,7 +53,10 @@ func load_next_level() -> void:
 	
 	tween.tween_property(current_level.ceiling, "process_mode", Node.PROCESS_MODE_INHERIT, 1)
 	
-	
+	if next_level == 1:
+		timer.start()
+		audio_stream_player.play()
+		
 	next_level += 1
 
 func time_out() -> void:
@@ -106,3 +108,15 @@ func _on_pen_detector_2_area_shape_entered(area_rid, area, area_shape_index, loc
 func _on_pen_detector_2_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
 	if area.name == "pen2 area":
 		$Level2/Zipper.unfreeze()
+
+
+func _on_bag_closer_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	if area.name == "pen area":
+		print("bag closed")
+		$Level2/Sepparator/CollisionShape2D.disabled = false
+
+
+func _on_pen_detector_2_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	if area.name == "pen2 area":
+		print("Unfrozen")
+		$Level2/Zipper.freeze()
