@@ -108,12 +108,16 @@ func _on_pen_detector_area_shape_exited(area_rid, area, area_shape_index, local_
 
 func _on_pen_detector_2_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	if area.name == "pen2 area":
-		$Level2/Zipper.freeze()
+		$"Background/2_level".red = true
+	elif area.name == "pen area":
+		$"Background/2_level".blue = true
 
 
 func _on_pen_detector_2_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
 	if area.name == "pen2 area":
-		$Level2/Zipper.unfreeze()
+		$"Background/2_level".red = false
+	elif area.name == "pen area":
+		$"Background/2_level".blue = false
 
 
 func _on_bag_closer_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):

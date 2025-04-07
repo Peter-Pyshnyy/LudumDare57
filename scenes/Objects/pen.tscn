@@ -9,7 +9,7 @@ size = Vector2(158, 17)
 
 [node name="pen" type="RigidBody2D"]
 collision_layer = 983040
-collision_mask = 16671
+collision_mask = 540959
 mass = 0.174
 script = ExtResource("1_6ex8p")
 

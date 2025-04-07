@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://dw5dep2lvaeic"]
+[gd_scene load_steps=63 format=3 uid="uid://dw5dep2lvaeic"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="2_264po"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bw8lknb7uhddv" path="res://assets/Background/Lvl_bg.png" id="4_suyxu"]
 [ext_resource type="Texture2D" uid="uid://btlom8710gcig" path="res://assets/Background/backpack/L13-Layer 10.png" id="5_1kice"]
 [ext_resource type="Texture2D" uid="uid://cumihxja0v7bw" path="res://assets/Background/backpack/L12-Layer 11.png" id="6_5newe"]
+[ext_resource type="Script" uid="uid://bt4m0npxqapdi" path="res://scenes/2_level.gd" id="8_nepv3"]
 [ext_resource type="Texture2D" uid="uid://do6uhae0tf2k5" path="res://assets/Background/backpack/L9-Layer 13.png" id="9_e1j6l"]
 [ext_resource type="Texture2D" uid="uid://ckfkmpegix5c6" path="res://assets/sprites/Book.png" id="9_suyxu"]
 [ext_resource type="Texture2D" uid="uid://6tm1r7qd8rq" path="res://assets/Background/backpack/L2-Layer 19.png" id="10_pl11u"]
@@ -120,7 +121,7 @@ timer = NodePath("../Timer")
 [node name="LevelFade" parent="." instance=ExtResource("2_bhx41")]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 350.0
+wait_time = 360.0
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -150,6 +151,7 @@ texture = ExtResource("5_1kice")
 texture = ExtResource("6_5newe")
 
 [node name="2_level" type="Node2D" parent="Background"]
+script = ExtResource("8_nepv3")
 
 [node name="sock_paper" type="Sprite2D" parent="Background/2_level"]
 position = Vector2(-30.735, 11.9941)
@@ -462,8 +464,8 @@ shape = SubResource("RectangleShape2D_nepv3")
 disabled = true
 
 [node name="pen" parent="Level2" instance=ExtResource("23_qnb83")]
-position = Vector2(56, -13)
-rotation = 1.57493
+position = Vector2(57, -51)
+rotation = 1.5708
 
 [node name="RemoteTransform2D2" type="RemoteTransform2D" parent="Level2/pen"]
 remote_path = NodePath("../../pen area")
@@ -494,21 +496,21 @@ rotation = -0.605937
 shape = SubResource("RectangleShape2D_qouja")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Level2/pen exit-block"]
-position = Vector2(328, 147)
+position = Vector2(347, 148)
 rotation = 0.526557
 shape = SubResource("RectangleShape2D_qouja")
 
 [node name="pen2 area" type="Area2D" parent="Level2"]
-position = Vector2(122, 88)
-rotation = 0.178391
+position = Vector2(149, 112)
+rotation = 0.0105601
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/pen2 area"]
 position = Vector2(88.7114, 11.4971)
 shape = SubResource("RectangleShape2D_v2yb1")
 
 [node name="pen area" type="Area2D" parent="Level2"]
-position = Vector2(56, -13)
-rotation = 1.57493
+position = Vector2(57, -51)
+rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/pen area"]
 position = Vector2(89.0488, 11.632)
@@ -516,8 +518,8 @@ rotation = 1.56922
 shape = SubResource("RectangleShape2D_02fa5")
 
 [node name="pen2" parent="Level2" instance=ExtResource("23_qnb83")]
-position = Vector2(122, 88)
-rotation = 0.178391
+position = Vector2(149, 112)
+rotation = 0.0105601
 num = 1
 
 [node name="pen area mover" type="RemoteTransform2D" parent="Level2/pen2"]
@@ -589,7 +591,7 @@ collision_layer = 536870912
 collision_mask = 31
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Level3/Handstop"]
-position = Vector2(115, 394.5)
+position = Vector2(115, 370.5)
 shape = SubResource("RectangleShape2D_05nbr")
 
 [node name="Floor" type="StaticBody2D" parent="Level3"]
@@ -655,16 +657,7 @@ position = Vector2(-117, 139)
 rotation = -1.74619
 
 [node name="Hand" parent="." instance=ExtResource("2_264po")]
-position = Vector2(578, -276)
-
-[node name="movement2" type="Button" parent="."]
-visible = false
-offset_left = 736.0
-offset_top = 804.0
-offset_right = 847.0
-offset_bottom = 835.0
-disabled = true
-text = "Move next lvl"
+position = Vector2(587, -314)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_pl11u")
