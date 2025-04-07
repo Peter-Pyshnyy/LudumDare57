@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=3 uid="uid://dmo50do0b76f1"]
+
+[ext_resource type="Theme" uid="uid://bgdq1vfbjdske" path="res://assets/Fonts/Pixel_theme.tres" id="1_um6dh"]
+[ext_resource type="Script" uid="uid://c1hlbvgo4acmm" path="res://classes/main_menu.gd" id="2_mf7fl"]
+[ext_resource type="Texture2D" uid="uid://spadqf55dn4v" path="res://assets/Background/Main_menu.png" id="3_d6l81"]
+[ext_resource type="Texture2D" uid="uid://c6it6ayhdqv8a" path="res://assets/Background/end_bg/end_character.png" id="4_a1wsg"]
+[ext_resource type="Texture2D" uid="uid://fhgnpfjo2g0j" path="res://assets/Background/end_bg/blood.png" id="5_i7p8e"]
+[ext_resource type="Texture2D" uid="uid://dia50kgsg5mrr" path="res://assets/Background/end_bg/mustard.png" id="6_sfthw"]
+[ext_resource type="Texture2D" uid="uid://bwimv2n56m6n1" path="res://assets/Background/end_bg/coffee.png" id="7_n3ahy"]
+[ext_resource type="Texture2D" uid="uid://ea5nmr8qeke8" path="res://assets/Background/Character_mainMenu.png" id="8_scr1a"]
+[ext_resource type="PackedScene" uid="uid://bs3bk8wwb46eb" path="res://scenes/UI/level_fade.tscn" id="9_d0t0a"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_um6dh")
+script = ExtResource("2_mf7fl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324.438)
+scale = Vector2(3.74937, 3.59375)
+texture = ExtResource("3_d6l81")
+
+[node name="end_character" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(207, 375)
+scale = Vector2(3.74937, 3.59375)
+texture = ExtResource("4_a1wsg")
+
+[node name="blood" type="Sprite2D" parent="end_character"]
+visible = false
+texture = ExtResource("5_i7p8e")
+
+[node name="mustard" type="Sprite2D" parent="end_character"]
+visible = false
+texture = ExtResource("6_sfthw")
+
+[node name="caffe" type="Sprite2D" parent="end_character"]
+visible = false
+texture = ExtResource("7_n3ahy")
+
+[node name="boy" type="Sprite2D" parent="."]
+position = Vector2(802, 321)
+scale = Vector2(-7.218, 7.218)
+texture = ExtResource("8_scr1a")
+
+[node name="Titel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -401.0
+offset_top = 63.0
+offset_right = 114.0
+offset_bottom = 274.0
+grow_horizontal = 2
+rotation = -0.0344328
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 87
+text = "The bag ate my"
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 2
+offset_left = 286.0
+offset_top = 279.0
+offset_right = 474.0
+offset_bottom = 387.0
+text = "Start"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 2
+offset_left = 502.0
+offset_top = 280.0
+offset_right = 636.0
+offset_bottom = 388.0
+text = "Quit
+"
+
+[node name="Fade" parent="." instance=ExtResource("9_d0t0a")]
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

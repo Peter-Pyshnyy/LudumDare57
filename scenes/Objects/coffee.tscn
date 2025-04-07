@@ -1,7 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bni4j3r7dp4jg"]
+[gd_scene load_steps=10 format=3 uid="uid://bni4j3r7dp4jg"]
 
 [ext_resource type="Script" uid="uid://doxc1kpf73yrl" path="res://classes/coffee.gd" id="1_kukex"]
-[ext_resource type="PackedScene" uid="uid://c3pgwvggt6yia" path="res://scenes/Objects/grip_detector.tscn" id="2_21xrd"]
+[ext_resource type="PackedScene" uid="uid://c3pgwvggt6yia" path="res://scenes/Objects/grip_lock.tscn" id="2_21xrd"]
+[ext_resource type="Texture2D" uid="uid://bdb20vyvslmcf" path="res://assets/sprites/Coffee.png" id="3_0woxd"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_21xrd"]
+friction = 0.0
+rough = true
 
 [sub_resource type="Gradient" id="Gradient_kukex"]
 colors = PackedColorArray(0.32771, 0.170355, 0.017865, 1, 0.88371, 0.599381, 0.341616, 1)
@@ -10,7 +15,7 @@ colors = PackedColorArray(0.32771, 0.170355, 0.017865, 1, 0.88371, 0.599381, 0.3
 gradient = SubResource("Gradient_kukex")
 
 [sub_resource type="Curve" id="Curve_0woxd"]
-_data = [Vector2(0, 0), 0.0, 20.7422, 0, 0, Vector2(0.12476, 1), 0.146392, 0.146392, 0, 0, Vector2(1, 0.493741), -1.0205, 0.0, 0, 0]
+_data = [Vector2(0.00178891, 0.011598), 0.0, 10.1451, 0, 0, Vector2(0.264758, 1), 0.146392, 0.146392, 0, 0, Vector2(1, 0), -2.50602, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_4nv5d"]
@@ -24,43 +29,53 @@ angle_min = 1.07288e-05
 angle_max = 1.07288e-05
 direction = Vector3(0, 0, 0)
 spread = 18.328
-initial_velocity_min = 124.38
-initial_velocity_max = 286.84
-gravity = Vector3(0, 900, 0)
-scale_min = 3.89
-scale_max = 49.8
+initial_velocity_min = 234.93
+initial_velocity_max = 427.55
+gravity = Vector3(0, 700, 0)
+scale_min = 0.54
+scale_max = 19.65
 scale_curve = SubResource("CurveTexture_4nv5d")
 color_initial_ramp = SubResource("GradientTexture1D_21xrd")
 
 [node name="Coffee" type="RigidBody2D" node_paths=PackedStringArray("grips")]
 scale = Vector2(0.275, 0.275)
-collision_layer = 196608
+collision_layer = 204800
 collision_mask = 287
-mass = 0.5
+mass = 0.087
+physics_material_override = SubResource("PhysicsMaterial_21xrd")
 center_of_mass_mode = 1
+linear_damp = 5.165
 script = ExtResource("1_kukex")
 grips = [NodePath("grip_detector"), NodePath("grip_detector2")]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(-61, -141)
+position = Vector2(3.63636, -192.727)
 rotation = -1.57079
+scale = Vector2(1.25, 1.25)
 amount = 113
-lifetime = 1.05
+lifetime = 0.6
 randomness = 0.02
+trail_lifetime = 0.17
 process_material = SubResource("ParticleProcessMaterial_f7x7d")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(60, 141, 115, -137, 155, -146, -144, -145, -100, -135, -65, 141)
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(-65, 141, 60, 141, 115, -137, 154, -146, -140, -145, -99, -136)
+scale = Vector2(1.25, 1.25)
+polygon = PackedVector2Array(58.1818, 128, 109.091, -116.364, 116.364, -123.636, 141.818, -116.364, 141.818, -141.818, -2.73411, -153.11, -141.818, -141.818, -149.091, -116.364, -123.636, -123.636, -112.727, -116.364, -58.1818, 128)
 
 [node name="grip_detector" parent="." instance=ExtResource("2_21xrd")]
-position = Vector2(109, -81)
+position = Vector2(145.455, -72.7272)
 rotation = 0.200041
-scale = Vector2(2.27756, 6.91)
+scale = Vector2(2.64859, 8.60304)
 
 [node name="grip_detector2" parent="." instance=ExtResource("2_21xrd")]
-position = Vector2(-95, -80)
-rotation = -0.132416
-scale = Vector2(2.38989, 6.91)
+position = Vector2(-134.545, -69.0909)
+rotation = -0.213866
+scale = Vector2(2.6486, 8.60304)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -178.182
+offset_top = -189.091
+offset_right = 103.818
+offset_bottom = 92.9091
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_0woxd")

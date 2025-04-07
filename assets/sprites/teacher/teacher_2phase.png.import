@@ -1,0 +1,43 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bdf7exye6ryhx"
+<<<<<<< HEAD:assets/sprites/teacher_2phase.png.import
+path="res://.godot/imported/Teacher_2phase.png-637be9351624512d1ddae6c35fdd04bb.ctex"
+=======
+path="res://.godot/imported/teacher_2phase.png-cad08c36e2dc661b28667cc465870d8f.ctex"
+>>>>>>> ef106ca67e1b7a629f2a7bd4379266d0ff9fe1dd:assets/sprites/teacher/teacher_2phase.png.import
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+<<<<<<< HEAD:assets/sprites/teacher_2phase.png.import
+source_file="res://assets/sprites/Teacher_2phase.png"
+dest_files=["res://.godot/imported/Teacher_2phase.png-637be9351624512d1ddae6c35fdd04bb.ctex"]
+=======
+source_file="res://assets/sprites/teacher/teacher_2phase.png"
+dest_files=["res://.godot/imported/teacher_2phase.png-cad08c36e2dc661b28667cc465870d8f.ctex"]
+>>>>>>> ef106ca67e1b7a629f2a7bd4379266d0ff9fe1dd:assets/sprites/teacher/teacher_2phase.png.import
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

@@ -1,4 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://xstywed8a4ni"]
+[gd_scene load_steps=7 format=3 uid="uid://xstywed8a4ni"]
+
+[ext_resource type="Script" uid="uid://b27pls0x163ri" path="res://classes/zipper.gd" id="1_tbvg1"]
+[ext_resource type="Texture2D" uid="uid://cf4uum54n7sbx" path="res://assets/sprites/zipper/zipper.png" id="2_1n2u7"]
+[ext_resource type="Texture2D" uid="uid://ca66xtsv1bvji" path="res://assets/sprites/zipper/basis_zipper.png" id="3_y7jk3"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_uaosp"]
 b = Vector2(-39.11, 0)
@@ -16,12 +20,13 @@ func _physics_process(delta):
 "
 
 [node name="Zipper" type="Node2D"]
-position = Vector2(787, 374)
+position = Vector2(641, 414)
+script = ExtResource("1_tbvg1")
 
 [node name="Base" type="StaticBody2D" parent="."]
 rotation = 1.5708
-collision_layer = 0
-collision_mask = 0
+collision_layer = 256
+collision_mask = 196735
 
 [node name="BaseCol" type="CollisionShape2D" parent="Base"]
 rotation = -1.5708
@@ -32,8 +37,8 @@ position = Vector2(0, 1)
 rotation = 1.5708
 node_a = NodePath("../Base")
 node_b = NodePath("../Handle")
-bias = 0.9
-length = 408.0
+bias = 0.816
+length = 226.0
 initial_offset = 1.0
 
 [node name="Handle" type="RigidBody2D" parent="."]
@@ -42,6 +47,7 @@ collision_layer = 196608
 collision_mask = 196639
 mass = 1.5
 physics_material_override = SubResource("PhysicsMaterial_6a7oh")
+gravity_scale = 0.0
 lock_rotation = true
 contact_monitor = true
 linear_damp = 10.236
@@ -50,19 +56,15 @@ script = SubResource("GDScript_uqdog")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Handle"]
 position = Vector2(-0.454407, 31.1566)
 scale = Vector2(2.5682, 2.5682)
-polygon = PackedVector2Array(-1.55751, 1.83704, 1.55751, 1.83704, 0.955688, -9.01666, 3.68134, -12.9104, -1.76996, -13.2998)
+polygon = PackedVector2Array(-1.76996, 1.88591, 1.73445, 1.88591, 1.73445, -9.40605, 4.4601, -12.9104, -1.76996, -12.9104)
 
-[node name="Polygon2D" type="Polygon2D" parent="Handle"]
-position = Vector2(-0.454407, 31.1566)
-scale = Vector2(2.5682, 2.5682)
-color = Color(0.678944, 0.678944, 0.678944, 1)
-polygon = PackedVector2Array(-1.55751, 1.83704, 1.55751, 1.83704, 0.955688, -9.40604, 2.02507, -10.781, 3.68134, -12.9104, -1.76996, -13.2998)
+[node name="Sprite2D" type="Sprite2D" parent="Handle"]
+position = Vector2(-1, 17)
+texture = ExtResource("2_1n2u7")
 
-[node name="Polygon2D2" type="Polygon2D" parent="Handle"]
-position = Vector2(0, 26)
-scale = Vector2(1.28114, 1.21129)
-color = Color(0.505924, 0.00127912, 0.676695, 1)
-polygon = PackedVector2Array(-11, -1, 13, -1, 17, 14, -16, 14)
+[node name="Sprite2D2" type="Sprite2D" parent="Handle"]
+position = Vector2(-1, 16)
+texture = ExtResource("3_y7jk3")
 
 [connection signal="body_entered" from="Handle" to="." method="_on_handle_body_entered"]
 [connection signal="body_shape_entered" from="Handle" to="." method="_on_handle_body_shape_entered"]

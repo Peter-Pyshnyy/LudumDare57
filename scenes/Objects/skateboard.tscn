@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cr0wiqnxvve8h"]
+[gd_scene load_steps=5 format=3 uid="uid://cr0wiqnxvve8h"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://c6sq0wqlx2vq1" path="res://scenes/Objects/physics_mat_rough.tres" id="1_31iws"]
+[ext_resource type="Texture2D" uid="uid://b4bg0a8ybh1kr" path="res://assets/sprites/skate/skate.png" id="2_br0ec"]
+[ext_resource type="Texture2D" uid="uid://crtcc3t6qqr1u" path="res://assets/sprites/skate/skate_wheels.png" id="4_2x743"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1f2to"]
 radius = 36.1248
@@ -8,19 +10,22 @@ radius = 36.1248
 [node name="Skateboard" type="Node2D"]
 
 [node name="Board" type="RigidBody2D" parent="."]
-collision_layer = 196608
-collision_mask = 287
+collision_layer = 458752
+collision_mask = 4383
 mass = 0.1
 physics_material_override = ExtResource("1_31iws")
 
-[node name="Polygon2D" type="Polygon2D" parent="Board"]
-scale = Vector2(0.35, 0.35)
-polygon = PackedVector2Array(-214.5, 12, 219, 12, 297.143, -40, 285.714, -54.2857, 217.143, -2.85714, 171.429, -8.57143, -160, -11.4286, -205.714, -2.85714, -282.857, -54.2857, -294.286, -40)
-uv = PackedVector2Array(-513.5, 16, 64.5, 21, 2.5, -17, -233.5, -29, -435.5, -23)
-
 [node name="Polygon2D2" type="CollisionPolygon2D" parent="Board"]
 scale = Vector2(0.35, 0.35)
-polygon = PackedVector2Array(-214.5, 12, 219, 12, 297.143, -40, 285.714, -54.2857, 217.143, -2.85714, 168.571, -8.57143, -160, -11.4286, -205.714, -2.85714, -282.857, -54.2857, -294.286, -40)
+polygon = PackedVector2Array(-214.5, 12, 219, 12, 311.429, -45.7143, 300, -62.8571, 217.143, -5.71429, 51.4286, -5.71429, -42.8571, -17.1429, -51.4286, -2.85714, -157.143, -2.85714, -160, -22.8571, -205.714, -2.85714, -294.286, -60, -302.857, -45.7143)
+
+[node name="TextureRect" type="TextureRect" parent="Board"]
+z_index = 1
+offset_left = -127.0
+offset_top = -147.0
+offset_right = 129.0
+offset_bottom = 109.0
+texture = ExtResource("2_br0ec")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2(-37, 19)
@@ -30,6 +35,8 @@ node_b = NodePath("../Wheel")
 
 [node name="Wheel" type="RigidBody2D" parent="."]
 position = Vector2(-37, 19)
+collision_layer = 458752
+collision_mask = 4383
 mass = 0.05
 physics_material_override = ExtResource("1_31iws")
 
@@ -37,9 +44,12 @@ physics_material_override = ExtResource("1_31iws")
 scale = Vector2(0.32, 0.32)
 shape = SubResource("CircleShape2D_1f2to")
 
-[node name="Polygon2D" type="Polygon2D" parent="Wheel"]
-scale = Vector2(0.32, 0.32)
-polygon = PackedVector2Array(0, -36, 28, -23, 34, 6, 17, 29, -5, 36, -28, 22, -36, -5, -27, -26, -10, -35)
+[node name="TextureRect" type="TextureRect" parent="Wheel"]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+texture = ExtResource("4_2x743")
 
 [node name="PinJoint2D2" type="PinJoint2D" parent="."]
 position = Vector2(34, 19)
@@ -49,6 +59,8 @@ node_b = NodePath("../Wheel2")
 
 [node name="Wheel2" type="RigidBody2D" parent="."]
 position = Vector2(34, 19)
+collision_layer = 458752
+collision_mask = 4383
 mass = 0.05
 physics_material_override = ExtResource("1_31iws")
 
@@ -56,6 +68,9 @@ physics_material_override = ExtResource("1_31iws")
 scale = Vector2(0.32, 0.32)
 shape = SubResource("CircleShape2D_1f2to")
 
-[node name="Polygon2D" type="Polygon2D" parent="Wheel2"]
-scale = Vector2(0.32, 0.32)
-polygon = PackedVector2Array(0, -36, 28, -23, 34, 6, 17, 29, -5, 36, -28, 22, -36, -5, -27, -26, -10, -35)
+[node name="TextureRect" type="TextureRect" parent="Wheel2"]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+texture = ExtResource("4_2x743")
