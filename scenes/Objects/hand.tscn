@@ -127,7 +127,7 @@ size = Vector2(38.5914, 24.6414)
 [node name="Hand" type="CharacterBody2D"]
 position = Vector2(363, 159)
 scale = Vector2(2.25, 2.25)
-collision_mask = 65792
+collision_mask = 4260096
 input_pickable = true
 script = ExtResource("1_k7pjy")
 is_palm = true
@@ -149,7 +149,7 @@ scale = Vector2(1.00001, 1.00001)
 [node name="Limb Thumb" type="CharacterBody2D" parent="Skeleton2D/Palm/IK Targets"]
 position = Vector2(-39.1035, 48.4798)
 collision_layer = 2
-collision_mask = 65792
+collision_mask = 4260096
 input_pickable = true
 script = ExtResource("1_k7pjy")
 push_force = 0.125
@@ -167,7 +167,7 @@ shape = SubResource("RectangleShape2D_cmdsa")
 
 [node name="Inner Thumb2" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Thumb"]
 z_index = 11
-position = Vector2(0.924706, -7.19157)
+position = Vector2(0.92469, -7.19156)
 rotation = 1.7972
 scale = Vector2(0.99998, 0.99998)
 shape = SubResource("RectangleShape2D_k7pjy")
@@ -177,7 +177,7 @@ position = Vector2(-14.0292, 89.9963)
 rotation = -1.5708
 scale = Vector2(1.59998, 1.59998)
 collision_layer = 4
-collision_mask = 65792
+collision_mask = 4260096
 input_pickable = true
 script = ExtResource("1_k7pjy")
 push_force = 0.125
@@ -203,7 +203,7 @@ scale = Vector2(0.625009, 0.625009)
 [node name="Limb Mid" type="CharacterBody2D" parent="Skeleton2D/Palm/IK Targets"]
 position = Vector2(2.02414, 90.2493)
 collision_layer = 8
-collision_mask = 65792
+collision_mask = 4260096
 input_pickable = true
 script = ExtResource("1_k7pjy")
 push_force = 0.125
@@ -215,7 +215,7 @@ position = Vector2(9.13246e-07, -9.35575e-06)
 [node name="Inner Mid1" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Mid"]
 z_index = 11
 position = Vector2(-1.21214, -36.7572)
-rotation = 0.0363445
+rotation = 0.0363446
 scale = Vector2(0.999984, 0.999984)
 shape = SubResource("RectangleShape2D_n04oe")
 
@@ -229,7 +229,7 @@ shape = SubResource("RectangleShape2D_yinqy")
 [node name="Limb Ring" type="CharacterBody2D" parent="Skeleton2D/Palm/IK Targets"]
 position = Vector2(16.2683, 83.4972)
 collision_layer = 16
-collision_mask = 65792
+collision_mask = 4260096
 input_pickable = true
 script = ExtResource("1_k7pjy")
 push_force = 0.125
@@ -255,7 +255,7 @@ shape = SubResource("RectangleShape2D_y1wyv")
 [node name="Limb Pinky" type="CharacterBody2D" parent="Skeleton2D/Palm/IK Targets"]
 position = Vector2(30.5017, 63.3822)
 collision_layer = 32
-collision_mask = 65792
+collision_mask = 4260096
 input_pickable = true
 script = ExtResource("1_k7pjy")
 push_force = 0.125
@@ -266,16 +266,16 @@ position = Vector2(7.62939e-06, 3.8147e-06)
 
 [node name="Inner Pinky1" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Pinky"]
 z_index = 11
-position = Vector2(-9.94218, -21.9245)
+position = Vector2(-9.94205, -21.9241)
 rotation = -0.408418
-scale = Vector2(0.999818, 0.999818)
+scale = Vector2(0.999868, 0.999868)
 shape = SubResource("RectangleShape2D_v24qn")
 
 [node name="Inner Pinky2" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Pinky"]
 z_index = 11
-position = Vector2(-3.69293, -7.49652)
+position = Vector2(-3.69249, -7.49543)
 rotation = -0.431229
-scale = Vector2(0.999827, 0.999827)
+scale = Vector2(0.999877, 0.999877)
 shape = SubResource("RectangleShape2D_bfalx")
 
 [node name="TextureRect" type="TextureRect" parent="Skeleton2D/Palm"]
@@ -647,7 +647,7 @@ offset_right = 1.66667
 offset_bottom = 17.0
 
 [node name="Outer Thumb1" type="CollisionShape2D" parent="."]
-position = Vector2(-29.7778, 14.6666)
+position = Vector2(-29.7778, 14.6667)
 rotation = 0.922474
 scale = Vector2(0.999986, 0.999986)
 shape = SubResource("RectangleShape2D_kdemd")
@@ -702,16 +702,16 @@ shape = SubResource("RectangleShape2D_h1yym")
 
 [node name="Outer Pinky1" type="CollisionShape2D" parent="."]
 z_index = 11
-position = Vector2(17.3344, 32.5667)
+position = Vector2(17.3345, 32.567)
 rotation = -0.341035
-scale = Vector2(0.999828, 0.999828)
+scale = Vector2(0.999878, 0.999878)
 shape = SubResource("RectangleShape2D_ohfqw")
 
 [node name="Outer Pinky2" type="CollisionShape2D" parent="."]
 z_index = 11
-position = Vector2(22.598, 47.3828)
+position = Vector2(22.5984, 47.384)
 rotation = -0.363846
-scale = Vector2(0.999837, 0.999837)
+scale = Vector2(0.999887, 0.999887)
 shape = SubResource("RectangleShape2D_dth4f")
 
 [node name="Palm" type="CollisionShape2D" parent="."]
@@ -790,9 +790,9 @@ offset_bottom = 8.0
 scale = Vector2(0.590214, 0.601798)
 
 [node name="Pinky Btn Anchor" type="Node2D" parent="Btns"]
-position = Vector2(423, 270)
+position = Vector2(423.001, 270.003)
 rotation = 1.22682
-scale = Vector2(2.24961, 2.24961)
+scale = Vector2(2.24972, 2.24972)
 
 [node name="Pinky Select" type="Button" parent="Btns/Pinky Btn Anchor"]
 z_index = 15
