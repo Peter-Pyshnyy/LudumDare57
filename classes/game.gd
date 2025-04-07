@@ -23,7 +23,7 @@ func start_game() -> void:
 
 	timer.start()
 	$Level1/Zipper.freeze()
-	
+	$Level2/Zipper.freeze()
 	#for level: Level in levels:
 	#	remove_child(level)
 	
@@ -90,3 +90,8 @@ func _on_skateboard_detector_body_entered(body):
 	if body.name == "Board":
 		print("Unfrozen")
 		$Level1/Zipper.unfreeze()
+
+func _on_pen_detector_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	if area.name == "pen area":
+		print("Unfrozen")
+		$Level2/Zipper.unfreeze()

@@ -723,7 +723,6 @@ shape = SubResource("RectangleShape2D_7g3cn")
 script = ExtResource("4_3omnj")
 
 [node name="Unlock Timer" type="Timer" parent="Grip Manager"]
-wait_time = 2.0
 one_shot = true
 
 [node name="Btns" type="Node" parent="."]
