@@ -3,6 +3,7 @@ class_name Game extends Node
 @onready var timer: Timer = $Timer
 @onready var hand: Limb = $Hand
 @onready var camera: Camera2D = $Camera2D
+@onready var level_fade: Fade = $LevelFade
 
 @export var levels: Array[Level]
 var current_level: Level
@@ -57,9 +58,17 @@ func load_next_level() -> void:
 	next_level += 1
 
 func time_out() -> void:
-	print("game over")
+	level_fade.fade_black_and_call(load_game_over_scene)
+
+func load_game_over_scene() -> void:
+	get_tree().change_scene_to_file("res://scenes/EndGameScreen/game_over.tscn")
 
 func won_game() -> void:
+	var won_scene = preload("res://scenes/EndGameScreen/game_completed.tscn").instantiate()
+	get_tree().root.add_child(won_scene)
+	won_scene.set_stain(blood_spilled, mayo_spilled, coffee_spilled)
+	
+	queue_free()
 	print("won game")
 
 func set_coffee_spilled() -> void:

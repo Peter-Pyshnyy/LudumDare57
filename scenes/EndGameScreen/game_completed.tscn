@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://ce4p5nkn307xt"]
+
+[ext_resource type="Texture2D" uid="uid://spadqf55dn4v" path="res://assets/Background/Main_menu.png" id="1_bttqt"]
+[ext_resource type="Script" uid="uid://cp0b0g43ycsrq" path="res://classes/game_completed.gd" id="1_ijgkr"]
+[ext_resource type="Texture2D" uid="uid://c6it6ayhdqv8a" path="res://assets/Background/end_bg/end_character.png" id="2_8u4dm"]
+[ext_resource type="Texture2D" uid="uid://fhgnpfjo2g0j" path="res://assets/Background/end_bg/blood.png" id="3_4s0nd"]
+[ext_resource type="Texture2D" uid="uid://dia50kgsg5mrr" path="res://assets/Background/end_bg/mustard.png" id="4_ijgkr"]
+[ext_resource type="Texture2D" uid="uid://bwimv2n56m6n1" path="res://assets/Background/end_bg/coffee.png" id="5_yavas"]
+[ext_resource type="PackedScene" uid="uid://bs3bk8wwb46eb" path="res://scenes/level_fade.tscn" id="7_yavas"]
+[ext_resource type="Texture2D" uid="uid://c77nucth0hqhi" path="res://assets/Background/homework_screen/homework.png" id="8_yavas"]
+
+[node name="GameCompleted" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ijgkr")
+
+[node name="MainMenu" type="Sprite2D" parent="."]
+position = Vector2(588, 332)
+scale = Vector2(3.75, 3.75)
+texture = ExtResource("1_bttqt")
+
+[node name="end_character" type="Sprite2D" parent="."]
+position = Vector2(269, 383)
+scale = Vector2(3.20607, 3.073)
+texture = ExtResource("2_8u4dm")
+
+[node name="blood" type="Sprite2D" parent="end_character"]
+visible = false
+texture = ExtResource("3_4s0nd")
+
+[node name="mustard" type="Sprite2D" parent="end_character"]
+visible = false
+texture = ExtResource("4_ijgkr")
+
+[node name="caffe" type="Sprite2D" parent="end_character"]
+visible = false
+texture = ExtResource("5_yavas")
+
+[node name="LevelFade" parent="." instance=ExtResource("7_yavas")]
+
+[node name="Homework" type="Sprite2D" parent="."]
+position = Vector2(600, 307)
+scale = Vector2(2.675, 2.675)
+texture = ExtResource("8_yavas")

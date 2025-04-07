@@ -1,23 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://dmo50do0b76f1"]
+[gd_scene load_steps=10 format=3 uid="uid://dmo50do0b76f1"]
 
 [ext_resource type="Texture2D" uid="uid://spadqf55dn4v" path="res://assets/Background/Main_menu.png" id="1_ekxnf"]
+[ext_resource type="Theme" uid="uid://bgdq1vfbjdske" path="res://assets/Fonts/Pixel_theme.tres" id="1_tbmy8"]
 [ext_resource type="Script" uid="uid://c1hlbvgo4acmm" path="res://classes/main_menu.gd" id="1_wu84c"]
 [ext_resource type="Texture2D" uid="uid://ea5nmr8qeke8" path="res://assets/Background/Character_mainMenu.png" id="3_oa1go"]
 [ext_resource type="Texture2D" uid="uid://c6it6ayhdqv8a" path="res://assets/Background/end_bg/end_character.png" id="4_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://fhgnpfjo2g0j" path="res://assets/Background/end_bg/blood.png" id="5_jk1qb"]
 [ext_resource type="Texture2D" uid="uid://dia50kgsg5mrr" path="res://assets/Background/end_bg/mustard.png" id="6_5dd4i"]
 [ext_resource type="Texture2D" uid="uid://bwimv2n56m6n1" path="res://assets/Background/end_bg/coffee.png" id="7_lgwnu"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vue75"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
-bg_color = Color(0.340339, 0.340339, 0.340339, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[ext_resource type="PackedScene" uid="uid://bs3bk8wwb46eb" path="res://scenes/level_fade.tscn" id="9_jk1qb"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -28,6 +19,7 @@ offset_left = 1.0
 offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_tbmy8")
 script = ExtResource("1_wu84c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -35,77 +27,65 @@ position = Vector2(576, 324.438)
 scale = Vector2(3.74937, 3.59375)
 texture = ExtResource("1_ekxnf")
 
-[node name="boy" type="Sprite2D" parent="."]
-position = Vector2(834, 338)
-scale = Vector2(6.47266, 6.47266)
-texture = ExtResource("3_oa1go")
-
-[node name="end_character" type="Sprite2D" parent="boy"]
-position = Vector2(-96.869, 5.71635)
-scale = Vector2(0.579263, 0.55522)
+[node name="end_character" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(207, 375)
+scale = Vector2(3.74937, 3.59375)
 texture = ExtResource("4_tbmy8")
 
-[node name="blood" type="Sprite2D" parent="boy/end_character"]
+[node name="blood" type="Sprite2D" parent="end_character"]
+visible = false
 texture = ExtResource("5_jk1qb")
 
-[node name="mustard" type="Sprite2D" parent="boy/end_character"]
+[node name="mustard" type="Sprite2D" parent="end_character"]
+visible = false
 texture = ExtResource("6_5dd4i")
 
-[node name="caffe" type="Sprite2D" parent="boy/end_character"]
+[node name="caffe" type="Sprite2D" parent="end_character"]
+visible = false
 texture = ExtResource("7_lgwnu")
+
+[node name="boy" type="Sprite2D" parent="."]
+position = Vector2(802, 321)
+scale = Vector2(-7.218, 7.218)
+texture = ExtResource("3_oa1go")
 
 [node name="Titel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 123.0
-offset_top = 21.0
-offset_right = 465.0
-offset_bottom = 99.0
+offset_left = -401.0
+offset_top = 63.0
+offset_right = 114.0
+offset_bottom = 274.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.745854, 0.738152, 0.705876, 1)
-theme_override_font_sizes/font_size = 57
-text = "Game Name"
+rotation = -0.0344328
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 87
+text = "The bag ate my"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -42.0
-offset_top = -4.0
-offset_right = 43.0
-offset_bottom = 74.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 8
-
-[node name="Start" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="."]
 layout_mode = 2
-theme_override_colors/font_hover_pressed_color = Color(0.768627, 0.760784, 0.278431, 1)
-theme_override_colors/font_hover_color = Color(0.768006, 0.759254, 0.278045, 1)
-theme_override_colors/font_pressed_color = Color(0.768627, 0.760784, 0.278431, 1)
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxEmpty_vue75")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bqqt6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+offset_left = 286.0
+offset_top = 279.0
+offset_right = 474.0
+offset_bottom = 387.0
 text = "Start"
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
+[node name="Quit" type="Button" parent="."]
 layout_mode = 2
-theme_override_colors/font_hover_pressed_color = Color(0.768627, 0.760784, 0.278431, 1)
-theme_override_colors/font_hover_color = Color(0.768006, 0.759254, 0.278045, 1)
-theme_override_colors/font_pressed_color = Color(0.768627, 0.760784, 0.278431, 1)
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxEmpty_vue75")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bqqt6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+offset_left = 502.0
+offset_top = 280.0
+offset_right = 636.0
+offset_bottom = 388.0
+theme_override_colors/font_hover_color = Color(0.601223, 0.601223, 0.601223, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Quit
 "
 
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[node name="Fade" parent="." instance=ExtResource("9_jk1qb")]
+follow_viewport_enabled = false
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
