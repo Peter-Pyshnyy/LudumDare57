@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dd5fjn0oyohlr"]
+[gd_scene load_steps=6 format=3 uid="uid://dd5fjn0oyohlr"]
 
+[ext_resource type="Theme" uid="uid://bgdq1vfbjdske" path="res://assets/Fonts/Pixel_theme.tres" id="1_goce2"]
 [ext_resource type="Script" uid="uid://cudgqxljbfcr2" path="res://classes/game_over.gd" id="1_kd8id"]
 [ext_resource type="PackedScene" uid="uid://bs3bk8wwb46eb" path="res://scenes/level_fade.tscn" id="2_3ffbc"]
+[ext_resource type="Texture2D" uid="uid://c77nucth0hqhi" path="res://assets/Background/homework_screen/homework.png" id="4_7joiv"]
+[ext_resource type="Texture2D" uid="uid://dx4xknjqdu1qk" path="res://assets/Background/homework_screen/f.png" id="5_f8up2"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -10,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_goce2")
 script = ExtResource("1_kd8id")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -21,6 +25,16 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="LevelFade" parent="." instance=ExtResource("2_3ffbc")]
+
+[node name="Homework" type="Sprite2D" parent="."]
+position = Vector2(443, 278)
+scale = Vector2(5.55972, 5.55972)
+texture = ExtResource("4_7joiv")
+
+[node name="F" type="Sprite2D" parent="Homework"]
+texture = ExtResource("5_f8up2")
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -28,12 +42,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.0
-offset_top = -11.5
-offset_right = 42.0
-offset_bottom = 11.5
+offset_left = -376.0
+offset_top = -173.0
+offset_right = -95.0
+offset_bottom = 368.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Time is up!"
-
-[node name="LevelFade" parent="." instance=ExtResource("2_3ffbc")]
+rotation = -0.0685888
+theme_override_colors/font_color = Color(0.0621882, 0.0370807, 0.146918, 1)
+theme_override_constants/line_spacing = -44
+theme_override_font_sizes/font_size = 141
+text = "Time
+is 
+up!"
+horizontal_alignment = 1
