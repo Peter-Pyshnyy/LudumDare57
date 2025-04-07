@@ -9,7 +9,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
+	
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_video_stream_player_finished() -> void:
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
