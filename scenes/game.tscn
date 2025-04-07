@@ -6,9 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://x3nmpdhmakcg" path="res://assets/Background/backpack/backpack_back.png" id="4_264po"]
 [ext_resource type="Texture2D" uid="uid://btlom8710gcig" path="res://assets/Background/backpack/L13-Layer 10.png" id="5_1kice"]
 [ext_resource type="Texture2D" uid="uid://cumihxja0v7bw" path="res://assets/Background/backpack/L12-Layer 11.png" id="6_5newe"]
-[ext_resource type="Texture2D" uid="uid://c16eqkoxsbtne" path="res://assets/Background/backpack/L10-Layer 12++.png" id="7_37s47"]
-[ext_resource type="Texture2D" uid="uid://cpvo0afsg33at" path="res://assets/Background/backpack/L8-Layer 12+.png" id="8_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://do6uhae0tf2k5" path="res://assets/Background/backpack/L9-Layer 13.png" id="9_e1j6l"]
+[ext_resource type="Texture2D" uid="uid://ckfkmpegix5c6" path="res://assets/sprites/Book.png" id="9_suyxu"]
 [ext_resource type="Texture2D" uid="uid://6tm1r7qd8rq" path="res://assets/Background/backpack/L2-Layer 19.png" id="10_pl11u"]
 [ext_resource type="Texture2D" uid="uid://dqsv4wabtr1y0" path="res://assets/Background/backpack/L7-Layer 14.png" id="11_bhx41"]
 [ext_resource type="Texture2D" uid="uid://vnyibalqxe1d" path="res://assets/Background/backpack/nutella.png" id="12_qnb83"]
@@ -25,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://damplki3il6ju" path="res://scenes/Objects/cutable.tscn" id="23_bt5mj"]
 [ext_resource type="PackedScene" uid="uid://1sqahkj7o667" path="res://scenes/Objects/knife.tscn" id="23_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://bett2b74shf8q" path="res://scenes/Objects/pen.tscn" id="23_qnb83"]
+[ext_resource type="Texture2D" uid="uid://cu58ertqb1plt" path="res://assets/Background/backpack/Bag_for_pen.png" id="23_sgl2t"]
 [ext_resource type="PackedScene" uid="uid://cr0wiqnxvve8h" path="res://scenes/Objects/skateboard.tscn" id="24_e1j6l"]
 [ext_resource type="AudioStream" uid="uid://c36uk4sahkpt7" path="res://assets/sound/soundtrack.wav" id="25_pl11u"]
 
@@ -111,30 +111,26 @@ texture = ExtResource("4_264po")
 [node name="floor_1_lvl" type="Sprite2D" parent="Background/1_level"]
 texture = ExtResource("5_1kice")
 
-[node name="StaticBody2D" type="Sprite2D" parent="Background/1_level"]
+[node name="books" type="Sprite2D" parent="Background/1_level"]
 texture = ExtResource("6_5newe")
 
 [node name="2_level" type="Node2D" parent="Background"]
 
-[node name="penholders" type="Sprite2D" parent="Background/2_level"]
-position = Vector2(577, 766)
-scale = Vector2(2.66797, 2.66797)
-texture = ExtResource("7_37s47")
-
-[node name="pens" type="Sprite2D" parent="Background/2_level"]
-position = Vector2(577, 766)
-scale = Vector2(2.66797, 2.66797)
-texture = ExtResource("8_bt5mj")
-
 [node name="sock_paper" type="Sprite2D" parent="Background/2_level"]
-position = Vector2(577, 766)
-scale = Vector2(2.66797, 2.66797)
+position = Vector2(-30.735, 11.9941)
+scale = Vector2(-0.908189, 0.877465)
 texture = ExtResource("9_e1j6l")
 
 [node name="Spot" type="Sprite2D" parent="Background/2_level"]
-position = Vector2(577, 766)
-scale = Vector2(2.66797, 2.66797)
+position = Vector2(-95.5782, 17.6164)
+scale = Vector2(1.18523, 1.18523)
 texture = ExtResource("10_pl11u")
+
+[node name="godot_book" type="Sprite2D" parent="Background/2_level"]
+position = Vector2(64.0937, 67.0922)
+rotation = -1.57079
+scale = Vector2(0.379941, 0.379941)
+texture = ExtResource("9_suyxu")
 
 [node name="3_level" type="Node2D" parent="Background"]
 position = Vector2(-216.269, -287.11)
@@ -238,7 +234,7 @@ collision_mask = 196927
 polygon = PackedVector2Array(-338, 60, -325, -31, -131, -67, 207, -58, 305, -31, 325, 66, 411, 77, 391, -135, -394, -121, -411, 72)
 
 [node name="Exit" parent="Level1" instance=ExtResource("20_1kice")]
-position = Vector2(-211, 349)
+position = Vector2(-204, 349)
 
 [node name="Zipper" parent="Level1" instance=ExtResource("18_ssvqc")]
 position = Vector2(-121, 179)
@@ -335,7 +331,6 @@ collision_mask = 196639
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/Sepparator"]
 position = Vector2(40.9368, 17.5461)
 rotation = 0.280921
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qnb83")
 
 [node name="ColorRect" type="ColorRect" parent="Level2/Sepparator/CollisionShape2D"]
@@ -349,6 +344,7 @@ scale = Vector2(5.69658, 0.514077)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Level2/Sepparator"]
 position = Vector2(-53.6721, -15.4408)
 rotation = 0.280921
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qnb83")
 
 [node name="ColorRect2" type="ColorRect" parent="Level2/Sepparator/CollisionShape2D2"]
@@ -358,6 +354,7 @@ offset_right = -17.7115
 offset_bottom = 10.7129
 rotation = 0.0108738
 scale = Vector2(5.69658, 0.514077)
+color = Color(0.356863, 0.282353, 0.105882, 1)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Level2/Sepparator"]
 position = Vector2(32.2104, 32.5572)
@@ -366,12 +363,19 @@ scale = Vector2(1.37841, -2.14366)
 shape = SubResource("RectangleShape2D_suyxu")
 
 [node name="ColorRect" type="ColorRect" parent="Level2/Sepparator/CollisionShape2D4"]
+visible = false
 z_index = 2
 offset_left = -2.0
 offset_top = -9.0
 offset_right = 118.0
 offset_bottom = 38.0
 scale = Vector2(0.0979681, 0.40166)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level2/Sepparator/CollisionShape2D4"]
+z_index = 2
+position = Vector2(5.40823, 4.38667)
+scale = Vector2(0.37091, -0.225796)
+texture = ExtResource("23_sgl2t")
 
 [node name="pen" parent="Level2" instance=ExtResource("23_qnb83")]
 position = Vector2(56, -13)
@@ -394,13 +398,11 @@ shape = SubResource("RectangleShape2D_qouja")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Level2/pen exit-block"]
 position = Vector2(9, 230)
 rotation = 0.358795
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qouja")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Level2/pen exit-block"]
 position = Vector2(-342, 172)
 rotation = -0.605937
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qouja")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Level2/pen exit-block"]
@@ -415,7 +417,6 @@ scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/pen area"]
 position = Vector2(88.7114, 11.4971)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_v2yb1")
 
 [node name="pen2" parent="Level2" instance=ExtResource("23_qnb83")]

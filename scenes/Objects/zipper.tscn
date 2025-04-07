@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://xstywed8a4ni"]
+[gd_scene load_steps=9 format=3 uid="uid://xstywed8a4ni"]
 
 [ext_resource type="Script" uid="uid://b27pls0x163ri" path="res://classes/zipper.gd" id="1_tbvg1"]
 [ext_resource type="Texture2D" uid="uid://cf4uum54n7sbx" path="res://assets/sprites/zipper/zipper.png" id="2_1n2u7"]
+[ext_resource type="Texture2D" uid="uid://bqvkwjnitp1fv" path="res://assets/sprites/zipper/seam_closed.png" id="2_ghaa7"]
+[ext_resource type="Texture2D" uid="uid://ymdb1jmmu6ep" path="res://assets/sprites/zipper/seam_open.png" id="3_y1rgw"]
 [ext_resource type="Texture2D" uid="uid://ca66xtsv1bvji" path="res://assets/sprites/zipper/basis_zipper.png" id="3_y7jk3"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_uaosp"]
@@ -40,6 +42,17 @@ node_b = NodePath("../Handle")
 bias = 0.816
 length = 226.0
 initial_offset = 1.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="GrooveJoint2D"]
+offset_left = -167.999
+offset_top = 239.001
+offset_right = 88.0009
+offset_bottom = 495.001
+rotation = -1.5708
+value = 97.0
+fill_mode = 1
+texture_under = ExtResource("2_ghaa7")
+texture_progress = ExtResource("3_y1rgw")
 
 [node name="Handle" type="RigidBody2D" parent="."]
 position = Vector2(0, -31)

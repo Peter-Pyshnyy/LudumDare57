@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djn78w0oicteb"
-path="res://.godot/imported/Zipper_line.png-eb301e803ba597c8a3a4ab0e144b6e6d.ctex"
+uid="uid://bqvkwjnitp1fv"
+path="res://.godot/imported/seam_closed.png-1a77aa25a705f428a21930237285a79f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/zipper/Zipper_line.png"
-dest_files=["res://.godot/imported/Zipper_line.png-eb301e803ba597c8a3a4ab0e144b6e6d.ctex"]
+source_file="res://assets/sprites/zipper/seam_closed.png"
+dest_files=["res://.godot/imported/seam_closed.png-1a77aa25a705f428a21930237285a79f.ctex"]
 
 [params]
 
