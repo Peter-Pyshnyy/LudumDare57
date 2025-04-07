@@ -17,7 +17,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if collision_shape:
 		collision_shape.b.x = slider.position.x
-
+	
+	$GrooveJoint2D/TextureProgressBar.value = -$Handle.position.x / $GrooveJoint2D.length * 100
 
 func _on_handle_body_entered(body):
 	pass
