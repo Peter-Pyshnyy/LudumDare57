@@ -65,9 +65,8 @@ size = Vector2(56.472, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37s47"]
 size = Vector2(381.5, 41.75)
 
-[node name="Game" type="Node" node_paths=PackedStringArray("levels")]
+[node name="Game" type="Node"]
 script = ExtResource("1_a2inv")
-levels = [NodePath("Level1"), NodePath("Level2"), NodePath("Level3")]
 
 [node name="LevelFade" parent="." instance=ExtResource("2_q27r4")]
 

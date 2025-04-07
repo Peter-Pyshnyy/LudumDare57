@@ -114,9 +114,3 @@ func _on_bag_closer_area_shape_entered(area_rid, area, area_shape_index, local_s
 	if area.name == "pen area":
 		print("bag closed")
 		$Level2/Sepparator/CollisionShape2D.disabled = false
-
-
-func _on_pen_detector_2_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	if area.name == "pen2 area":
-		print("Unfrozen")
-		$Level2/Zipper.freeze()
