@@ -34,8 +34,3 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and _dragging and not event.is_pressed():
 		_dragging = false
-
-#func _on_Draggable_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-		#if event is InputEventMouseButton:
-			#if event.button_index == MOUSE_BUTTON_LEFT:
-				#_dragging = event.is_pressed()

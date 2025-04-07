@@ -16,6 +16,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 [physics]
 
+common/physics_ticks_per_second=120
 2d/physics_engine="Rapier2D"
 
 [rendering]

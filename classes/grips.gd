@@ -91,6 +91,8 @@ func _on_pinky_select_button_up():
 
 func _on_palm_select_button_down():
 	is_palm = true
+	if grip_manager.ready_to_unlock:
+		$"../Grip Manager/Unlock Timer".start(0)
 	focus_limb(limb_hand)
 
 
