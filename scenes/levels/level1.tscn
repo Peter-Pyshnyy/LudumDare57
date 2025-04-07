@@ -13,7 +13,10 @@ size = Vector2(1277, 95)
 script = ExtResource("1_bfxgj")
 
 [node name="Zipper" parent="." instance=ExtResource("1_x6ivy")]
-position = Vector2(743, 572)
+position = Vector2(726, 341)
+
+[node name="Zipper2" parent="." instance=ExtResource("1_x6ivy")]
+position = Vector2(431, 340)
 
 [node name="Coffee" parent="." instance=ExtResource("2_dd0lh")]
 position = Vector2(929, 518)
