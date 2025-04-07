@@ -62,10 +62,10 @@ func time_out() -> void:
 	level_fade.fade_black_and_call(load_game_over_scene)
 
 func load_game_over_scene() -> void:
-	get_tree().change_scene_to_file("res://scenes/EndGameScreen/game_over.tscn")
+	get_tree().change_scene_to_file("res://scenes/UI/game_over.tscn")
 
 func won_game() -> void:
-	var won_scene = preload("res://scenes/EndGameScreen/game_completed.tscn").instantiate()
+	var won_scene = preload("res://scenes/UI/game_completed.tscn").instantiate()
 	get_tree().root.add_child(won_scene)
 	get_tree().current_scene = won_scene
 	won_scene.set_stain(blood_spilled, mayo_spilled, coffee_spilled)

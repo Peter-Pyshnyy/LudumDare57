@@ -17,7 +17,7 @@ var num_clicks = 0
 
 func back_to_menu() -> void:
 	print("back to main")
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/UI/main_menu.tscn")
 
 func set_stain(blood_spilled: bool, mustard_spilled: bool, coffee_spilled: bool) -> void:
 	blood.visible = blood_spilled
