@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b111tmamgk5ip"]
 
-[ext_resource type="Script" uid="uid://s130wi7dvyit" path="res://classes/homework.gd" id="1_3j3op"]
+[ext_resource type="Script" path="res://classes/homework.gd" id="1_3j3op"]
 [ext_resource type="Texture2D" uid="uid://dube00rhdv8in" path="res://assets/sprites/Homework 2.png" id="1_vn3aq"]
 
 [node name="Homework" type="RigidBody2D"]

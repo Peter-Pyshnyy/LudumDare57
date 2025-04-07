@@ -24,9 +24,9 @@ var dir: Vector2
 func _input(event):
 	if is_palm and event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			limb_hand.rotate(deg_to_rad(-3))
+			limb_hand.rotate(deg_to_rad(-2.5))
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			limb_hand.rotate(deg_to_rad(3))
+			limb_hand.rotate(deg_to_rad(2.5))
 
 func _physics_process(delta):
 	pass

@@ -101,9 +101,8 @@ size = Vector2(381.5, 172)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ool0"]
 size = Vector2(136.75, 132)
 
-[node name="Game" type="Node" node_paths=PackedStringArray("levels")]
+[node name="Game" type="Node"]
 script = ExtResource("1_uwrxv")
-levels = [NodePath("Level0"), NodePath("Level1"), NodePath("Level2"), NodePath("Level3")]
 
 [node name="InGameUI" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("2_sww3w")]
 timer = NodePath("../Timer")
