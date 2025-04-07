@@ -1,8 +1,8 @@
-[gd_scene load_steps=42 format=3 uid="uid://dw5dep2lvaeic"]
+[gd_scene load_steps=44 format=3 uid="uid://dw5dep2lvaeic"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="2_264po"]
-[ext_resource type="PackedScene" uid="uid://bs3bk8wwb46eb" path="res://scenes/level_fade.tscn" id="2_bhx41"]
+[ext_resource type="PackedScene" uid="uid://bs3bk8wwb46eb" path="res://scenes/UI/level_fade.tscn" id="2_bhx41"]
 [ext_resource type="Texture2D" uid="uid://x3nmpdhmakcg" path="res://assets/Background/backpack/backpack_back.png" id="4_264po"]
 [ext_resource type="Texture2D" uid="uid://btlom8710gcig" path="res://assets/Background/backpack/L13-Layer 10.png" id="5_1kice"]
 [ext_resource type="Texture2D" uid="uid://cumihxja0v7bw" path="res://assets/Background/backpack/L12-Layer 11.png" id="6_5newe"]
@@ -51,19 +51,25 @@ size = Vector2(354, 651.5)
 size = Vector2(4.81259, 4.28038)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kice"]
-size = Vector2(535, 27)
+size = Vector2(414, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnb83"]
-size = Vector2(58.843, 20)
+size = Vector2(58.843, 7.74879)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_suyxu"]
 size = Vector2(3.97388, 19.9213)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgl2t"]
-size = Vector2(231, 39)
+size = Vector2(231, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qouja"]
-size = Vector2(20, 102.704)
+size = Vector2(16.2175, 102.704)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2yb1"]
+size = Vector2(155.959, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wljb1"]
+size = Vector2(383, 285)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37s47"]
 size = Vector2(381.5, 41.75)
@@ -302,7 +308,8 @@ collision_layer = 256
 collision_mask = 196927
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/Floor"]
-position = Vector2(-83.5, 12.5)
+position = Vector2(-144, 12.5004)
+rotation = -4.46886e-05
 shape = SubResource("RectangleShape2D_1kice")
 
 [node name="Ceiling" type="StaticBody2D" parent="Level2"]
@@ -326,30 +333,29 @@ collision_layer = 131328
 collision_mask = 196639
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/Sepparator"]
-position = Vector2(43.2464, 12.3655)
+position = Vector2(40.9368, 17.5461)
 rotation = 0.280921
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qnb83")
 
 [node name="ColorRect" type="ColorRect" parent="Level2/Sepparator/CollisionShape2D"]
-offset_left = -29.8023
-offset_top = -10.0772
-offset_right = -19.8023
-offset_bottom = 29.9228
+offset_left = -30.0
+offset_top = -4.0
+offset_right = -20.0
+offset_bottom = 11.0
 rotation = 0.00419113
 scale = Vector2(5.69658, 0.514077)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Level2/Sepparator"]
 position = Vector2(-53.6721, -15.4408)
 rotation = 0.280921
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qnb83")
 
 [node name="ColorRect2" type="ColorRect" parent="Level2/Sepparator/CollisionShape2D2"]
-offset_left = -27.5465
-offset_top = -11.241
-offset_right = -17.5465
-offset_bottom = 28.7589
+offset_left = -27.7115
+offset_top = -4.28709
+offset_right = -17.7115
+offset_bottom = 10.7129
 rotation = 0.0108738
 scale = Vector2(5.69658, 0.514077)
 
@@ -360,9 +366,10 @@ scale = Vector2(1.37841, -2.14366)
 shape = SubResource("RectangleShape2D_suyxu")
 
 [node name="ColorRect" type="ColorRect" parent="Level2/Sepparator/CollisionShape2D4"]
+z_index = 2
 offset_left = -2.0
 offset_top = -9.0
-offset_right = 38.0
+offset_right = 118.0
 offset_bottom = 38.0
 scale = Vector2(0.0979681, 0.40166)
 
@@ -370,34 +377,62 @@ scale = Vector2(0.0979681, 0.40166)
 position = Vector2(56, -13)
 rotation = 1.57493
 
-[node name="ColorRect" type="ColorRect" parent="Level2"]
-offset_left = 183.0
-offset_top = 189.0
-offset_right = 328.0
-offset_bottom = 217.0
-
 [node name="pen exit-block" type="StaticBody2D" parent="Level2"]
 position = Vector2(-4, -18)
 collision_layer = 16384
-collision_mask = 196608
+collision_mask = 262144
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/pen exit-block"]
-position = Vector2(228.5, 195.5)
+position = Vector2(228.5, 192)
 shape = SubResource("RectangleShape2D_sgl2t")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Level2/pen exit-block"]
-position = Vector2(118, 144)
-rotation = -0.337165
+position = Vector2(102, 156)
+rotation = -0.614712
+shape = SubResource("RectangleShape2D_qouja")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Level2/pen exit-block"]
+position = Vector2(9, 230)
+rotation = 0.358795
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_qouja")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Level2/pen exit-block"]
+position = Vector2(-342, 172)
+rotation = -0.605937
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qouja")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Level2/pen exit-block"]
-position = Vector2(349, 146)
-rotation = 0.316448
+position = Vector2(328, 147)
+rotation = 0.526557
 shape = SubResource("RectangleShape2D_qouja")
 
+[node name="pen area" type="Area2D" parent="Level2"]
+position = Vector2(124, 118)
+rotation = -0.0238136
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/pen area"]
+position = Vector2(88.7114, 11.4971)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_v2yb1")
+
 [node name="pen2" parent="Level2" instance=ExtResource("23_qnb83")]
-position = Vector2(161, 130)
-rotation = -0.166734
+position = Vector2(124, 118)
+rotation = -0.0238136
+
+[node name="pen area mover" type="RemoteTransform2D" parent="Level2/pen2"]
+remote_path = NodePath("../../pen area")
+
+[node name="Zipper" parent="Level2" instance=ExtResource("18_ssvqc")]
+position = Vector2(309, 182)
+
+[node name="pen detector" type="Area2D" parent="Level2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/pen detector"]
+position = Vector2(-147.5, 42.5)
+shape = SubResource("RectangleShape2D_wljb1")
 
 [node name="Level3" type="Node2D" parent="." node_paths=PackedStringArray("hand_start_pos", "camera_pos", "ceiling")]
 position = Vector2(585, 1196)
@@ -481,5 +516,7 @@ autoplay = true
 [connection signal="spilled_signal" from="Level1/Coffee" to="." method="set_coffee_spilled"]
 [connection signal="body_entered" from="Level1/Skateboard detector" to="." method="_on_skateboard_detector_body_entered"]
 [connection signal="exit_level" from="Level2/Exit" to="." method="exit_level"]
+[connection signal="area_entered" from="Level2/pen detector" to="." method="_on_pen_detector_area_entered"]
+[connection signal="area_shape_entered" from="Level2/pen detector" to="." method="_on_pen_detector_area_shape_entered"]
 [connection signal="exit_level" from="Level3/Exit" to="." method="exit_level"]
 [connection signal="pressed" from="movement" to="Level1/Exit" method="exit"]

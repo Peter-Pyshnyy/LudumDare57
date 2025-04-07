@@ -81,6 +81,8 @@ func unlock():
 
 
 func _on_unlock_timer_timeout():
-	var distanve = $"..".global_position.distance_to(gripped_object.global_position)
-	
-	#unlock()
+	var distance = $"..".global_position.distance_to(gripped_object.global_position)
+	if distance > 200:
+		unlock()
+	else:
+		unlock_timer.start()
