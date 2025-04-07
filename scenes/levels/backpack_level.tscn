@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d3iraddllcna7" path="res://classes/backpack_level.gd" id="1_kd5y1"]
 [ext_resource type="Texture2D" uid="uid://x3nmpdhmakcg" path="res://assets/Background/backpack/backpack_back.png" id="2_0h82l"]
+[ext_resource type="Texture2D" uid="uid://cvgvtb1sgw63a" path="res://assets/Background/Lvl_bg.png" id="2_joo0d"]
 [ext_resource type="Texture2D" uid="uid://btlom8710gcig" path="res://assets/Background/backpack/L13-Layer 10.png" id="2_kd5y1"]
 [ext_resource type="Texture2D" uid="uid://c16eqkoxsbtne" path="res://assets/Background/backpack/L10-Layer 12++.png" id="3_g2ape"]
 [ext_resource type="Texture2D" uid="uid://cpvo0afsg33at" path="res://assets/Background/backpack/L8-Layer 12+.png" id="4_0h82l"]
@@ -19,9 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="17_dmo7p"]
 [ext_resource type="PackedScene" uid="uid://bni4j3r7dp4jg" path="res://scenes/Objects/coffee.tscn" id="18_10fj1"]
 [ext_resource type="PackedScene" uid="uid://cr0wiqnxvve8h" path="res://scenes/Objects/skateboard.tscn" id="19_jegnj"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgqdl"]
-bg_color = Color(0.336176, 0.616865, 0.479606, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0h82l"]
 size = Vector2(267.619, 37.4816)
@@ -43,10 +41,10 @@ fill_to = Vector2(1, 1)
 [node name="backpack_level" type="Node2D"]
 script = ExtResource("1_kd5y1")
 
-[node name="Panel" type="Panel" parent="."]
-offset_right = 1154.0
-offset_bottom = 1573.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_xgqdl")
+[node name="classroom_bg" type="Sprite2D" parent="."]
+position = Vector2(578.938, 506)
+scale = Vector2(3.60664, 2.97812)
+texture = ExtResource("2_joo0d")
 
 [node name="Backpack_BG" type="Sprite2D" parent="."]
 position = Vector2(577, 766)
