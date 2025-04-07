@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://dw5dep2lvaeic"]
+[gd_scene load_steps=62 format=3 uid="uid://dw5dep2lvaeic"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="2_264po"]
@@ -24,17 +24,25 @@
 [ext_resource type="Script" uid="uid://c5tnood4o4tnv" path="res://classes/Level.gd" id="19_js0lu"]
 [ext_resource type="Texture2D" uid="uid://le4ohchumbmg" path="res://assets/sprites/tips/tip3.png" id="19_qouja"]
 [ext_resource type="PackedScene" uid="uid://v6cdwcpvgjeu" path="res://scenes/Objects/exit.tscn" id="20_1kice"]
+[ext_resource type="Texture2D" uid="uid://5swbvgeig13" path="res://assets/sprites/tips/tip4.png" id="20_02fa5"]
 [ext_resource type="PackedScene" uid="uid://bni4j3r7dp4jg" path="res://scenes/Objects/coffee.tscn" id="21_5newe"]
 [ext_resource type="PackedScene" uid="uid://damplki3il6ju" path="res://scenes/Objects/cutable.tscn" id="23_bt5mj"]
 [ext_resource type="PackedScene" uid="uid://1sqahkj7o667" path="res://scenes/Objects/knife.tscn" id="23_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://bett2b74shf8q" path="res://scenes/Objects/pen.tscn" id="23_qnb83"]
 [ext_resource type="Texture2D" uid="uid://cu58ertqb1plt" path="res://assets/Background/backpack/Bag_for_pen.png" id="23_sgl2t"]
+[ext_resource type="PackedScene" uid="uid://b4r47h1vi0rwj" path="res://scenes/Objects/padlock.tscn" id="23_twgab"]
 [ext_resource type="PackedScene" uid="uid://cr0wiqnxvve8h" path="res://scenes/Objects/skateboard.tscn" id="24_e1j6l"]
 [ext_resource type="AudioStream" uid="uid://c36uk4sahkpt7" path="res://assets/sound/soundtrack.wav" id="25_pl11u"]
 [ext_resource type="Script" path="res://classes/final_exit.gd" id="26_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://c7of1kowtd34p" path="res://assets/sprites/seam/seam_end_front.png" id="28_qouja"]
 [ext_resource type="PackedScene" uid="uid://b111tmamgk5ip" path="res://scenes/Objects/homework.tscn" id="29_wljb1"]
 [ext_resource type="Texture2D" uid="uid://cd5pgod48irx7" path="res://assets/sprites/seam/seam_end.png" id="31_wljb1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4url"]
+size = Vector2(302.621, 28.0837)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sl42"]
+size = Vector2(213.675, 43.4894)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pl11u"]
 
@@ -106,6 +114,7 @@ script = ExtResource("1_uwrxv")
 levels = [NodePath("Level0"), NodePath("Level1"), NodePath("Level2"), NodePath("Level3")]
 
 [node name="InGameUI" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("2_sww3w")]
+visible = false
 timer = NodePath("../Timer")
 
 [node name="LevelFade" parent="." instance=ExtResource("2_bhx41")]
@@ -212,6 +221,12 @@ rotation = 0.104903
 scale = Vector2(0.32679, 0.336317)
 texture = ExtResource("19_qouja")
 
+[node name="Sprite2D4" type="Sprite2D" parent="Background"]
+position = Vector2(126.313, -353.827)
+rotation = 0.233914
+scale = Vector2(0.282891, 0.282891)
+texture = ExtResource("20_02fa5")
+
 [node name="Level0" type="Node2D" parent="." node_paths=PackedStringArray("hand_start_pos", "camera_pos", "ceiling")]
 position = Vector2(585, -109)
 script = ExtResource("19_js0lu")
@@ -251,6 +266,26 @@ polygon = PackedVector2Array(-350, 25, -368, -33, -359, -442, -296, -505, -154, 
 
 [node name="Exit" parent="Level0" instance=ExtResource("20_1kice")]
 position = Vector2(-19, 301)
+
+[node name="Padlock" parent="Level0" instance=ExtResource("23_twgab")]
+position = Vector2(-42, 81)
+
+[node name="Padlock floor" type="StaticBody2D" parent="Level0"]
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level0/Padlock floor"]
+position = Vector2(-19.0339, 165.594)
+rotation = 0.00599996
+scale = Vector2(0.997847, 0.883485)
+shape = SubResource("RectangleShape2D_m4url")
+
+[node name="Area2D" type="Area2D" parent="Level0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level0/Area2D"]
+position = Vector2(-26.9628, 138.222)
+scale = Vector2(1.14227, 0.792015)
+shape = SubResource("RectangleShape2D_0sl42")
 
 [node name="Level1" type="Node2D" parent="." node_paths=PackedStringArray("hand_start_pos", "camera_pos", "ceiling")]
 position = Vector2(585, 399)
@@ -620,13 +655,15 @@ position = Vector2(-117, 139)
 rotation = -1.74619
 
 [node name="Hand" parent="." instance=ExtResource("2_264po")]
-position = Vector2(883, -633)
+position = Vector2(578, -276)
 
 [node name="movement2" type="Button" parent="."]
+visible = false
 offset_left = 736.0
 offset_top = 804.0
 offset_right = 847.0
 offset_bottom = 835.0
+disabled = true
 text = "Move next lvl"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -639,6 +676,7 @@ texture = ExtResource("31_wljb1")
 
 [connection signal="timeout" from="Timer" to="." method="time_out"]
 [connection signal="exit_level" from="Level0/Exit" to="." method="exit_level"]
+[connection signal="body_exited" from="Level0/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="exit_level" from="Level1/Exit" to="." method="exit_level"]
 [connection signal="spilled_signal" from="Level1/Coffee" to="." method="set_coffee_spilled"]
 [connection signal="body_entered" from="Level1/Skateboard detector" to="." method="_on_skateboard_detector_body_entered"]

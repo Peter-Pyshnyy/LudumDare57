@@ -20,7 +20,7 @@ func _ready() -> void:
 
 func start_game() -> void:
 	#start timer
-
+	$Level0/Zipper.freeze()
 	$Level1/Zipper.freeze()
 	$Level2/Zipper.freeze()
 	
@@ -61,6 +61,7 @@ func load_next_level() -> void:
 	if next_level == 1:
 		timer.start()
 		audio_stream_player.play()
+		$InGameUI.visible = true
 		
 	next_level += 1
 
@@ -119,3 +120,8 @@ func _on_bag_closer_area_shape_entered(area_rid, area, area_shape_index, local_s
 	if area.name == "pen area":
 		print("bag closed")
 		$Level2/Sepparator/CollisionShape2D.disabled = false
+
+
+func _on_area_2d_body_exited(body):
+	if body.name == "Padlock":
+		$Level0/Zipper.unfreeze()
