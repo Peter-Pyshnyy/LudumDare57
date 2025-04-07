@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bett2b74shf8q"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0nxin"]
+
+[node name="pen" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_0nxin")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="RigidBody2D"]
+polygon = PackedVector2Array(19, 1, 19, 21, 22, 13, 31, 13, 31, 20, 206, 20, 218, 13, 206, 4, 30, 3, 30, 8, 22, 8)
+
+[node name="Handle" type="CollisionPolygon2D" parent="RigidBody2D"]
+position = Vector2(110, 14)
+rotation = 1.59221
+scale = Vector2(0.676088, 0.676088)
+polygon = PackedVector2Array(-14.8636, 134.947, 11.7541, 134.377, 1.30776, 130.162, 1.02277, 116.854, 11.3741, 116.632, 5.80105, -143.63, -4.86691, -158.196, -17.8591, -143.123, -13.7331, 118.649, -6.33936, 118.491, -6.08604, 130.321)
