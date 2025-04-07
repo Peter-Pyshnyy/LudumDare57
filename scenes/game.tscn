@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://dw5dep2lvaeic"]
+[gd_scene load_steps=57 format=3 uid="uid://dw5dep2lvaeic"]
 
 [ext_resource type="Script" uid="uid://1i42u7l1byqq" path="res://classes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cyiacwvceu3mp" path="res://scenes/Objects/hand.tscn" id="2_264po"]
@@ -95,6 +95,9 @@ size = Vector2(223, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pr1ej"]
 size = Vector2(381.5, 261)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05nbr"]
+size = Vector2(381.5, 295)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37s47"]
 size = Vector2(381.5, 184)
@@ -543,6 +546,14 @@ collision_mask = 8388608
 position = Vector2(115, 411.5)
 shape = SubResource("RectangleShape2D_pr1ej")
 
+[node name="Handstop" type="StaticBody2D" parent="Level3"]
+collision_layer = 536870912
+collision_mask = 31
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Level3/Handstop"]
+position = Vector2(115, 394.5)
+shape = SubResource("RectangleShape2D_05nbr")
+
 [node name="Floor" type="StaticBody2D" parent="Level3"]
 position = Vector2(-180, 186)
 collision_layer = 256
@@ -557,7 +568,7 @@ position = Vector2(514.625, 96.0625)
 shape = SubResource("RectangleShape2D_8ool0")
 
 [node name="Exit" parent="Level3" instance=ExtResource("20_1kice")]
-position = Vector2(112, 395)
+position = Vector2(112, 401)
 
 [node name="Knife" parent="Level3" instance=ExtResource("23_e1j6l")]
 z_index = 2
