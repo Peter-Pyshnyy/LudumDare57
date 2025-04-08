@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://47q2bt4waunc"]
+[gd_scene load_steps=48 format=3 uid="uid://47q2bt4waunc"]
 
 [ext_resource type="Script" uid="uid://bxsu2gg1006px" path="res://classes/in_game_ui.gd" id="1_dyyxj"]
 [ext_resource type="Theme" uid="uid://bgdq1vfbjdske" path="res://assets/Fonts/Pixel_theme.tres" id="2_somwp"]
@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bdf7exye6ryhx" path="res://assets/sprites/teacher/teacher_2phase.png" id="4_diyqw"]
 [ext_resource type="Texture2D" uid="uid://0osart3r2mun" path="res://assets/sprites/teacher/Teacher_3phase.png" id="5_u4xde"]
 [ext_resource type="Texture2D" uid="uid://jmdrogu5mnqh" path="res://assets/sprites/teacher/teacher_4phase.png" id="6_lmaav"]
-[ext_resource type="Texture2D" uid="uid://dytpgrunu4xlx" path="res://assets/Background/homework_screen/a.png" id="7_diyqw"]
+[ext_resource type="Texture2D" uid="uid://cb58hlwn8dxkg" path="res://assets/Background/homework_screen/grade_a.png" id="7_u4xde"]
+[ext_resource type="Texture2D" uid="uid://b0nc12n3eryit" path="res://assets/Background/homework_screen/grade_circle.png" id="8_lmaav"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_75t27"]
 atlas = ExtResource("3_mrpyu")
@@ -318,5 +319,9 @@ animation = &"phase1"
 autoplay = "phase1"
 
 [node name="Grade" type="Sprite2D" parent="."]
-position = Vector2(1025, 51)
-texture = ExtResource("7_diyqw")
+position = Vector2(1093, 66)
+texture = ExtResource("7_u4xde")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1089, 67)
+texture = ExtResource("8_lmaav")

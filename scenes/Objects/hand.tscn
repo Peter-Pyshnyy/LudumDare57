@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cyiacwvceu3mp"]
+[gd_scene load_steps=45 format=3 uid="uid://cyiacwvceu3mp"]
 
 [ext_resource type="Script" uid="uid://cfbetsvoob6r8" path="res://classes/grips.gd" id="1_eyfoh"]
 [ext_resource type="Script" uid="uid://dfdneti23ltj3" path="res://classes/limb.gd" id="1_k7pjy"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://o4cimbky8jbj" path="res://assets/sprites/hand/ring_1.png" id="11_f1fl8"]
 [ext_resource type="Texture2D" uid="uid://ci4wc2qyclke6" path="res://assets/sprites/hand/pinky_2.png" id="12_2lli3"]
 [ext_resource type="Texture2D" uid="uid://d1xyrgw0q61nv" path="res://assets/sprites/hand/pinky_1.png" id="13_c2n2t"]
+[ext_resource type="Texture2D" uid="uid://u3oxmqifjadu" path="res://assets/sprites/hand/Hand_button.png" id="16_c2n2t"]
+[ext_resource type="Texture2D" uid="uid://bidfbymg657nf" path="res://assets/sprites/hand/Hand_button_pressed.png" id="17_1ucu7"]
 
 [sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_eyfoh"]
 target_nodepath = NodePath("Palm/IK Targets/Limb Thumb/Thumb Target")
@@ -266,16 +268,16 @@ position = Vector2(7.62939e-06, 3.8147e-06)
 
 [node name="Inner Pinky1" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Pinky"]
 z_index = 11
-position = Vector2(-9.94197, -21.924)
+position = Vector2(-9.94218, -21.9245)
 rotation = -0.408418
-scale = Vector2(0.999894, 0.999894)
+scale = Vector2(0.999818, 0.999818)
 shape = SubResource("RectangleShape2D_v24qn")
 
 [node name="Inner Pinky2" type="CollisionShape2D" parent="Skeleton2D/Palm/IK Targets/Limb Pinky"]
 z_index = 11
-position = Vector2(-3.69225, -7.49488)
+position = Vector2(-3.69293, -7.49652)
 rotation = -0.431229
-scale = Vector2(0.999903, 0.999903)
+scale = Vector2(0.999827, 0.999827)
 shape = SubResource("RectangleShape2D_bfalx")
 
 [node name="TextureRect" type="TextureRect" parent="Skeleton2D/Palm"]
@@ -634,17 +636,17 @@ rotation = -0.282304
 scale = Vector2(0.207287, 0.450811)
 texture = ExtResource("13_c2n2t")
 
-[node name="Palm Select2" type="Button" parent="Skeleton2D/Palm"]
-z_index = 10
-anchors_preset = -1
-anchor_left = -0.011
-anchor_top = -0.012
-anchor_right = 0.005
-anchor_bottom = 0.017
-offset_left = -6.33333
-offset_top = 9.0
-offset_right = 1.66667
-offset_bottom = 17.0
+[node name="TextureButton" type="TextureButton" parent="Skeleton2D/Palm"]
+z_index = 15
+offset_left = 4.33333
+offset_top = 6.33333
+offset_right = 44.3333
+offset_bottom = 46.3333
+rotation = 1.57061
+scale = Vector2(0.419472, 0.419472)
+texture_normal = ExtResource("16_c2n2t")
+texture_pressed = ExtResource("17_1ucu7")
+texture_hover = ExtResource("17_1ucu7")
 
 [node name="Outer Thumb1" type="CollisionShape2D" parent="."]
 position = Vector2(-29.7778, 14.6666)
@@ -702,16 +704,16 @@ shape = SubResource("RectangleShape2D_h1yym")
 
 [node name="Outer Pinky1" type="CollisionShape2D" parent="."]
 z_index = 11
-position = Vector2(17.3345, 32.5672)
+position = Vector2(17.3344, 32.5667)
 rotation = -0.341035
-scale = Vector2(0.999904, 0.999904)
+scale = Vector2(0.999828, 0.999828)
 shape = SubResource("RectangleShape2D_ohfqw")
 
 [node name="Outer Pinky2" type="CollisionShape2D" parent="."]
 z_index = 11
-position = Vector2(22.5986, 47.3845)
+position = Vector2(22.598, 47.3828)
 rotation = -0.363846
-scale = Vector2(0.999913, 0.999913)
+scale = Vector2(0.999837, 0.999837)
 shape = SubResource("RectangleShape2D_dth4f")
 
 [node name="Palm" type="CollisionShape2D" parent="."]
@@ -732,92 +734,93 @@ position = Vector2(275.823, 227.467)
 rotation = 1.74375
 scale = Vector2(2.24998, 2.24998)
 
-[node name="Thumb Select" type="Button" parent="Btns/Thumb Btn Anchor"]
+[node name="TextureButton" type="TextureButton" parent="Btns/Thumb Btn Anchor"]
 z_index = 15
-anchors_preset = -1
-anchor_left = -0.052
-anchor_top = 0.006
-anchor_right = -0.045
-anchor_bottom = 0.019
-offset_right = 8.0
-offset_bottom = 8.0
-scale = Vector2(0.693351, 0.771626)
+offset_left = 0.372647
+offset_top = 0.757276
+offset_right = 40.3726
+offset_bottom = 40.7573
+scale = Vector2(0.284595, 0.284595)
+texture_normal = ExtResource("16_c2n2t")
+texture_pressed = ExtResource("17_1ucu7")
+texture_hover = ExtResource("17_1ucu7")
 
 [node name="Index Btn Anchor" type="Node2D" parent="Btns"]
 position = Vector2(319, 325)
 rotation = 1.55956
 scale = Vector2(3.59996, 3.59996)
 
-[node name="Index Select" type="Button" parent="Btns/Index Btn Anchor"]
+[node name="TextureButton" type="TextureButton" parent="Btns/Index Btn Anchor"]
 z_index = 15
-offset_left = -1.77777
-offset_top = -2.22221
-offset_right = 6.22223
-offset_bottom = 5.77779
-rotation = 0.188648
-scale = Vector2(0.559097, 0.490883)
+offset_left = -2.74958
+offset_top = -2.53109
+offset_right = 37.2504
+offset_bottom = 37.4689
+scale = Vector2(0.197136, 0.207228)
+texture_normal = ExtResource("16_c2n2t")
+texture_pressed = ExtResource("17_1ucu7")
+texture_hover = ExtResource("17_1ucu7")
 
 [node name="Mid Btn Anchor" type="Node2D" parent="Btns"]
 position = Vector2(361, 321)
 rotation = 1.60587
 scale = Vector2(3.56623, 3.56623)
 
-[node name="Mid Select" type="Button" parent="Btns/Mid Btn Anchor"]
+[node name="TextureButton" type="TextureButton" parent="Btns/Mid Btn Anchor"]
 z_index = 15
-anchors_preset = -1
-anchor_left = -0.024
-anchor_top = 0.074
-anchor_right = -0.017
-anchor_bottom = 0.086
-offset_right = 8.0
-offset_bottom = 8.0
-scale = Vector2(0.594524, 0.591454)
+offset_left = -0.870231
+offset_top = -0.811208
+offset_right = 39.1298
+offset_bottom = 39.1888
+scale = Vector2(0.208472, 0.208472)
+texture_normal = ExtResource("16_c2n2t")
+texture_pressed = ExtResource("17_1ucu7")
+texture_hover = ExtResource("17_1ucu7")
 
 [node name="Ring Btn Anchor" type="Node2D" parent="Btns"]
 position = Vector2(393, 307)
 rotation = 1.52229
 scale = Vector2(3.36374, 3.36374)
 
-[node name="Ring Select" type="Button" parent="Btns/Ring Btn Anchor"]
+[node name="TextureButton" type="TextureButton" parent="Btns/Ring Btn Anchor"]
 z_index = 15
-anchors_preset = -1
-anchor_left = -0.001
-anchor_top = 0.065
-anchor_right = 0.006
-anchor_bottom = 0.077
-offset_right = 8.00002
-offset_bottom = 8.0
-scale = Vector2(0.590214, 0.601798)
+offset_left = 0.0288102
+offset_top = -0.593877
+offset_right = 40.0288
+offset_bottom = 39.4061
+scale = Vector2(0.18266, 0.199729)
+texture_normal = ExtResource("16_c2n2t")
+texture_pressed = ExtResource("17_1ucu7")
+texture_hover = ExtResource("17_1ucu7")
 
 [node name="Pinky Btn Anchor" type="Node2D" parent="Btns"]
-position = Vector2(423.002, 270.004)
+position = Vector2(423, 270)
 rotation = 1.22682
-scale = Vector2(2.24978, 2.24978)
+scale = Vector2(2.24961, 2.24961)
 
-[node name="Pinky Select" type="Button" parent="Btns/Pinky Btn Anchor"]
+[node name="TextureButton" type="TextureButton" parent="Btns/Pinky Btn Anchor"]
 z_index = 15
-anchors_preset = -1
-anchor_left = 0.017
-anchor_top = 0.06
-anchor_right = 0.024
-anchor_bottom = 0.073
-offset_right = 8.00001
-offset_bottom = 8.0
-rotation = -1.51199
-scale = Vector2(-0.795792, 0.749136)
+offset_left = -0.687102
+offset_top = -0.718295
+offset_right = 39.3129
+offset_bottom = 39.2817
+scale = Vector2(0.258241, 0.258241)
+texture_normal = ExtResource("16_c2n2t")
+texture_pressed = ExtResource("17_1ucu7")
+texture_hover = ExtResource("17_1ucu7")
 
 [connection signal="input_event" from="." to="." method="_on_Draggable_input_event"]
 [connection signal="input_event" from="Skeleton2D/Palm/IK Targets/Limb Index" to="Skeleton2D/Palm/IK Targets/Limb Index" method="_on_Draggable_input_event"]
-[connection signal="button_down" from="Skeleton2D/Palm/Palm Select2" to="Skeleton2D" method="_on_palm_select_button_down"]
-[connection signal="button_up" from="Skeleton2D/Palm/Palm Select2" to="Skeleton2D" method="_on_palm_select_button_up"]
+[connection signal="button_down" from="Skeleton2D/Palm/TextureButton" to="Skeleton2D" method="_on_palm_select_button_down"]
+[connection signal="button_up" from="Skeleton2D/Palm/TextureButton" to="Skeleton2D" method="_on_palm_select_button_up"]
 [connection signal="timeout" from="Grip Manager/Unlock Timer" to="Grip Manager" method="_on_unlock_timer_timeout"]
-[connection signal="button_down" from="Btns/Thumb Btn Anchor/Thumb Select" to="Skeleton2D" method="_on_thumb_select_button_down"]
-[connection signal="button_up" from="Btns/Thumb Btn Anchor/Thumb Select" to="Skeleton2D" method="_on_thumb_select_button_up"]
-[connection signal="button_down" from="Btns/Index Btn Anchor/Index Select" to="Skeleton2D" method="_on_index_select_button_down"]
-[connection signal="button_up" from="Btns/Index Btn Anchor/Index Select" to="Skeleton2D" method="_on_index_select_button_up"]
-[connection signal="button_down" from="Btns/Mid Btn Anchor/Mid Select" to="Skeleton2D" method="_on_mid_select_button_down"]
-[connection signal="button_up" from="Btns/Mid Btn Anchor/Mid Select" to="Skeleton2D" method="_on_mid_select_button_up"]
-[connection signal="button_down" from="Btns/Ring Btn Anchor/Ring Select" to="Skeleton2D" method="_on_ring_select_button_down"]
-[connection signal="button_up" from="Btns/Ring Btn Anchor/Ring Select" to="Skeleton2D" method="_on_ring_select_button_up"]
-[connection signal="button_down" from="Btns/Pinky Btn Anchor/Pinky Select" to="Skeleton2D" method="_on_pinky_select_button_down"]
-[connection signal="button_up" from="Btns/Pinky Btn Anchor/Pinky Select" to="Skeleton2D" method="_on_pinky_select_button_up"]
+[connection signal="button_down" from="Btns/Thumb Btn Anchor/TextureButton" to="Skeleton2D" method="_on_thumb_select_button_down"]
+[connection signal="button_up" from="Btns/Thumb Btn Anchor/TextureButton" to="Skeleton2D" method="_on_thumb_select_button_up"]
+[connection signal="button_down" from="Btns/Index Btn Anchor/TextureButton" to="Skeleton2D" method="_on_index_select_button_down"]
+[connection signal="button_up" from="Btns/Index Btn Anchor/TextureButton" to="Skeleton2D" method="_on_index_select_button_up"]
+[connection signal="button_down" from="Btns/Mid Btn Anchor/TextureButton" to="Skeleton2D" method="_on_mid_select_button_down"]
+[connection signal="button_up" from="Btns/Mid Btn Anchor/TextureButton" to="Skeleton2D" method="_on_mid_select_button_up"]
+[connection signal="button_down" from="Btns/Ring Btn Anchor/TextureButton" to="Skeleton2D" method="_on_ring_select_button_down"]
+[connection signal="button_up" from="Btns/Ring Btn Anchor/TextureButton" to="Skeleton2D" method="_on_ring_select_button_up"]
+[connection signal="button_down" from="Btns/Pinky Btn Anchor/TextureButton" to="Skeleton2D" method="_on_pinky_select_button_down"]
+[connection signal="button_up" from="Btns/Pinky Btn Anchor/TextureButton" to="Skeleton2D" method="_on_pinky_select_button_up"]

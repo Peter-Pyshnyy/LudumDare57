@@ -84,17 +84,18 @@ func won_game() -> void:
 func decrease_grade():
 	grade = grade + 1
 	if grade == 1:
-		$InGameUI.get_child(2).texture = load("res://assets/Background/homework_screen/b.png")
+		$InGameUI.get_child(2).texture = load("res://assets/Background/homework_screen/grade_b.png")
 	else:
-		$InGameUI.get_child(2).texture = load("res://assets/Background/homework_screen/c.png")
+		$Level3/Homework.get_child(0).texture = load("res://assets/sprites/Homework_both.png")
+		$InGameUI.get_child(2).texture = load("res://assets/Background/homework_screen/grade_c.png")
 
 func set_coffee_spilled() -> void:
 	coffee_spilled = true
+	$Level3/Homework.get_child(0).texture = load("res://assets/sprites/Homework_coffee.png")
 	decrease_grade()
-	print("YFSDLKFJSDLKJDSFLKFJL")
 
 func set_nutella_spilled() -> void:
-	print("NUTELLAED")
+	$Level3/Homework.get_child(0).texture = load("res://assets/sprites/Homework_nutella.png")
 	decrease_grade()
 	nutella_spilled = true
 	
