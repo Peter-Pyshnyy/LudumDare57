@@ -583,7 +583,7 @@ collision_layer = 0
 collision_mask = 8388608
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Level3/StaticBody2D2"]
-position = Vector2(115, 411.5)
+position = Vector2(115, 372.5)
 shape = SubResource("RectangleShape2D_pr1ej")
 
 [node name="Handstop" type="StaticBody2D" parent="Level3"]
@@ -591,7 +591,7 @@ collision_layer = 536870912
 collision_mask = 31
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Level3/Handstop"]
-position = Vector2(115, 370.5)
+position = Vector2(115, 412.5)
 shape = SubResource("RectangleShape2D_05nbr")
 
 [node name="Floor" type="StaticBody2D" parent="Level3"]
@@ -679,3 +679,5 @@ texture = ExtResource("31_wljb1")
 [connection signal="area_shape_entered" from="Level2/pen detector2" to="." method="_on_pen_detector_2_area_shape_entered"]
 [connection signal="area_shape_exited" from="Level2/pen detector2" to="." method="_on_pen_detector_2_area_shape_exited"]
 [connection signal="exit_level" from="Level3/Exit" to="." method="exit_level"]
+[connection signal="body_entered" from="Level3/Homework" to="Level3/Homework" method="_on_body_entered"]
+[connection signal="nutellaed" from="Level3/Homework" to="." method="set_nutella_spilled"]

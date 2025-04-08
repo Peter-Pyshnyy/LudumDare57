@@ -9,6 +9,7 @@ class_name Game extends Node
 @export var levels: Array[Level]
 var current_level: Level
 var next_level = 0
+var grade = 0
 
 var coffee_spilled: bool = false
 var nutella_spilled: bool = false
@@ -75,15 +76,26 @@ func won_game() -> void:
 	var won_scene = preload("res://scenes/UI/game_completed.tscn").instantiate()
 	get_tree().root.add_child(won_scene)
 	get_tree().current_scene = won_scene
-	won_scene.set_stain(blood_spilled, mayo_spilled, coffee_spilled)
+	won_scene.set_stain(nutella_spilled, mayo_spilled, coffee_spilled)
 	
 	queue_free()
 	print("won game")
 
+func decrease_grade():
+	grade = grade + 1
+	if grade == 1:
+		$InGameUI.get_child(2).texture = load("res://assets/Background/homework_screen/b.png")
+	else:
+		$InGameUI.get_child(2).texture = load("res://assets/Background/homework_screen/c.png")
+
 func set_coffee_spilled() -> void:
 	coffee_spilled = true
+	decrease_grade()
+	print("YFSDLKFJSDLKJDSFLKFJL")
 
 func set_nutella_spilled() -> void:
+	print("NUTELLAED")
+	decrease_grade()
 	nutella_spilled = true
 	
 func set_mayo_spilled() -> void:

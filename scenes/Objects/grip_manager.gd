@@ -20,7 +20,6 @@ func _ready():
 	grip_listener_thumb.connect("untouched", index_obj_remove)
 
 func thumb_obj_add(body):
-	print("emit reseived")
 	if object_index == body:
 		unlock_timer.stop()
 		if not gripped:
@@ -29,7 +28,6 @@ func thumb_obj_add(body):
 			ready_to_unlock = false
 			thumb_unlocked = false
 			body.set_collision_layer_value(17, false)
-			print("LOCKED")
 	object_thumb = body
 	
 	if gripped and body == gripped_object:
@@ -38,15 +36,12 @@ func thumb_obj_add(body):
 func thumb_obj_remove(body):
 	if body == gripped_object:
 		thumb_unlocked = true
-		print("thumb unlocked")
 		if thumb_unlocked:
 			ready_to_unlock = true
-			print("ready to unlock")
 			#unlock_timer.start(0)
 	object_thumb = null
 
 func index_obj_add(body):
-	print("emit reseived")
 	if object_thumb == body:
 		unlock_timer.stop()
 		if not gripped:
@@ -55,7 +50,6 @@ func index_obj_add(body):
 			ready_to_unlock = false
 			index_unlocked = false
 			body.set_collision_layer_value(17, false)
-			print("LOCKED")
 	object_index = body
 	
 	if gripped and body == gripped_object:
@@ -64,10 +58,8 @@ func index_obj_add(body):
 func index_obj_remove(body):
 	if body == gripped_object:
 		index_unlocked = true
-		print("index unlocked")
 		if thumb_unlocked:
 			ready_to_unlock = true
-			print("ready to unlock")
 			#unlock_timer.start(0)
 	object_index = null
 
@@ -77,7 +69,6 @@ func unlock():
 	gripped = false
 	ready_to_unlock = false
 	unlock_timer.stop()
-	print("UNLOCKED")
 
 
 func _on_unlock_timer_timeout():
